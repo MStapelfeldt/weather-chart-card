@@ -104,11 +104,11 @@ HACS is a third party community store and is not included in Home Assistant out 
 
 ###### What custom icons can I use?
 Icons should be in svg format. Icons should have names as shown [here](https://github.com/mstapelfeldt/weather-chart-card/blob/master/src/const.js#L24). Example:
-![130360372-76d70c42-986c-46e3-b9b5-810f0317f94f](https://github.com/MStapelfeldt/weather-chart-card/blob/master/d3ee55a2-e64f-4354-b36d-9faf6ea37361.png)
+![icons](https://github.com/MStapelfeldt/weather-chart-card/blob/master/254627752-d3ee55a2-e64f-4354-b36d-9faf6ea37361.png)
 
 #### Example usage:
 ###### Card with current time, date and day
-![date-time](https://github.com/MStapelfeldt/weather-chart-card/blob/master/ab2c32f7-8c6a-4a7e-84fc-f857a519a725.png)
+![date-time](https://github.com/MStapelfeldt/weather-chart-card/blob/master/307542307-ab2c32f7-8c6a-4a7e-84fc-f857a519a725.png)
 ```yaml
 type: custom:weather-chart-card
 entity: weather.weather_home
@@ -120,7 +120,7 @@ icon_style: style1
 
 ```
 ###### Style2 chart
-![style2](https://github.com/MStapelfeldt/weather-chart-card/blob/master/93537082/3067cc43-0e80-492c-b4a5-771b1e44ea17.png)
+![style2](https://github.com/MStapelfeldt/weather-chart-card/blob/master/258654972-3067cc43-0e80-492c-b4a5-771b1e44ea17.png)
 ```yaml
 type: custom:weather-chart-card
 entity: weather.my_home
@@ -128,7 +128,7 @@ forecast:
   style: style2
 ```
 ###### Chart only
-![Chart-only](https://github.com/mstapelfeldt/weather-chart-card/blob/master/c99d85a4-30d1-4fd9-90ff-877421b39e9b.png)
+![Chart-only](https://github.com/MStapelfeldt/weather-chart-card/blob/master/255619227-c99d85a4-30d1-4fd9-90ff-877421b39e9b.png)
 ```yaml
 type: custom:weather-chart-card
 entity: weather.my_home
@@ -140,7 +140,7 @@ forecast:
 ```
 
 ###### Custom units
-![Units](https://github.com/mstapelfeldt/weather-chart-card/blob/master/e72862ee-9bb7-4f97-9a3c-b17663c458aa.png)
+![Units](https://github.com/MStapelfeldt/weather-chart-card/blob/master/255619316-e72862ee-9bb7-4f97-9a3c-b17663c458aa.png)
 ```yaml
 type: custom:weather-chart-card
 entity: weather.my_home
