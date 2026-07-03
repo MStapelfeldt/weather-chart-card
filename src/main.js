@@ -53,15 +53,18 @@ static getStubConfig(hass, unusedEntities, allEntities) {
     forecast: {
       precipitation_type: 'rainfall',
       show_probability: false,
+      show_rainfall: true,
       labels_font_size: '11',
+      precip_labels_font_size: '10',
       precip_bar_size: '100',
       style: 'style1',
       show_wind_forecast: true,
       condition_icons: true,
       round_temp: false,
       type: 'daily',
-      number_of_forecasts: '0', 
-      disable_animation: false, 
+      number_of_forecasts: '0',
+      disable_animation: false,
+      disable_tooltips: false,
     },
   };
 }
@@ -102,13 +105,16 @@ setConfig(config) {
     forecast: {
       precipitation_type: 'rainfall',
       show_probability: false,
+      show_rainfall: true,
       labels_font_size: 11,
+      precip_labels_font_size: 10,
       chart_height: 180,
       precip_bar_size: 100,
       style: 'style1',
       temperature1_color: 'rgba(255, 152, 0, 1.0)',
       temperature2_color: 'rgba(68, 115, 158, 1.0)',
       precipitation_color: 'rgba(132, 209, 253, 1.0)',
+      disable_tooltips: false,
       condition_icons: true,
       show_wind_forecast: true,
       round_temp: false,
@@ -154,7 +160,7 @@ set hass(hass) {
     this.windSpeed = this.config.windspeed ? hass.states[this.config.windspeed].state : this.weather.attributes.wind_speed;
     this.dew_point = this.config.dew_point ? hass.states[this.config.dew_point].state : this.weather.attributes.dew_point;
     this.wind_gust_speed = this.config.wind_gust_speed ? hass.states[this.config.wind_gust_speed].state : this.weather.attributes.wind_gust_speed;
-    this.visibility = this.config.visibility ? hass.states[this.config.visibility].state : this.weather.attributes.visibility;
+    this.visibility = this.config.visibility_entity ? hass.states[this.config.visibility_entity].state : this.weather.attributes.visibility;
 
     if (this.config.winddir && hass.states[this.config.winddir] && hass.states[this.config.winddir].state !== undefined) {
       this.windDirection = parseFloat(hass.states[this.config.winddir].state);
@@ -470,11 +476,11 @@ drawChart({ config, language, weather, forecastItems } = this) {
   }
   var tempUnit = this._hass.config.unit_system.temperature;
   var lengthUnit = this._hass.config.unit_system.length;
-  if (config.forecast.precipitation_type === 'probability') {
-    var precipUnit = '%';
-  } else {
+  //if (config.forecast.precipitation_type === 'probability') {
+  //  var precipUnit = '%';
+  //} else {
     var precipUnit = lengthUnit === 'km' ? this.ll('units')['mm'] : this.ll('units')['in'];
-  }
+  //}
   const data = this.computeForecastData();
 
   var style = getComputedStyle(document.body);
@@ -537,29 +543,26 @@ drawChart({ config, language, weather, forecastItems } = this) {
       categoryPercentage: 1.0,
       datalabels: {
         display: function (context) {
-          return context.dataset.data[context.dataIndex] > 0 ? 'true' : false;
+          //return context.dataset.data[context.dataIndex] > 0 ? 'true' : false;
+          return context.dataset.data[context.dataIndex] > 0 && (config.forecast.show_rainfall || config.forecast.show_probability) ? 'true' : false;
         },
       formatter: function (value, context) {
-        const precipitationType = config.forecast.precipitation_type;
-
-        const rainfall = context.dataset.data[context.dataIndex];
+        const rainfall = data.forecast[context.dataIndex].precipitation;
         const probability = data.forecast[context.dataIndex].precipitation_probability;
 
-        let formattedValue;
-        if (precipitationType === 'rainfall') {
-          if (probability !== undefined && probability !== null && config.forecast.show_probability) {
-	    formattedValue = `${rainfall > 9 ? Math.round(rainfall) : rainfall.toFixed(1)} ${precipUnit}\n${Math.round(probability)}%`;
-          } else {
-            formattedValue = `${rainfall > 9 ? Math.round(rainfall) : rainfall.toFixed(1)} ${precipUnit}`;
-          }
-        } else {
-          formattedValue = `${rainfall > 9 ? Math.round(rainfall) : rainfall.toFixed(1)} ${precipUnit}`;
+        let formattedValue = [];
+        if (config.forecast.show_rainfall) {
+          formattedValue.push(`${rainfall > 9 ? Math.round(rainfall) : rainfall.toFixed(1)} ${precipUnit}`)
         }
-
-        formattedValue = formattedValue.replace('\n', '\n\n');
-
-        return formattedValue;
-      },
+        if (probability !== undefined && probability !== null && config.forecast.show_probability) {
+          formattedValue.push(`${Math.round(probability)}%`);
+        }
+        return formattedValue.join('\n\n');
+        },
+        font: {
+          size: config.forecast.precip_labels_font_size,
+          lineHeight: 0.7,
+        },
         textAlign: 'center',
         textBaseline: 'middle',
         align: 'top',
@@ -640,7 +643,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
               callback: function (value, index, values) {
                   var datetime = this.getLabelForValue(value);
                   var dateObj = new Date(datetime);
-        
+
                   var timeFormatOptions = {
                       hour12: config.use_12hour_format,
                       hour: 'numeric',
@@ -702,7 +705,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
         datalabels: {
           backgroundColor: backgroundColor,
           borderColor: context => context.dataset.backgroundColor,
-          borderRadius: 0,
+          borderRadius: config.forecast.style === 'style3' ? 8 : 0,
           borderWidth: 1.5,
           padding: config.forecast.precipitation_type === 'rainfall' && config.forecast.show_probability && config.forecast.type !== 'hourly' ? 3 : 4,
           color: chart_text_color || textColor,
@@ -715,6 +718,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
           },
         },
         tooltip: {
+          enabled: config.forecast.disable_tooltips !== true,
           caretSize: 0,
           caretPadding: 15,
           callbacks: {
@@ -729,17 +733,22 @@ drawChart({ config, language, weather, forecastItems } = this) {
                 hour12: config.use_12hour_format,
               });
             },
-    label: function (context) {
-      var label = context.dataset.label;
-      var value = context.formattedValue;
-      var probability = data.forecast[context.dataIndex].precipitation_probability;
-      var unit = context.datasetIndex === 2 ? precipUnit : tempUnit;
+            label: function (context) {
+              var label = context.dataset.label;
+              var value = context.formattedValue;
+              var rainfall = data.forecast[context.dataIndex].precipitation;
+              var probability = data.forecast[context.dataIndex].precipitation_probability;
 
-      if (config.forecast.precipitation_type === 'rainfall' && context.datasetIndex === 2 && config.forecast.show_probability && probability !== undefined && probability !== null) {
-        return label + ': ' + value + ' ' + precipUnit + ' / ' + Math.round(probability) + '%';
-      } else {
-        return label + ': ' + value + ' ' + unit;
-      }
+              if (context.datasetIndex === 2) {
+                if (probability !== undefined && probability !== null) {
+                  return `${label}: ${rainfall} ${precipUnit} / ${Math.round(probability)}%`;
+                }
+                else {
+                  return `${label}: ${rainfall} ${precipUnit}`
+                }
+              } else {
+                return label + ': ' + value + ' ' + tempUnit;
+              }
             },
           },
         },
@@ -889,7 +898,7 @@ updateChart({ forecasts, forecastChart } = this) {
           justify-content: space-around;
           align-items: center;
           margin: 0px 5px 0px 5px;
-      	  cursor: pointer;
+          cursor: pointer;
         }
         .forecast-item {
           display: flex;
@@ -951,7 +960,7 @@ updateChart({ forecasts, forecastChart } = this) {
           font-weight: 400;
         }
         .main .description {
-	  font-style: italic;
+	        font-style: italic;
           font-size: 13px;
           margin-top: 5px;
           font-weight: 400;
@@ -1084,6 +1093,7 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
 
 renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, language, uv_index, dew_point, wind_gust_speed, visibility } = this) {
   let dWindSpeed = windSpeed;
+  let dWindGustSpeed = wind_gust_speed;
   let dPressure = pressure;
 
   if (this.unitSpeed !== this.weather.attributes.wind_speed_unit) {
@@ -1110,6 +1120,32 @@ renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, la
     }
   } else {
     dWindSpeed = Math.round(dWindSpeed);
+  }
+
+  if (this.unitSpeed !== this.weather.attributes.wind_speed_unit) {
+    if (this.unitSpeed === 'm/s') {
+      if (this.weather.attributes.wind_speed_unit === 'km/h') {
+        dWindGustSpeed = Math.round(dWindGustSpeed * 1000 / 3600);
+      } else if (this.weather.attributes.wind_speed_unit === 'mph') {
+        dWindGustSpeed = Math.round(dWindGustSpeed * 0.44704);
+      }
+    } else if (this.unitSpeed === 'km/h') {
+      if (this.weather.attributes.wind_speed_unit === 'm/s') {
+        dWindGustSpeed = Math.round(dWindGustSpeed * 3.6);
+      } else if (this.weather.attributes.wind_speed_unit === 'mph') {
+        dWindGustSpeed = Math.round(dWindGustSpeed * 1.60934);
+      }
+    } else if (this.unitSpeed === 'mph') {
+      if (this.weather.attributes.wind_speed_unit === 'm/s') {
+        dWindGustSpeed = Math.round(dWindGustSpeed / 0.44704);
+      } else if (this.weather.attributes.wind_speed_unit === 'km/h') {
+        dWindGustSpeed = Math.round(dWindGustSpeed / 1.60934);
+      }
+    } else if (this.unitSpeed === 'Bft') {
+        dWindGustSpeed = this.calculateBeaufortScale(dWindGustSpeed);
+    }
+  } else {
+    dWindGustSpeed = Math.round(dWindGustSpeed);
   }
 
   if (this.unitPressure !== this.weather.attributes.pressure_unit) {
@@ -1193,9 +1229,9 @@ renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, la
             <ha-icon icon="hass:weather-windy"></ha-icon>
             ${dWindSpeed} ${this.ll('units')[this.unitSpeed]} <br>
           ` : ''}
-          ${showWindgustspeed && wind_gust_speed !== undefined ? html`
+          ${showWindgustspeed && dWindGustSpeed !== undefined ? html`
             <ha-icon icon="hass:weather-windy-variant"></ha-icon>
-            ${wind_gust_speed} ${this.ll('units')[this.unitSpeed]}
+            ${dWindGustSpeed} ${this.ll('units')[this.unitSpeed]}
           ` : ''}
         </div>
       ` : ''}
