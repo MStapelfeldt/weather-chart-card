@@ -169,6 +169,14 @@ class WeatherChartCardEditor extends LitElement {
     this.requestUpdate();
   }
 
+  _setForecastType(value) {
+    this._handleTypeChange({ target: { value } });
+  }
+
+  _setChartStyle(value) {
+    this._handleStyleChange({ target: { value } });
+  }
+
   _handleIconStyleChange(event) {
     if (!this._config) {
       return;
@@ -256,6 +264,13 @@ class WeatherChartCardEditor extends LitElement {
           align-items: center;
           margin-bottom: 6px;
         }
+        .radio-option {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          cursor: pointer;
+          user-select: none;
+        }
         .style-radio-group {
           display: flex;
           flex-wrap: wrap;
@@ -323,59 +338,99 @@ class WeatherChartCardEditor extends LitElement {
       <h5>Forecast type:</h5>
 
       <div class="radio-group">
-        <ha-formfield label="Daily forecast">
+        <div
+          class="radio-option"
+          role="radio"
+          aria-checked="${forecastConfig.type === 'daily'}"
+          tabindex="0"
+          @click="${() => this._setForecastType('daily')}"
+          @keydown="${(e) => (e.key === 'Enter' || e.key === ' ') && this._setForecastType('daily')}"
+        >
           <ha-radio
             name="type"
             value="daily"
             @change="${this._handleTypeChange}"
             .checked="${forecastConfig.type === 'daily'}"
           ></ha-radio>
-        </ha-formfield>
+          <span class="check-label">Daily forecast</span>
+        </div>
       </div>
 
       <div class="radio-group">
-        <ha-formfield label="Hourly forecast">
+        <div
+          class="radio-option"
+          role="radio"
+          aria-checked="${forecastConfig.type === 'hourly'}"
+          tabindex="0"
+          @click="${() => this._setForecastType('hourly')}"
+          @keydown="${(e) => (e.key === 'Enter' || e.key === ' ') && this._setForecastType('hourly')}"
+        >
           <ha-radio
             name="type"
             value="hourly"
             @change="${this._handleTypeChange}"
             .checked="${forecastConfig.type === 'hourly'}"
           ></ha-radio>
-        </ha-formfield>
+          <span class="check-label">Hourly forecast</span>
+        </div>
       </div>
 
       <h5>Chart style:</h5>
       <div class="style-radio-group">
         <div class="radio-group">
-          <ha-formfield label="Chart style 1">
-          <ha-radio
-            name="style"
-            value="style1"
-            @change="${this._handleStyleChange}"
-            .checked="${forecastConfig.style === 'style1'}"
-          ></ha-radio>
-          </ha-formfield>
+          <div
+            class="radio-option"
+            role="radio"
+            aria-checked="${forecastConfig.style === 'style1'}"
+            tabindex="0"
+            @click="${() => this._setChartStyle('style1')}"
+            @keydown="${(e) => (e.key === 'Enter' || e.key === ' ') && this._setChartStyle('style1')}"
+          >
+            <ha-radio
+              name="style"
+              value="style1"
+              @change="${this._handleStyleChange}"
+              .checked="${forecastConfig.style === 'style1'}"
+            ></ha-radio>
+            <span class="check-label">Chart style 1</span>
+          </div>
         </div>
 
         <div class="radio-group">
-          <ha-formfield label="Chart style 2">
-          <ha-radio
-            name="style"
-            value="style2"
-            @change="${this._handleStyleChange}"
-            .checked="${forecastConfig.style === 'style2'}"
-          ></ha-radio>
-          </ha-formfield>
+          <div
+            class="radio-option"
+            role="radio"
+            aria-checked="${forecastConfig.style === 'style2'}"
+            tabindex="0"
+            @click="${() => this._setChartStyle('style2')}"
+            @keydown="${(e) => (e.key === 'Enter' || e.key === ' ') && this._setChartStyle('style2')}"
+          >
+            <ha-radio
+              name="style"
+              value="style2"
+              @change="${this._handleStyleChange}"
+              .checked="${forecastConfig.style === 'style2'}"
+            ></ha-radio>
+            <span class="check-label">Chart style 2</span>
+          </div>
         </div>
         <div class="radio-group">
-          <ha-formfield label="Chart style 3">
-          <ha-radio
-            name="style"
-            value="style3"
-            @change="${this._handleStyleChange}"
-            .checked="${forecastConfig.style === 'style3'}"
-          ></ha-radio>
-          </ha-formfield>
+          <div
+            class="radio-option"
+            role="radio"
+            aria-checked="${forecastConfig.style === 'style3'}"
+            tabindex="0"
+            @click="${() => this._setChartStyle('style3')}"
+            @keydown="${(e) => (e.key === 'Enter' || e.key === ' ') && this._setChartStyle('style3')}"
+          >
+            <ha-radio
+              name="style"
+              value="style3"
+              @change="${this._handleStyleChange}"
+              .checked="${forecastConfig.style === 'style3'}"
+            ></ha-radio>
+            <span class="check-label">Chart style 3</span>
+          </div>
         </div>
       </div>
 
