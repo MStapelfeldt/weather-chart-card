@@ -1117,6 +1117,13 @@ class WeatherChartCardEditor extends s {
         .radio-group {
           display: flex;
           align-items: center;
+          margin-bottom: 6px;
+        }
+        .style-radio-group {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 8px;
         }
         .radio-group label {
           margin-left: 4px;
@@ -1179,64 +1186,59 @@ class WeatherChartCardEditor extends s {
       <h5>Forecast type:</h5>
 
       <div class="radio-group">
-        <ha-radio
-          name="type"
-          value="daily"
-          @change="${this._handleTypeChange}"
-          .checked="${forecastConfig.type === 'daily'}"
-        ></ha-radio>
-        <label class="check-label">
-          Daily forecast
-        </label>
+        <ha-formfield label="Daily forecast">
+          <ha-radio
+            name="type"
+            value="daily"
+            @change="${this._handleTypeChange}"
+            .checked="${forecastConfig.type === 'daily'}"
+          ></ha-radio>
+        </ha-formfield>
       </div>
 
       <div class="radio-group">
-        <ha-radio
-          name="type"
-          value="hourly"
-          @change="${this._handleTypeChange}"
-          .checked="${forecastConfig.type === 'hourly'}"
-        ></ha-radio>
-        <label class="check-label">
-          Hourly forecast
-        </label>
+        <ha-formfield label="Hourly forecast">
+          <ha-radio
+            name="type"
+            value="hourly"
+            @change="${this._handleTypeChange}"
+            .checked="${forecastConfig.type === 'hourly'}"
+          ></ha-radio>
+        </ha-formfield>
       </div>
 
       <h5>Chart style:</h5>
-      <div class="radio-container">
-        <div class="switch-right">
+      <div class="style-radio-group">
+        <div class="radio-group">
+          <ha-formfield label="Chart style 1">
           <ha-radio
             name="style"
             value="style1"
             @change="${this._handleStyleChange}"
             .checked="${forecastConfig.style === 'style1'}"
           ></ha-radio>
-          <label class="check-label">
-            Chart style 1
-          </label>
+          </ha-formfield>
         </div>
 
-        <div class="switch-right">
+        <div class="radio-group">
+          <ha-formfield label="Chart style 2">
           <ha-radio
             name="style"
             value="style2"
             @change="${this._handleStyleChange}"
             .checked="${forecastConfig.style === 'style2'}"
           ></ha-radio>
-          <label class="check-label">
-            Chart style 2
-          </label>
+          </ha-formfield>
         </div>
-        <div class="switch-right">
+        <div class="radio-group">
+          <ha-formfield label="Chart style 3">
           <ha-radio
             name="style"
             value="style3"
             @change="${this._handleStyleChange}"
             .checked="${forecastConfig.style === 'style3'}"
           ></ha-radio>
-          <label class="check-label">
-            Chart style 3
-          </label>
+          </ha-formfield>
         </div>
       </div>
 
