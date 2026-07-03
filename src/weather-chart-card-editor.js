@@ -262,6 +262,26 @@ class WeatherChartCardEditor extends LitElement {
           border-bottom: 2px solid #ccc;
           padding-bottom: 10px;
           margin-bottom: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .tab-button {
+          border: 1px solid var(--divider-color, #bdbdbd);
+          border-radius: 8px;
+          background: var(--card-background-color, #fff);
+          color: var(--primary-text-color, #212121);
+          padding: 6px 12px;
+          cursor: pointer;
+          font: inherit;
+        }
+        .tab-button:hover {
+          background: var(--secondary-background-color, #f5f5f5);
+        }
+        .tab-button.active {
+          border-color: var(--primary-color, #03a9f4);
+          color: var(--primary-color, #03a9f4);
+          font-weight: 600;
         }
         .flex-container {
           display: flex;
@@ -360,10 +380,26 @@ class WeatherChartCardEditor extends LitElement {
       <!-- Buttons to switch between pages -->
        <h4>Settings:</h4>
        <div class="buttons-container">
-         <mwc-button @click="${() => this.showPage('card')}">Main</mwc-button>
-         <mwc-button @click="${() => this.showPage('forecast')}">Forecast</mwc-button>
-         <mwc-button @click="${() => this.showPage('units')}">Units</mwc-button>
-         <mwc-button @click="${() => this.showPage('alternate')}">Alternate entities</mwc-button>
+         <button
+           type="button"
+           class="tab-button ${this.currentPage === 'card' ? 'active' : ''}"
+           @click="${() => this.showPage('card')}"
+         >Main</button>
+         <button
+           type="button"
+           class="tab-button ${this.currentPage === 'forecast' ? 'active' : ''}"
+           @click="${() => this.showPage('forecast')}"
+         >Forecast</button>
+         <button
+           type="button"
+           class="tab-button ${this.currentPage === 'units' ? 'active' : ''}"
+           @click="${() => this.showPage('units')}"
+         >Units</button>
+         <button
+           type="button"
+           class="tab-button ${this.currentPage === 'alternate' ? 'active' : ''}"
+           @click="${() => this.showPage('alternate')}"
+         >Alternate entities</button>
        </div>
 
       <!-- Card Settings Page -->
