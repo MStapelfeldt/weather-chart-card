@@ -11,8 +11,8 @@
     "custom-cards"
   ],
   "module": "src/main.js",
-  "repository": "git@github.com:mlamberts78/weather-chart-card.git",
-  "author": "Marc Lamberts",
+  "repository": "git@github.com:mstapelfeldt/weather-chart-card.git",
+  "author": "Moritz Stapelfeldt",
   "license": "MIT",
   "dependencies": {
     "chart.js": "^4.4.1",
@@ -30,7 +30,7 @@
   "scripts": {
     "start": "rollup -c rollup.config.dev.js --watch",
     "build": "npm run lint && npm run rollup",
-    "lint": "eslint 'src/**/*.js'",
+    "lint": "eslint src/**/*.js",
     "rollup": "rollup -c"
   }
 }
