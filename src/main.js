@@ -858,15 +858,25 @@ updateChart({ forecasts, forecastChart } = this) {
         .main {
           display: flex;
           align-items: flex-start;
-          justify-content: space-between;
+          justify-content: flex-start;
           font-size: ${config.current_temp_size}px;
           margin-bottom: 10px;
-          gap: 10px;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+        .main-block {
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+        }
+        .main-headline {
+          font-size: 12px;
+          color: var(--secondary-text-color);
+          margin-bottom: 4px;
         }
         .main-current {
           display: flex;
           align-items: center;
-          min-width: 0;
         }
         .main-weather-icon ha-icon {
           --mdc-icon-size: 50px;
@@ -890,20 +900,19 @@ updateChart({ forecasts, forecastChart } = this) {
         }
         .main-forecast {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           align-items: flex-start;
-          gap: 8px;
-          margin-inline-start: 10px;
+          gap: 16px;
         }
         .main-forecast-item {
           display: flex;
+          flex-direction: column;
+          min-width: 0;
+        }
+        .main-forecast-body {
+          display: flex;
           align-items: center;
           line-height: 0.9;
-        }
-        .main-forecast-day {
-          font-size: 12px;
-          color: var(--secondary-text-color);
-          margin-bottom: 2px;
         }
         .main-forecast-content {
           line-height: 0.9;
@@ -1100,38 +1109,41 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
 
   return html`
     <div class="main">
-      <div class="main-current">
-        <div class="main-weather-icon">
-          ${iconHtml}
-        </div>
-        <div>
-        <div>
-          ${showTemperature ? html`${roundedTemperature}<span>${this.getUnit('temperature')}</span>` : ''}
-          ${showFeelsLike && roundedFeelsLike ? html`
-            <div class="feels-like">
-              ${this.ll('feelsLike')}
-              ${roundedFeelsLike}${this.getUnit('temperature')}
-            </div>
-          ` : ''}
-          ${showCurrentCondition ? html`
-            <div class="current-condition">
-              <span>${this.ll(weather.state)}</span>
-            </div>
-          ` : ''}
-          ${showDescription ? html`
-            <div class="description">
-              ${description}
-            </div>
-          ` : ''}
-        </div>
-        ${showTime ? html`
-          <div class="current-time">
-            <div id="digital-clock"></div>
-            ${showDay ? html`<div class="date-text day"></div>` : ''}
-            ${showDay && showDate ? html` ` : ''}
-            ${showDate ? html`<div class="date-text date"></div>` : ''}
+      <div class="main-block">
+        <div class="main-headline">${this.getMainDayLabel(0)}</div>
+        <div class="main-current">
+          <div class="main-weather-icon">
+            ${iconHtml}
           </div>
-        ` : ''}
+          <div>
+            <div>
+              ${showTemperature ? html`${roundedTemperature}<span>${this.getUnit('temperature')}</span>` : ''}
+              ${showFeelsLike && roundedFeelsLike ? html`
+                <div class="feels-like">
+                  ${this.ll('feelsLike')}
+                  ${roundedFeelsLike}${this.getUnit('temperature')}
+                </div>
+              ` : ''}
+              ${showCurrentCondition ? html`
+                <div class="current-condition">
+                  <span>${this.ll(weather.state)}</span>
+                </div>
+              ` : ''}
+              ${showDescription ? html`
+                <div class="description">
+                  ${description}
+                </div>
+              ` : ''}
+            </div>
+            ${showTime ? html`
+              <div class="current-time">
+                <div id="digital-clock"></div>
+                ${showDay ? html`<div class="date-text day"></div>` : ''}
+                ${showDay && showDate ? html` ` : ''}
+                ${showDate ? html`<div class="date-text date"></div>` : ''}
+              </div>
+            ` : ''}
+          </div>
         </div>
       </div>
       ${showMainForecast && mainForecastDays.length ? html`
@@ -1143,11 +1155,14 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
 
             return html`
               <div class="main-forecast-item">
-                <div class="main-weather-icon">${forecastIcon}</div>
-                <div class="main-forecast-content">
-                  <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
-                  <div class="feels-like">${this.ll('feelsLike')} ${day.feelsLike}${this.getUnit('temperature')}</div>
-                  <div class="current-condition"><span>${day.day}</span></div>
+                <div class="main-headline">${day.headline}</div>
+                <div class="main-forecast-body">
+                  <div class="main-weather-icon">${forecastIcon}</div>
+                  <div class="main-forecast-content">
+                    <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
+                    <div class="feels-like">${this.ll('feelsLike')} ${day.feelsLike}${this.getUnit('temperature')}</div>
+                    <div class="current-condition"><span>${day.day}</span></div>
+                  </div>
                 </div>
               </div>
             `;
@@ -1195,7 +1210,8 @@ getMainForecastDays() {
       roundedTemperature = Math.round(roundedTemperature * 10) / 10;
     }
 
-    const dayLabel = days.length === 0 ? 'Morgen' : 'Übermorgen';
+    const dayOffset = days.length + 1;
+    const dayLabel = this.getMainDayLabel(dayOffset);
     const isDayTime = this.config.forecast.type === 'daily' ? true : this.isDayTimeForDate(forecastDate);
 
     let roundedFeelsLike = typeof item.apparent_temperature !== 'undefined'
@@ -1212,6 +1228,7 @@ getMainForecastDays() {
       condition: item.condition,
       temperature: roundedTemperature,
       feelsLike: roundedFeelsLike,
+      headline: this.getMainDayLabel(dayOffset),
       sunState: isDayTime ? 'above_horizon' : 'below_horizon',
     });
 
@@ -1221,6 +1238,26 @@ getMainForecastDays() {
   }
 
   return days;
+}
+
+getMainDayLabel(dayOffset) {
+  const selectedLocale = (this.config.locale || this.language || 'en').toLowerCase();
+
+  if (selectedLocale.startsWith('de')) {
+    if (dayOffset === 0) return 'Heute';
+    if (dayOffset === 1) return 'Morgen';
+    return 'Übermorgen';
+  }
+
+  if (selectedLocale.startsWith('en')) {
+    if (dayOffset === 0) return 'Today';
+    if (dayOffset === 1) return 'Tomorrow';
+    return 'Day after tomorrow';
+  }
+
+  const formatter = new Intl.RelativeTimeFormat(selectedLocale, { numeric: 'auto' });
+  const label = formatter.format(dayOffset, 'day');
+  return label.charAt(0).toUpperCase() + label.slice(1);
 }
 
 isDayTimeForDate(forecastDate) {
