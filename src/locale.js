@@ -4,6 +4,7 @@ const locale = {
     'tempLo': 'Teplota v noci',
     'precip': 'Srážky',
     'feelsLike': 'Pocitová teplota',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -38,6 +39,7 @@ const locale = {
     'tempLo': 'Teplota v noci',
     'precip': 'Zrážky',
     'feelsLike': 'Pocitová teplota',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -72,6 +74,7 @@ const locale = {
     'tempLo': 'Nachttemperatur',
     'precip': 'Niederschlag',
     'feelsLike': 'Gefühlt',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -106,6 +109,7 @@ const locale = {
     'tempLo': 'Nachttemperatuur',
     'precip': 'Neerslag',
     'feelsLike': 'Voelt als',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -140,6 +144,7 @@ const locale = {
     'tempLo': 'Temperature night',
     'precip': 'Precipitations',
     'feelsLike': 'Feels like',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -174,6 +179,7 @@ const locale = {
     'tempLo': 'Temperatura mínima',
     'precip': 'Precipitación',
     'feelsLike': 'Sensación térmica',
+    'lowest': 'Mínimo',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -208,6 +214,7 @@ const locale = {
     'tempLo': 'Lämpötila alin',
     'precip': 'Sademäärä',
     'feelsLike': 'Tuntuu kuin',
+    'lowest': 'Minimi',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -242,6 +249,7 @@ const locale = {
     'tempLo': 'Min. hőmérséklet',
     'precip': 'Csapadék',
     'feelsLike': 'Hőérzet',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -276,6 +284,7 @@ const locale = {
     'tempLo': 'Температура ночью',
     'precip': 'Осадки',
     'feelsLike': 'Ощущается как',
+    'lowest': 'Минимум',
     'units': {
       'km/h': 'км/ч',
       'm/s': 'м/с',
@@ -310,6 +319,7 @@ const locale = {
     'tempLo': 'Temperatur min',
     'precip': 'Nederbörd',
     'feelsLike': 'Känns som',
+    'lowest': 'Minimum',
     'units': {
         'km/h': 'km/h',
         'm/s': 'm/s',
@@ -344,6 +354,7 @@ const locale = {
     'tempLo': 'Température min',
     'precip': 'Précipitations',
     'feelsLike': 'Ressenti',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -378,6 +389,7 @@ const locale = {
     'tempLo': 'Temperatura w nocy',
     'precip': 'Opady',
     'feelsLike': 'Odczuwalna',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -412,6 +424,7 @@ const locale = {
     'tempLo': 'Minimumstemperatur',
     'precip': 'Nedbør',
     'feelsLike': 'Føles som',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/t',
       'm/s': 'm/s',
@@ -446,6 +459,7 @@ const locale = {
     'tempLo': 'Nattemperatur',
     'precip': 'Nedbør',
     'feelsLike': 'Føles som',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -480,6 +494,7 @@ const locale = {
     'tempLo': 'Temperatura notte',
     'precip': 'Precipitazioni',
     'feelsLike': 'Percepito come',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -514,6 +529,7 @@ const locale = {
     'tempLo': 'Temperatura noite',
     'precip': 'Precipitação',
     'feelsLike': 'Sensação Térmica',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -548,6 +564,7 @@ const locale = {
     'tempLo': 'Ελάχιστη θερμοκρασία νύχτας',
     'precip': 'Υετός',
     'feelsLike': 'Αίσθηση σαν',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'χλμ/ώρα',
       'm/s': 'μ/δ',
@@ -582,6 +599,7 @@ const locale = {
     'tempLo': 'Минимална температура',
     'precip': 'Валежи',
     'feelsLike': 'Усеща се като',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'км/ч',
       'm/s': 'м/с',
@@ -616,6 +634,7 @@ const locale = {
     'tempLo': 'Naktį',
     'precip': 'Krituliai',
     'feelsLike': 'Jaučiama',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -650,6 +669,7 @@ const locale = {
     'tempLo': 'Temperatura mínima',
     'precip': 'Precipitació',
     'feelsLike': 'Sensació tèrmica',
+    'lowest': 'Mínim',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -684,6 +704,7 @@ const locale = {
     'tempLo': 'Temperatură noaptea',
     'precip': 'Precipitații',
     'feelsLike': 'Se simte ca',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -718,6 +739,7 @@ const locale = {
     'tempLo': 'Температура вночі',
     'precip': 'Опади',
     'feelsLike': 'Відчувається як',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'км/год',
       'm/s': 'м/с',
@@ -752,6 +774,7 @@ const locale = {
     'tempLo': '최저 기온',
     'precip': '강수',
     'feelsLike': '체감',
+    'lowest': 'Minimum',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',

@@ -84,7 +84,8 @@ static getStubConfig(hass, unusedEntities, allEntities) {
       windDirection: {type: Number},
       forecastChart: {type: Object},
       forecastItems: {type: Number},
-      forecasts: { type: Array }
+      forecasts: { type: Array },
+      dailyForecasts: { type: Array }, 
     };
   }
 
@@ -200,6 +201,20 @@ subscribeForecastEvents() {
     forecast_type: isHourly ? 'hourly' : 'daily',
     entity_id: this.config.entity,
   });
+
+  if (this.supportsFeature(WeatherEntityFeature.FORECAST_DAILY)) {
+    this.dailyForecastSubscriber = this._hass.connection.subscribeMessage(
+      (event) => {
+        this.dailyForecasts = event.forecast;
+        this.requestUpdate();
+      },
+      {
+        type: "weather/subscribe_forecast",
+        forecast_type: "daily",
+        entity_id: this.config.entity,
+      }
+    );
+  }
 }
 
   supportsFeature(feature) {
@@ -210,6 +225,8 @@ subscribeForecastEvents() {
     super();
     this.resizeObserver = null;
     this.resizeInitialized = false;
+    this.forecasts = [];
+    this.dailyForecasts = [];
   }
 
   connectedCallback() {
@@ -231,6 +248,9 @@ subscribeForecastEvents() {
     this.detachResizeObserver();
     if (this.forecastSubscriber) {
       this.forecastSubscriber.then((unsub) => unsub());
+    }
+    if (this.dailyForecastSubscriber) {
+      this.dailyForecastSubscriber.then((unsub) => unsub());
     }
   }
 
@@ -856,18 +876,26 @@ updateChart({ forecasts, forecastChart } = this) {
           padding-left: 16px;
         }
         .main {
-          display: flex;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
           align-items: flex-start;
-          justify-content: flex-start;
           font-size: ${config.current_temp_size}px;
           margin-bottom: 10px;
           gap: 16px;
-          flex-wrap: wrap;
         }
         .main-block {
           display: flex;
           flex-direction: column;
           min-width: 0;
+        }
+        .main-block--today {
+          justify-self: start;
+        }
+        .main-block--tomorrow {
+          justify-self: center;
+        }
+        .main-block--dayafter {
+          justify-self: end;
         }
         .main-headline {
           font-size: 12px;
@@ -897,12 +925,6 @@ updateChart({ forecasts, forecastChart } = this) {
         .main span {
           font-size: 18px;
           color: var(--secondary-text-color);
-        }
-        .main-forecast {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-start;
-          gap: 16px;
         }
         .main-forecast-item {
           display: flex;
@@ -1109,7 +1131,7 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
 
   return html`
     <div class="main">
-      <div class="main-block">
+      <div class="main-block main-block--today">
         <div class="main-headline">${this.getMainDayLabel(0)}</div>
         <div class="main-current">
           <div class="main-weather-icon">
@@ -1146,9 +1168,10 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
           </div>
         </div>
       </div>
-      ${showMainForecast && mainForecastDays.length ? html`
-        <div class="main-forecast">
-          ${mainForecastDays.map((day) => {
+      ${showMainForecast && mainForecastDays[0] ? html`
+        <div class="main-block main-block--tomorrow">
+          ${(() => {
+            const day = mainForecastDays[0];
             const forecastIcon = config.animated_icons || config.icons
               ? html`<img src="${this.getWeatherIcon(day.condition, day.sunState)}" alt="">`
               : html`<ha-icon icon="${this.getWeatherIcon(day.condition, day.sunState)}"></ha-icon>`;
@@ -1160,81 +1183,72 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                   <div class="main-weather-icon">${forecastIcon}</div>
                   <div class="main-forecast-content">
                     <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
-                    <div class="feels-like">${this.ll('feelsLike')} ${day.feelsLike}${this.getUnit('temperature')}</div>
-                    <div class="current-condition"><span>${day.day}</span></div>
+                    <div class="feels-like">${this.ll('lowest')} ${day.tempLow}${this.getUnit('temperature')}</div>
+                    <div class="current-condition"><span>${this.localizeCondition(day.condition)}</span></div>
                   </div>
                 </div>
               </div>
             `;
-          })}
+          })()}
         </div>
-      ` : ''}
+      ` : html`<div></div>`}
+
+      ${showMainForecast && mainForecastDays[1] ? html`
+        <div class="main-block main-block--dayafter">
+          ${(() => {
+            const day = mainForecastDays[1];
+            const forecastIcon = config.animated_icons || config.icons
+              ? html`<img src="${this.getWeatherIcon(day.condition, day.sunState)}" alt="">`
+              : html`<ha-icon icon="${this.getWeatherIcon(day.condition, day.sunState)}"></ha-icon>`;
+
+            return html`
+              <div class="main-forecast-item">
+                <div class="main-headline">${day.headline}</div>
+                <div class="main-forecast-body">
+                  <div class="main-weather-icon">${forecastIcon}</div>
+                  <div class="main-forecast-content">
+                    <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
+                    <div class="feels-like">${this.ll('lowest')} ${day.tempLow}${this.getUnit('temperature')}</div>
+                    <div class="current-condition"><span>${this.localizeCondition(day.condition)}</span></div>
+                  </div>
+                </div>
+              </div>
+            `;
+          })()}
+        </div>
+      ` : html`<div></div>`}
     </div>
   `;
 }
 
 getMainForecastDays() {
-  if (!this.forecasts || !this.forecasts.length) {
+  if (!this.dailyForecasts || !this.dailyForecasts.length) {
     return [];
   }
 
-  const now = new Date();
-  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const days = [];
-  const seenDays = new Set();
 
-  for (const item of this.forecasts) {
-    if (!item || !item.datetime) {
-      continue;
+  for (let i = 0; i < Math.min(2, this.dailyForecasts.length); i++) {
+    const item = this.dailyForecasts[i];
+
+    let temperature = parseFloat(item.temperature);
+    if (!isNaN(temperature) && temperature % 1 !== 0) {
+      temperature = Math.round(temperature * 10) / 10;
     }
 
-    const forecastDate = new Date(item.datetime);
-    if (isNaN(forecastDate.getTime())) {
-      continue;
-    }
-
-    const dayStart = new Date(forecastDate.getFullYear(), forecastDate.getMonth(), forecastDate.getDate());
-    if (dayStart <= todayStart) {
-      continue;
-    }
-
-    const dayKey = `${forecastDate.getFullYear()}-${forecastDate.getMonth()}-${forecastDate.getDate()}`;
-    if (seenDays.has(dayKey)) {
-      continue;
-    }
-
-    seenDays.add(dayKey);
-
-    let roundedTemperature = parseFloat(item.temperature);
-    if (!isNaN(roundedTemperature) && roundedTemperature % 1 !== 0) {
-      roundedTemperature = Math.round(roundedTemperature * 10) / 10;
-    }
-
-    const dayOffset = days.length + 1;
-    const dayLabel = this.getMainDayLabel(dayOffset);
-    const isDayTime = this.config.forecast.type === 'daily' ? true : this.isDayTimeForDate(forecastDate);
-
-    let roundedFeelsLike = typeof item.apparent_temperature !== 'undefined'
-      ? parseFloat(item.apparent_temperature)
-      : roundedTemperature;
-    if (isNaN(roundedFeelsLike)) {
-      roundedFeelsLike = roundedTemperature;
-    } else if (roundedFeelsLike % 1 !== 0) {
-      roundedFeelsLike = Math.round(roundedFeelsLike * 10) / 10;
+    let tempLow = parseFloat(item.templow);
+    if (!isNaN(tempLow) && tempLow % 1 !== 0) {
+      tempLow = Math.round(tempLow * 10) / 10;
     }
 
     days.push({
-      day: dayLabel,
+      headline: this.getMainDayLabel(i + 1),
+      day: this.getMainDayLabel(i + 1),
       condition: item.condition,
-      temperature: roundedTemperature,
-      feelsLike: roundedFeelsLike,
-      headline: this.getMainDayLabel(dayOffset),
-      sunState: isDayTime ? 'above_horizon' : 'below_horizon',
+      temperature,
+      tempLow,
+      sunState: 'above_horizon',
     });
-
-    if (days.length === 2) {
-      break;
-    }
   }
 
   return days;
