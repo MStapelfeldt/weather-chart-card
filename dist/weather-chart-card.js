@@ -19321,7 +19321,7 @@ getMainForecastDays() {
 
   const days = [];
 
-  for (let i = 0; i < Math.min(2, this.dailyForecasts.length); i++) {
+  for (let i = 1; i <= Math.min(2, this.dailyForecasts.length); i++) {
     const item = this.dailyForecasts[i];
 
     let temperature = parseFloat(item.temperature);
@@ -19335,8 +19335,8 @@ getMainForecastDays() {
     }
 
     days.push({
-      headline: this.getMainDayLabel(i + 1),
-      day: this.getMainDayLabel(i + 1),
+      headline: this.getMainDayLabel(i),
+      day: this.getMainDayLabel(i),
       condition: item.condition,
       temperature,
       tempLow,
