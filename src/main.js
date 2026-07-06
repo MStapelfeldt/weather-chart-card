@@ -857,10 +857,11 @@ updateChart({ forecasts, forecastChart } = this) {
         }
         .main {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           justify-content: space-between;
           font-size: ${config.current_temp_size}px;
           margin-bottom: 10px;
+          gap: 10px;
         }
         .main-current {
           display: flex;
@@ -889,38 +890,35 @@ updateChart({ forecasts, forecastChart } = this) {
         }
         .main-forecast {
           display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 12px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
           margin-inline-start: 10px;
         }
         .main-forecast-item {
           display: flex;
-          flex-direction: column;
           align-items: center;
-          line-height: 1.1;
-          min-width: 42px;
+          line-height: 0.9;
         }
         .main-forecast-day {
-          font-size: 10px;
+          font-size: 12px;
           color: var(--secondary-text-color);
           margin-bottom: 2px;
         }
-        .main-forecast-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .main-forecast-content {
+          line-height: 0.9;
         }
-        .main-forecast-icon ha-icon {
-          --mdc-icon-size: 22px;
+        .main-forecast-value {
+          font-size: ${config.current_temp_size}px;
         }
-        .main-forecast-icon img {
-          width: ${config.icons_size}px;
-          height: ${config.icons_size}px;
+        .main-forecast-value span {
+          font-size: 18px;
+          color: var(--secondary-text-color);
         }
-        .main-forecast-temp {
-          font-size: 12px;
-          margin-top: 2px;
+        .main-forecast-feels-like {
+          font-size: 13px;
+          margin-top: 5px;
+          font-weight: 400;
         }
         .attributes {
           display: flex;
@@ -1145,9 +1143,12 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
 
             return html`
               <div class="main-forecast-item">
-                <div class="main-forecast-day">${day.day}</div>
-                <div class="main-forecast-icon">${forecastIcon}</div>
-                <div class="main-forecast-temp">${day.temperature}${this.getUnit('temperature')}</div>
+                <div class="main-weather-icon">${forecastIcon}</div>
+                <div class="main-forecast-content">
+                  <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
+                  <div class="feels-like">${this.ll('feelsLike')} ${day.feelsLike}${this.getUnit('temperature')}</div>
+                  <div class="current-condition"><span>${day.day}</span></div>
+                </div>
               </div>
             `;
           })}
@@ -1194,13 +1195,23 @@ getMainForecastDays() {
       roundedTemperature = Math.round(roundedTemperature * 10) / 10;
     }
 
-    const dayLabel = forecastDate.toLocaleString(this.language, { weekday: 'short' }).toUpperCase();
+    const dayLabel = days.length === 0 ? 'Morgen' : 'Übermorgen';
     const isDayTime = this.config.forecast.type === 'daily' ? true : this.isDayTimeForDate(forecastDate);
+
+    let roundedFeelsLike = typeof item.apparent_temperature !== 'undefined'
+      ? parseFloat(item.apparent_temperature)
+      : roundedTemperature;
+    if (isNaN(roundedFeelsLike)) {
+      roundedFeelsLike = roundedTemperature;
+    } else if (roundedFeelsLike % 1 !== 0) {
+      roundedFeelsLike = Math.round(roundedFeelsLike * 10) / 10;
+    }
 
     days.push({
       day: dayLabel,
       condition: item.condition,
       temperature: roundedTemperature,
+      feelsLike: roundedFeelsLike,
       sunState: isDayTime ? 'above_horizon' : 'below_horizon',
     });
 
