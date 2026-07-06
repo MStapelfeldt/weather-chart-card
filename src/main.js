@@ -27,6 +27,7 @@ static getStubConfig(hass, unusedEntities, allEntities) {
   return {
     entity,
     show_main: true,
+    show_main_forecast: false,
     show_temperature: true,
     show_current_condition: true,
     show_attributes: true,
@@ -101,6 +102,7 @@ setConfig(config) {
     show_visibility: false,
     show_last_changed: false,
     show_description: false,
+    show_main_forecast: false,
     ...config,
     forecast: {
       precipitation_type: 'rainfall',
@@ -856,28 +858,69 @@ updateChart({ forecasts, forecastChart } = this) {
         .main {
           display: flex;
           align-items: center;
+          justify-content: space-between;
           font-size: ${config.current_temp_size}px;
           margin-bottom: 10px;
         }
-        .main ha-icon {
+        .main-current {
+          display: flex;
+          align-items: center;
+          min-width: 0;
+        }
+        .main-weather-icon ha-icon {
           --mdc-icon-size: 50px;
           margin-right: 14px;
           margin-inline-start: initial;
           margin-inline-end: 14px;
         }
-        .main img {
+        .main-weather-icon img {
           width: ${config.icons_size * 2}px;
           height: ${config.icons_size * 2}px;
           margin-right: 14px;
           margin-inline-start: initial;
           margin-inline-end: 14px;
         }
-        .main div {
+        .main-current div {
           line-height: 0.9;
         }
         .main span {
           font-size: 18px;
           color: var(--secondary-text-color);
+        }
+        .main-forecast {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 12px;
+          margin-inline-start: 10px;
+        }
+        .main-forecast-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          line-height: 1.1;
+          min-width: 42px;
+        }
+        .main-forecast-day {
+          font-size: 10px;
+          color: var(--secondary-text-color);
+          margin-bottom: 2px;
+        }
+        .main-forecast-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .main-forecast-icon ha-icon {
+          --mdc-icon-size: 22px;
+        }
+        .main-forecast-icon img {
+          width: ${config.icons_size}px;
+          height: ${config.icons_size}px;
+        }
+        .main-forecast-temp {
+          font-size: 12px;
+          margin-top: 2px;
         }
         .attributes {
           display: flex;
@@ -998,9 +1041,11 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
   const showDate = config.show_date;
   const showFeelsLike = config.show_feels_like;
   const showDescription = config.show_description;
+  const showMainForecast = config.show_main_forecast === true;
   const showCurrentCondition = config.show_current_condition !== false;
   const showTemperature = config.show_temperature !== false;
   const showSeconds = config.show_time_seconds === true;
+  const mainForecastDays = showMainForecast ? this.getMainForecastDays() : [];
 
   let roundedTemperature = parseFloat(temperature);
   if (!isNaN(roundedTemperature) && roundedTemperature % 1 !== 0) {
@@ -1057,8 +1102,11 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
 
   return html`
     <div class="main">
-      ${iconHtml}
-      <div>
+      <div class="main-current">
+        <div class="main-weather-icon">
+          ${iconHtml}
+        </div>
+        <div>
         <div>
           ${showTemperature ? html`${roundedTemperature}<span>${this.getUnit('temperature')}</span>` : ''}
           ${showFeelsLike && roundedFeelsLike ? html`
@@ -1086,9 +1134,107 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
             ${showDate ? html`<div class="date-text date"></div>` : ''}
           </div>
         ` : ''}
+        </div>
       </div>
+      ${showMainForecast && mainForecastDays.length ? html`
+        <div class="main-forecast">
+          ${mainForecastDays.map((day) => {
+            const forecastIcon = config.animated_icons || config.icons
+              ? html`<img src="${this.getWeatherIcon(day.condition, day.sunState)}" alt="">`
+              : html`<ha-icon icon="${this.getWeatherIcon(day.condition, day.sunState)}"></ha-icon>`;
+
+            return html`
+              <div class="main-forecast-item">
+                <div class="main-forecast-day">${day.day}</div>
+                <div class="main-forecast-icon">${forecastIcon}</div>
+                <div class="main-forecast-temp">${day.temperature}${this.getUnit('temperature')}</div>
+              </div>
+            `;
+          })}
+        </div>
+      ` : ''}
     </div>
   `;
+}
+
+getMainForecastDays() {
+  if (!this.forecasts || !this.forecasts.length) {
+    return [];
+  }
+
+  const now = new Date();
+  const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const days = [];
+  const seenDays = new Set();
+
+  for (const item of this.forecasts) {
+    if (!item || !item.datetime) {
+      continue;
+    }
+
+    const forecastDate = new Date(item.datetime);
+    if (isNaN(forecastDate.getTime())) {
+      continue;
+    }
+
+    const dayStart = new Date(forecastDate.getFullYear(), forecastDate.getMonth(), forecastDate.getDate());
+    if (dayStart <= todayStart) {
+      continue;
+    }
+
+    const dayKey = `${forecastDate.getFullYear()}-${forecastDate.getMonth()}-${forecastDate.getDate()}`;
+    if (seenDays.has(dayKey)) {
+      continue;
+    }
+
+    seenDays.add(dayKey);
+
+    let roundedTemperature = parseFloat(item.temperature);
+    if (!isNaN(roundedTemperature) && roundedTemperature % 1 !== 0) {
+      roundedTemperature = Math.round(roundedTemperature * 10) / 10;
+    }
+
+    const dayLabel = forecastDate.toLocaleString(this.language, { weekday: 'short' }).toUpperCase();
+    const isDayTime = this.config.forecast.type === 'daily' ? true : this.isDayTimeForDate(forecastDate);
+
+    days.push({
+      day: dayLabel,
+      condition: item.condition,
+      temperature: roundedTemperature,
+      sunState: isDayTime ? 'above_horizon' : 'below_horizon',
+    });
+
+    if (days.length === 2) {
+      break;
+    }
+  }
+
+  return days;
+}
+
+isDayTimeForDate(forecastDate) {
+  if (!this.sun || !this.sun.attributes) {
+    return true;
+  }
+
+  const sunriseTime = new Date(this.sun.attributes.next_rising);
+  const sunsetTime = new Date(this.sun.attributes.next_setting);
+
+  if (isNaN(sunriseTime.getTime()) || isNaN(sunsetTime.getTime())) {
+    return true;
+  }
+
+  const adjustedSunriseTime = new Date(forecastDate);
+  adjustedSunriseTime.setHours(sunriseTime.getHours());
+  adjustedSunriseTime.setMinutes(sunriseTime.getMinutes());
+  adjustedSunriseTime.setSeconds(sunriseTime.getSeconds());
+
+  const adjustedSunsetTime = new Date(forecastDate);
+  adjustedSunsetTime.setHours(sunsetTime.getHours());
+  adjustedSunsetTime.setMinutes(sunsetTime.getMinutes());
+  adjustedSunsetTime.setSeconds(sunsetTime.getSeconds());
+
+  return forecastDate >= adjustedSunriseTime && forecastDate <= adjustedSunsetTime;
 }
 
 renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, language, uv_index, dew_point, wind_gust_speed, visibility } = this) {
