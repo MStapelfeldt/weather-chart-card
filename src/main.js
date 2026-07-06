@@ -1184,7 +1184,7 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                   <div class="main-forecast-content">
                     <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
                     <div class="feels-like">${this.ll('lowest')} ${day.tempLow}${this.getUnit('temperature')}</div>
-                    <div class="current-condition"><span>${this.localizeCondition(day.condition)}</span></div>
+                    <div class="current-condition"><span>${this.ll(day.condition)}</span></div>
                   </div>
                 </div>
               </div>
@@ -1209,7 +1209,7 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                   <div class="main-forecast-content">
                     <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
                     <div class="feels-like">${this.ll('lowest')} ${day.tempLow}${this.getUnit('temperature')}</div>
-                    <div class="current-condition"><span>${this.localizeCondition(day.condition)}</span></div>
+                    <div class="current-condition"><span>${this.ll(day.condition)}</span></div>
                   </div>
                 </div>
               </div>
