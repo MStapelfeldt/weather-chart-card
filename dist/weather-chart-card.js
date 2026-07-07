@@ -18119,6 +18119,7 @@ static getStubConfig(hass, unusedEntities, allEntities) {
       precip_labels_font_size: '10',
       precip_bar_size: '100',
       style: 'style1',
+      use_color_thresholds: false,
       show_wind_forecast: true,
       condition_icons: true,
       round_temp: false,
@@ -18175,6 +18176,7 @@ setConfig(config) {
       temperature1_color: 'rgba(255, 152, 0, 1.0)',
       temperature2_color: 'rgba(68, 115, 158, 1.0)',
       precipitation_color: 'rgba(132, 209, 253, 1.0)',
+      use_color_thresholds: false,
       disable_tooltips: false,
       condition_icons: true,
       show_wind_forecast: true,
@@ -18339,6 +18341,32 @@ ll(str) {
 
   getUnit(unit) {
     return this._hass.config.unit_system[unit] || '';
+  }
+
+  normalizeTemperatureUnit(unit) {
+    const normalized = String(unit || '').toUpperCase();
+    return normalized.includes('F') ? 'F' : 'C';
+  }
+
+  toCelsius(temperature, unit) {
+    return unit === 'F' ? ((temperature - 32) * 5) / 9 : temperature;
+  }
+
+  getTemperatureColor(temperature, unit) {
+    const numeric = Number(temperature);
+    if (!Number.isFinite(numeric)) {
+      return this.config.forecast.temperature1_color;
+    }
+
+    const unitKind = this.normalizeTemperatureUnit(unit);
+    const tempC = this.toCelsius(numeric, unitKind);
+
+    if (tempC <= -10) return '#1e88e5';
+    if (tempC <= 0) return '#64b5f6';
+    if (tempC <= 15) return '#66bb6a';
+    if (tempC <= 25) return '#fdd835';
+    if (tempC <= 32) return '#fb8c00';
+    return '#e53935';
   }
 
   getWeatherIcon(condition, sun) {
@@ -18575,6 +18603,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
   Chart.defaults.elements.line.borderWidth = 1.5;
   Chart.defaults.elements.point.radius = 2;
   Chart.defaults.elements.point.hitRadius = 10;
+  const useColorThresholds = config.forecast.use_color_thresholds === true;
 
   var datasets = [
     {
@@ -18584,6 +18613,15 @@ drawChart({ config, language, weather, forecastItems } = this) {
       yAxisID: 'TempAxis',
       borderColor: config.forecast.temperature1_color,
       backgroundColor: config.forecast.temperature1_color,
+      segment: useColorThresholds ? {
+        borderColor: (ctx) => this.getTemperatureColor(ctx.p1.parsed.y, tempUnit),
+      } : undefined,
+      pointBackgroundColor: useColorThresholds
+        ? (ctx) => this.getTemperatureColor(ctx.raw, tempUnit)
+        : config.forecast.temperature1_color,
+      pointBorderColor: useColorThresholds
+        ? (ctx) => this.getTemperatureColor(ctx.raw, tempUnit)
+        : config.forecast.temperature1_color,
     },
     {
       label: this.ll('tempLo'),
@@ -18647,7 +18685,9 @@ drawChart({ config, language, weather, forecastItems } = this) {
       anchor: 'center',
       backgroundColor: 'transparent',
       borderColor: 'transparent',
-      color: chart_text_color || config.forecast.temperature1_color,
+      color: useColorThresholds
+        ? (context) => this.getTemperatureColor(context.dataset.data[context.dataIndex], tempUnit)
+        : (chart_text_color || config.forecast.temperature1_color),
       font: {
         size: parseInt(config.forecast.labels_font_size) + 1,
         lineHeight: 0.7,
@@ -19496,5 +19536,5 @@ window.customCards.push({
   name: "Weather Chart Card",
   description: "A custom weather card with chart.",
   preview: true,
-  documentationURL: "https://github.com/mlamberts78/weather-chart-card",
+  documentationURL: "https://github.com/mstapelfeldt/weather-chart-card",
 });
