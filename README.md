@@ -1,7 +1,7 @@
 <h1 align="center">Weather Chart Card</h1>
 
 # Forked from mlamberts78
-Since the main repo is no longer maintained, this fork continues future development.
+Since the main repo is no longer maintained, this fork continues future development. Credits for the work to @mlamberts78!
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mstapelfeldt/weather-chart-card?style=flat-square)](https://github.com/mstapelfeldt/weather-chart-card/releases/latest)
@@ -15,7 +15,7 @@ Since the main repo is no longer maintained, this fork continues future developm
 
 ### HACS
 
-This card is available in HACS (Home Assistant Community Store).
+This card is available in HACS (Home Assistant Community Store). You might need to add a custom repository.
 HACS is a third party community store and is not included in Home Assistant out of the box.
 
 #### Configuration variables:
@@ -39,6 +39,7 @@ HACS is a third party community store and is not included in Home Assistant out 
 | description            | string  | none                     | An entity_id for a custom weather description sensor.                                              |
 | title                  | string  | none                     | Card title.                                                                                        |
 | show_main              | boolean | true                     | Show or hide a section with current weather condition and temperature.                             |
+| show_main_forecast     | boolean | false                    | Show or hide additional main forecast blocks for tomorrow and day after tomorrow.                  |
 | show_temperature       | boolean | true                     | Show or hide the current temperature.                                                              |
 | show_current_condition | boolean | true                     | Show or hide the current weather condition.                                                        |
 | show_attributes        | boolean | true                     | Show or hide a section with attributes such as pressure, humidity, wind direction and speed, etc.  |
@@ -69,6 +70,15 @@ HACS is a third party community store and is not included in Home Assistant out 
 | units                  | object  | none                     | See [units of measurement](#units-of-measurement) for available options.                           |
 | locale                 | string  | none                     | See [Supported languages](#supported-languages) for available languages                            |
 | autoscroll             | boolean | false                    | Update the chart each hour, hiding prior forecast datapoints                                       |
+
+###### Main forecast switch behavior
+
+- `show_main_forecast: true` adds two summary blocks next to today (tomorrow and day after tomorrow).
+- `show_temperature: false` hides the large temperature value in each main forecast block.
+- `show_feels_like: true` in main forecast shows the low temperature line (`tempLo`) when available.
+- `show_feels_like: false` in main forecast shows a fallback temperature line using `tempHi`.
+- `show_current_condition: false` hides the weather condition text line in main forecast blocks.
+- If `show_temperature: false` and `show_feels_like: false`, the fallback `tempHi` line remains visible so each main forecast block still shows a temperature value.
 
 ##### Forecast options
 

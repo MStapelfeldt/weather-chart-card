@@ -126,15 +126,15 @@ const locale = {
       'N', 'N-NO', 'NO', 'O-NO', 'O', 'O-ZO', 'ZO', 'Z-ZO',
       'Z', 'Z-ZW', 'ZW', 'W-ZW', 'W', 'W-NW', 'NW', 'N-NW', 'N'
     ],
-    'clear-night': 'Helder nacht',
+    'clear-night': 'Heldere nacht',
     'cloudy': 'Bewolkt',
     'fog': 'Mist',
     'hail': 'Hagel',
     'lightning': 'Bliksem',
-    'lightning-rainy': 'Bliksem, Regen',
+    'lightning-rainy': 'Onweer met regen',
     'partlycloudy': 'Gedeeltelijk bewolkt',
-    'pouring': 'Regen',
-    'rainy': 'Regenachtig',
+    'pouring': 'Plensregen',
+    'rainy': 'Regen',
     'snowy': 'Sneeuw',
     'snowy-rainy': 'Sneeuw, regen',
     'sunny': 'Zonnig',
@@ -143,8 +143,8 @@ const locale = {
   },
   en: {
     'tempHi': 'Temperature',
-    'tempLo': 'Temperature night',
-    'precip': 'Precipitations',
+    'tempLo': 'Night temperature',
+    'precip': 'Precipitation',
     'feelsLike': 'Feels like',
     'lowest': 'Minimum',
     'units': {
@@ -161,17 +161,17 @@ const locale = {
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
       'S', 'S-SW', 'SW', 'W-SW', 'W', 'W-NW', 'NW', 'N-NW', 'N'
     ],
-    'clear-night': 'Clear, night',
+    'clear-night': 'Clear night',
     'cloudy': 'Cloudy',
     'fog': 'Fog',
     'hail': 'Hail',
     'lightning': 'Lightning',
-    'lightning-rainy': 'Lightning, rainy',
+    'lightning-rainy': 'Thunderstorm',
     'partlycloudy': 'Partly cloudy',
     'pouring': 'Pouring',
     'rainy': 'Rainy',
     'snowy': 'Snowy',
-    'snowy-rainy': 'Snowy, rainy',
+    'snowy-rainy': 'Snow and rain',
     'sunny': 'Sunny',
     'windy': 'Windy',
     'windy-variant': 'Windy'
@@ -202,7 +202,7 @@ const locale = {
     'hail': 'Granizo',
     'lightning': 'Truenos',
     'lightning-rainy': 'Lluvia y truenos',
-    'partlycloudy': 'Nublado parcialmente',
+    'partlycloudy': 'Parcialmente nublado',
     'pouring': 'Lluvia fuerte',
     'rainy': 'Lluvia',
     'snowy': 'Nieve',
@@ -476,7 +476,7 @@ const locale = {
       'N', 'N-NØ', 'NO', 'Ø-NØ', 'Ø', 'Ø-SØ', 'SØ', 'S-SØ',
       'S', 'S-SV', 'SV', 'V-SV', 'V', 'V-NV', 'NV', 'N-NV', 'N'
     ],
-    'clear-night': 'Klart',
+    'clear-night': 'Klar nat',
     'cloudy': 'Overskyet',
     'fog': 'Tåget',
     'hail': 'Hagl',
@@ -496,7 +496,7 @@ const locale = {
     'tempLo': 'Temperatura notte',
     'precip': 'Precipitazioni',
     'feelsLike': 'Percepito come',
-    'lowest': 'Minimum',
+    'lowest': 'Minimo',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -531,7 +531,7 @@ const locale = {
     'tempLo': 'Temperatura noite',
     'precip': 'Precipitação',
     'feelsLike': 'Sensação Térmica',
-    'lowest': 'Minimum',
+    'lowest': 'Mínimo',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -546,11 +546,11 @@ const locale = {
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
       'S', 'S-SW', 'SW', 'W-SW', 'W', 'W-NW', 'NW', 'N-NW', 'N'
     ],
-    'clear-night': 'Noite limpa',
+    'clear-night': 'Noite clara',
     'cloudy': 'Nublado',
     'fog': 'Nevoeiro',
     'hail': 'Granizo',
-    'lightning': 'Relâmpago ',
+    'lightning': 'Relâmpago',
     'lightning-rainy': 'Chuva e relâmpagos',
     'partlycloudy': 'Parcialmente nublado',
     'pouring': 'Chuva forte',
@@ -566,7 +566,7 @@ const locale = {
     'tempLo': 'Ελάχιστη θερμοκρασία νύχτας',
     'precip': 'Υετός',
     'feelsLike': 'Αίσθηση σαν',
-    'lowest': 'Minimum',
+    'lowest': 'Ελάχιστο',
     'units': {
       'km/h': 'χλμ/ώρα',
       'm/s': 'μ/δ',
@@ -578,8 +578,8 @@ const locale = {
       'in': 'ίντσες'
     },
     'cardinalDirections': [
-      'Β', 'Β-ΒΔ', 'ΒΔ', 'Δ-ΒΔ', 'Δ', 'Δ-ΝΔ', 'ΝΔ', 'Ν-ΝΔ',
-      'Ν', 'Ν-ΒΔ', 'ΒΔ', 'Β-ΒΔ', 'Β', 'Β-ΒΔ', 'ΒΔ', 'Β-ΒΔ', 'Β'
+      'Β', 'Β-ΒΑ', 'ΒΑ', 'Α-ΒΑ', 'Α', 'Α-ΝΑ', 'ΝΑ', 'Ν-ΝΑ',
+      'Ν', 'Ν-ΝΔ', 'ΝΔ', 'Δ-ΝΔ', 'Δ', 'Δ-ΒΔ', 'ΒΔ', 'Β-ΒΔ', 'Β'
     ],
     'clear-night': 'Καθαρός ουρανός, νύχτα',
     'cloudy': 'Συννεφιά',
@@ -601,7 +601,7 @@ const locale = {
     'tempLo': 'Минимална температура',
     'precip': 'Валежи',
     'feelsLike': 'Усеща се като',
-    'lowest': 'Minimum',
+    'lowest': 'Минимум',
     'units': {
       'km/h': 'км/ч',
       'm/s': 'м/с',
@@ -706,7 +706,7 @@ const locale = {
     'tempLo': 'Temperatură noaptea',
     'precip': 'Precipitații',
     'feelsLike': 'Se simte ca',
-    'lowest': 'Minimum',
+    'lowest': 'Minim',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -726,7 +726,7 @@ const locale = {
     'fog': 'Ceață',
     'hail': 'Grindină',
     'lightning': 'Fulger',
-    'lightning-rainy': 'Fulger, ploios',
+    'lightning-rainy': 'Furtună cu ploaie',
     'partlycloudy': 'Parțial noros',
     'pouring': 'Plouă torențial',
     'rainy': 'Ploios',
@@ -741,7 +741,7 @@ const locale = {
     'tempLo': 'Температура вночі',
     'precip': 'Опади',
     'feelsLike': 'Відчувається як',
-    'lowest': 'Minimum',
+    'lowest': 'Мінімум',
     'units': {
       'km/h': 'км/год',
       'm/s': 'м/с',
@@ -776,7 +776,7 @@ const locale = {
     'tempLo': '최저 기온',
     'precip': '강수',
     'feelsLike': '체감',
-    'lowest': 'Minimum',
+    'lowest': '최저',
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
@@ -19275,9 +19275,17 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                 <div class="main-forecast-body">
                   <div class="main-weather-icon">${forecastIcon}</div>
                   <div class="main-forecast-content">
-                    <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
-                    <div class="feels-like">${this.ll('lowest')} ${day.tempLow}${this.getUnit('temperature')}</div>
-                    <div class="current-condition"><span>${this.ll(day.condition)}</span></div>
+                    ${showTemperature ? x`
+                      <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
+                    ` : ''}
+                    ${showFeelsLike && day.tempLow !== undefined && day.tempLow !== null ? x`
+                      <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.getUnit('temperature')}</div>
+                    ` : x`
+                      <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.getUnit('temperature')}</div>
+                    `}
+                    ${showCurrentCondition ? x`
+                      <div class="current-condition"><span>${this.ll(day.condition)}</span></div>
+                    ` : ''}
                   </div>
                 </div>
               </div>
@@ -19300,9 +19308,17 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                 <div class="main-forecast-body">
                   <div class="main-weather-icon">${forecastIcon}</div>
                   <div class="main-forecast-content">
-                    <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
-                    <div class="feels-like">${this.ll('lowest')} ${day.tempLow}${this.getUnit('temperature')}</div>
-                    <div class="current-condition"><span>${this.ll(day.condition)}</span></div>
+                    ${showTemperature ? x`
+                      <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
+                    ` : ''}
+                    ${showFeelsLike && day.tempLow !== undefined && day.tempLow !== null ? x`
+                      <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.getUnit('temperature')}</div>
+                    ` : x`
+                      <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.getUnit('temperature')}</div>
+                    `}
+                    ${showCurrentCondition ? x`
+                      <div class="current-condition"><span>${this.ll(day.condition)}</span></div>
+                    ` : ''}
                   </div>
                 </div>
               </div>

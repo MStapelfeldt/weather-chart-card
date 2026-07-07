@@ -2,6 +2,48 @@
 
 All notable changes in this fork are documented in this file.
 
+## [1.0.6] - Main forecast rendering fixes and locale translation pass
+
+### Changed
+- Updated main forecast summary rendering for tomorrow and day-after blocks to use robust conditional template sections.
+- Switched forecast low-temperature label usage in the main summary from a generic minimum key to locale temperature labels.
+- Added fallback display logic for forecast values when low temperature is unavailable.
+- Updated package version to 1.0.6.
+
+### Fixed
+- Fixed malformed copied template conditions in main forecast markup that caused parser/compile failures.
+- Corrected and standardized multiple locale translations in src/locale.js (including wording consistency and obvious phrasing errors).
+- Corrected Greek cardinal direction mapping values in locale definitions.
+- Regenerated dist bundle to reflect source and locale updates.
+
+## [1.0.5] - Main forecast expansion and layout/translation refinements
+
+### Added
+- Extended the main weather area with forecast blocks for upcoming days (tomorrow/day-after flow).
+
+### Changed
+- Merged development branch changes for the extended main forecast view.
+- Updated package versioning through the 1.0.5 pre-release cycle (1.0.5a/1.0.5b) before final 1.0.5f.
+- Regenerated dist bundle after forecast feature updates.
+
+### Fixed
+- Improved main forecast presentation and overall card layout alignment.
+- Fixed forecast temperature display issues in the new main forecast section.
+- Updated translation text entries related to the forecast/main view updates.
+
+## [1.0.4] - UI control fixes and repository asset/documentation cleanup
+
+### Added
+- Added previously missing images/assets required by README and card documentation.
+
+### Changed
+- Updated README content and image links for consistency and correctness.
+- Updated package metadata/version to 1.0.4 at release point cccc044.
+
+### Fixed
+- Fixed button behavior in editor/UI interactions.
+- Fixed radio button behavior in editor/UI interactions.
+
 ## [1.0.3] - Include unmerged Pull Requests from mlamberts78 (246, 252 and 262)
 
 ### Added
@@ -33,19 +75,3 @@ All notable changes in this fork are documented in this file.
 - Lint script normalized from eslint 'src/**/*.js' to eslint src/**/*.js.
 - README top section changed from unmaintained notice to active fork notice.
 - Dist bundle regenerated to include source updates.
-
-## [Comparison Summary]
-
-Compared against: https://github.com/mlamberts78/weather-chart-card (upstream/master)
-
-Ahead by 3 commits:
-- 3d2c771 Fixed Version
-- 4421ec5 Add show_uv option
-- f32226a Added UV Switch
-
-Files changed in committed fork diff:
-- README.md
-- dist/weather-chart-card.js
-- package.json
-- src/main.js
-- src/weather-chart-card-editor.js
