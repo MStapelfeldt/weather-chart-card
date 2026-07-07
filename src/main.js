@@ -1185,11 +1185,14 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                     ${showTemperature ? html`
                       <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
                     ` : ''}
-                    ${showFeelsLike && day.tempLow !== undefined && day.tempLow !== null ? html`
-                      <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.getUnit('temperature')}</div>
-                    ` : html`
-                      <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.getUnit('temperature')}</div>
-                    `}
+                    ${showFeelsLike ? html`
+                      ${showTemperature && day.tempLow !== undefined && day.tempLow !== null ? html`
+                        <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.getUnit('temperature')}</div>
+                      ` : ''}
+                      ${!showTemperature ? html`
+                        <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.getUnit('temperature')}</div>
+                      ` : ''}
+                    ` : ''}
                     ${showCurrentCondition ? html`
                       <div class="current-condition"><span>${this.ll(day.condition)}</span></div>
                     ` : ''}
@@ -1218,11 +1221,14 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                     ${showTemperature ? html`
                       <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
                     ` : ''}
-                    ${showFeelsLike && day.tempLow !== undefined && day.tempLow !== null ? html`
-                      <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.getUnit('temperature')}</div>
-                    ` : html`
-                      <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.getUnit('temperature')}</div>
-                    `}
+                    ${showFeelsLike ? html`
+                      ${showTemperature && day.tempLow !== undefined && day.tempLow !== null ? html`
+                        <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.getUnit('temperature')}</div>
+                      ` : ''}
+                      ${!showTemperature ? html`
+                        <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.getUnit('temperature')}</div>
+                      ` : ''}
+                    ` : ''}
                     ${showCurrentCondition ? html`
                       <div class="current-condition"><span>${this.ll(day.condition)}</span></div>
                     ` : ''}
