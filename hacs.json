@@ -1,5 +1,5 @@
 {
-  "name": "Weather Chart Card",
+  "name": "Forecast Weather Chart Card",
   "render_readme": true,
-  "filename": "weather-chart-card.js"
+  "filename": "forecast-weather-chart-card.js"
 }

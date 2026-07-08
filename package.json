@@ -1,7 +1,7 @@
 {
-  "name": "weather-chart-card",
-  "version": "1.0.6",
-  "description": "Weather card with charts for Home Assistant Lovelace UI",
+  "name": "forecast-weather-chart-card",
+  "version": "1.0.7-alpha",
+  "description": "Weather forecast card with charts for Home Assistant Lovelace UI",
   "keywords": [
     "home-assistant",
     "homeassistant",
@@ -11,8 +11,15 @@
     "custom-cards"
   ],
   "module": "src/main.js",
-  "repository": "git@github.com:mstapelfeldt/weather-chart-card.git",
-  "author": "Moritz Stapelfeldt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mstapelfeldt/weather-chart-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mstapelfeldt/weather-chart-card/issues"
+  },
+  "homepage": "https://github.com/mstapelfeldt/weather-chart-card#readme",
+  "author": "Moritz Stapelfeldt, forked from w4mhi and mlamberts78",
   "license": "MIT",
   "dependencies": {
     "chart.js": "^4.4.1",
