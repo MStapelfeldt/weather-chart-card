@@ -1529,6 +1529,15 @@ var WeatherChartCard = (function () {
           ${this.entities.map((entity) => x`<option value=${entity} ?selected=${entity === this._entity}>${entity}</option>`)}
         </select>
 
+        <div class="switch-right">
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'hide_title')}"
+            .checked="${this._config.hide_title === true}"
+          ></ha-switch>
+          <label class="switch-label">
+            Hide Title
+          </label>
+        </div>
         <label class="switch-label">
           Title
         </label>
@@ -18622,6 +18631,7 @@ var WeatherChartCard = (function () {
     return {
       entity,
       title: 'Forecast Weather Chart Card',
+      hide_title: false,
       show_main: true,
       show_main_forecast: false,
       show_temperature: true,
@@ -18694,6 +18704,7 @@ var WeatherChartCard = (function () {
   setConfig(config) {
     const cardConfig = {
       title: 'Weather',
+      hide_title: false,
       icons_size: 30,
       animated_icons: true,
       icon_style: 'style1',
@@ -20236,17 +20247,18 @@ var WeatherChartCard = (function () {
       if (!config || !_hass) {
         return x``;
       }
+      const showTitle = config.hide_title !== true && !!(config.title && String(config.title).trim());
       if (!weather || !weather.attributes) {
         return x`
         <style>
           .card {
-            padding-top: ${config.title? '0px' : '16px'};
+            padding-top: ${showTitle ? '0px' : '16px'};
             padding-right: 16px;
             padding-bottom: 16px;
             padding-left: 16px;
           }
         </style>
-        <ha-card header="${config.title}">
+        <ha-card header="${showTitle ? config.title : ''}">
           <div class="card">
             Please, check your weather entity
           </div>
@@ -20256,7 +20268,7 @@ var WeatherChartCard = (function () {
       return x`
       <style>
         ha-card {
-          ${config.title ? 'padding-bottom: 8px;' : ''}
+          ${showTitle ? 'padding-bottom: 8px;' : ''}
           overflow: hidden;
         }
         ha-icon {
@@ -20267,7 +20279,7 @@ var WeatherChartCard = (function () {
           height: ${config.icons_size}px;
         }
         .card {
-          padding-top: ${config.title ? '0px' : '16px'};
+          padding-top: ${showTitle ? '0px' : '16px'};
           padding-right: 16px;
           padding-bottom: ${config.show_last_changed === true ? '2px' : '16px'};
           padding-left: 16px;
@@ -20379,7 +20391,7 @@ var WeatherChartCard = (function () {
         }
         .current-time {
           position: absolute;
-          top: ${config.title ? '24px' : '20px'};
+          top: ${showTitle ? '24px' : '20px'};
           right: 16px;
           inset-inline-start: initial;
           inset-inline-end: 16px;
@@ -20499,7 +20511,7 @@ var WeatherChartCard = (function () {
         }
       </style>
 
-      <ha-card header="${config.title}">
+      <ha-card header="${showTitle ? config.title : ''}">
         <div class="card">
           ${this.renderClock()}
           ${this.renderMain()}

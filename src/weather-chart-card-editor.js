@@ -490,6 +490,15 @@ class WeatherChartCardEditor extends LitElement {
           ${this.entities.map((entity) => html`<option value=${entity} ?selected=${entity === this._entity}>${entity}</option>`)}
         </select>
 
+        <div class="switch-right">
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'hide_title')}"
+            .checked="${this._config.hide_title === true}"
+          ></ha-switch>
+          <label class="switch-label">
+            Hide Title
+          </label>
+        </div>
         <label class="switch-label">
           Title
         </label>
