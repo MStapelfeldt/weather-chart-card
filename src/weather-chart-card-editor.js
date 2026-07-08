@@ -222,6 +222,38 @@ class WeatherChartCardEditor extends LitElement {
     this.requestUpdate();
   }
 
+  _handleFontSizeChange(event, key) {
+    if (!this._config) {
+      return;
+    }
+
+    const constraints = {
+      current_temp_size: { min: 10, max: 80, fallback: 38 },
+      time_size: { min: 10, max: 80, fallback: 26 },
+      day_date_size: { min: 8, max: 60, fallback: 15 },
+    };
+    const rule = constraints[key];
+    if (!rule) {
+      return;
+    }
+
+    let value = Number(event.target.value);
+    if (!Number.isFinite(value)) {
+      value = rule.fallback;
+    }
+    value = Math.round(value);
+    value = Math.min(rule.max, Math.max(rule.min, value));
+
+    event.target.value = String(value);
+    const newConfig = {
+      ...this._config,
+      [key]: value,
+    };
+    this.configChanged(newConfig);
+    this._config = newConfig;
+    this.requestUpdate();
+  }
+
   _handlePrecipitationTypeChange(e) {
     const newValue = e.target.value;
     this.config.forecast.precipitation_type = newValue;
@@ -442,21 +474,26 @@ class WeatherChartCardEditor extends LitElement {
       </style>
       <div>
       <div class="textfield-container">
-<label class="switch-label">Entity</label>
-<select
-  aria-label="Entity"
-  style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid var(--divider-color, #ccc); border-radius: 4px; background: var(--card-background-color, #fff); color: var(--primary-text-color, #000); font-size: 14px;"
-  .value=${this._entity}
-  @change=${(e) => this._EntityChanged(e, 'entity')}
->
-  <option value="">-- Select entity --</option>
-  ${this.entities.map((entity) => html`<option value=${entity} ?selected=${entity === this._entity}>${entity}</option>`)}
-</select>
-      <ha-textfield
-        label="Title"
-        .value="${this._config.title || ''}"
-        @change="${(e) => this._valueChanged(e, 'title')}"
-      ></ha-textfield>
+        <label class="switch-label">Entity</label>
+        <select
+          aria-label="Entity"
+          style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid var(--divider-color, #ccc); border-radius: 4px; background: var(--card-background-color, #fff); color: var(--primary-text-color, #000); font-size: 14px;"
+          .value=${this._entity}
+          @change=${(e) => this._EntityChanged(e, 'entity')}
+        >
+          <option value="">-- Select entity --</option>
+          ${this.entities.map((entity) => html`<option value=${entity} ?selected=${entity === this._entity}>${entity}</option>`)}
+        </select>
+
+        <label class="switch-label">
+          Title
+        </label>
+          <input
+            type="text"
+            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+            .value="${this._config.title || ''}"
+            @change="${(e) => this._valueChanged(e, 'title')}"
+          />
       
       <div>
         <label>Select custom language</label>
@@ -537,113 +574,7 @@ class WeatherChartCardEditor extends LitElement {
         ${this._geoStatus.startsWith('error:') ? html`<div style="margin-top:6px; color:var(--error-color, #c62828); font-size:13px;">✗ ${this._geoStatus.slice(6)}</div>` : ''}
         ${!this._geoStatus && this._config.sun_city ? html`<div style="margin-top:6px; color:var(--success-color, #388e3c); font-size:13px;">✓ ${this._config.sun_city}<br><small>lat: ${this._config.sun_latitude}, lon: ${this._config.sun_longitude}${this._config.sun_timezone ? `, tz: ${this._config.sun_timezone}` : ''}</small></div>` : ''}
       </div>
-       </div>
-
-      <h5>Forecast type:</h5>
-      <div class="radio-container">
-        <div class="switch-right">
-          <ha-radio
-            name="type"
-            value="daily"
-            @change="${this._handleTypeChange}"
-            .checked="${forecastConfig.type === 'daily'}"
-          ></ha-radio>
-          <label class="check-label">
-            Daily forecast
-          </label>
-        </div>
-
-        <div class="switch-right">
-          <ha-radio
-            name="type"
-            value="hourly"
-            @change="${this._handleTypeChange}"
-            .checked="${forecastConfig.type === 'hourly'}"
-          ></ha-radio>
-          <label class="check-label">
-            Hourly forecast
-          </label>
-        </div>
       </div>
-
-      <div class="switch-container">
-        <div class="switch-right">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_forecast_toggle')}"
-            .checked="${this._config.show_forecast_toggle === true}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Daily/Hourly toggle button
-          </label>
-        </div>
-      </div>
-
-      <div class="input-container">
-        <label class="switch-label">
-          Auto-rotate interval (minutes, 0 = off, 1-60)
-        </label>
-        <input
-          type="number"
-          min="0"
-          max="60"
-          step="1"
-          .value="${forecastConfig.auto_rotate || 0}"
-          @change="${(e) => {
-            let val = parseInt(e.target.value, 10);
-            if (isNaN(val) || val < 0) val = 0;
-            if (val > 60) val = 60;
-            const newConfig = JSON.parse(JSON.stringify(this._config));
-            newConfig.forecast = newConfig.forecast || {};
-            newConfig.forecast.auto_rotate = val;
-            this.configChanged(newConfig);
-            this._config = newConfig;
-            this.requestUpdate();
-          }}"
-          style="width: 60px; margin-left: 8px;"
-        />
-      </div>
-
-      <h5>Chart style:</h5>
-      <div class="style-radio-group">
-        <div class="radio-group">
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="style"
-              value="style1"
-              @change="${this._handleStyleChange}"
-              .checked="${forecastConfig.style === 'style1'}"
-            />
-            <span class="check-label">Chart style 1</span>
-          </label>
-        </div>
-
-        <div class="radio-group">
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="style"
-              value="style2"
-              @change="${this._handleStyleChange}"
-              .checked="${forecastConfig.style === 'style2'}"
-            />
-            <span class="check-label">Chart style 2</span>
-          </label>
-        </div>
-        <div class="radio-group">
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="style"
-              value="style3"
-              @change="${this._handleStyleChange}"
-              .checked="${forecastConfig.style === 'style3'}"
-            />
-            <span class="check-label">Chart style 3</span>
-          </label>
-        </div>
-      </div>
-
 
       <h5>Icons settings:</h5>
       <div class="icon-container">
@@ -683,45 +614,63 @@ class WeatherChartCardEditor extends LitElement {
           </div>
         </div>
       </div>
+
+
+      
+        <label>Sunrise/Sunset city <small style="color:var(--secondary-text-color)">(optional — if not set, uses HA server location)</small></label>
+        <div style="display:flex; gap:8px; margin-top:8px; align-items:center;">
+          <input
+            type="number"
+            min="0"
+            max="60"
+            step="1"
+            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+            .value="${this._config.icons_size || '35'}"
+            @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
+          />
+        </div>
+
+
+
       <div class="input-container">
         <label class="switch-label">
           Size for daily icons
         </label>
-        <input
-          type="number"
-          min="0"
-          max="60"
-          step="1"
-          .value="${this._config.icons_size || '35'}"
-          @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
-          style="width: 60px; margin-left: 8px;"
-        />
+          <input
+            type="number"
+            min="0"
+            max="60"
+            step="1"
+            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+            .value="${this._config.icons_size || '35'}"
+            @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
+          />
         <label class="switch-label">
           Size for main icon
         </label>
-        <input
-          type="number"
-          min="0"
-          max="60"
-          step="1"
-          .value="${this._config.main_icon_size || '150'}"
-          @change="${(e) => this._handleIconSizeChange(e, 'main_icon_size')}"
-          style="width: 60px; margin-left: 8px;"
-        />
+          <input
+            type="number"
+            min="0"
+            max="60"
+            step="1"
+            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+            .value="${this._config.main_icons_size || '35'}"
+            @change="${(e) => this._handleIconSizeChange(e, 'main_icons_size')}"
+          />
       </div>
       <div class="input-container">
         <label class="switch-label">
           Temperature font size
         </label>
-        <input
-          type="number"
-          min="0"
-          max="60"
-          step="1"
-          .value="${this._config.current_temp_size || '30'}"
-          @change="${(e) => this._handleIconSizeChange(e, 'current_temp_size')}"
-          style="width: 60px; margin-left: 8px;"
-        />
+          <input
+            type="number"
+            min="0"
+            max="60"
+            step="1"
+            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+            .value="${this._config.main_icons_size || '35'}"
+            @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
+          />
       </div>
 
       <div class="buttons-container">
@@ -986,6 +935,108 @@ class WeatherChartCardEditor extends LitElement {
 
         <!-- Forecast Settings Page -->
         <div class="page-container ${this.currentPage === 'forecast' ? 'active' : ''}">
+          <h5>Forecast type:</h5>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="type"
+                value="daily"
+                @change="${this._handleTypeChange}"
+                .checked="${forecastConfig.type === 'daily'}"
+              />
+              <span class="check-label">Daily forecast</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="type"
+                value="hourly"
+                @change="${this._handleTypeChange}"
+                .checked="${forecastConfig.type === 'hourly'}"
+              />
+              <span class="check-label">Hourly forecast</span>
+            </label>
+          </div>
+
+          <div class="switch-container">
+            <div class="switch-right">
+              <ha-switch
+                @change="${(e) => this._valueChanged(e, 'show_forecast_toggle')}"
+                .checked="${this._config.show_forecast_toggle === true}"
+              ></ha-switch>
+              <label class="switch-label">
+                Show Daily/Hourly toggle button
+              </label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label class="switch-label">
+              Auto-rotate interval (minutes, 0 = off, 1-60)
+            </label>
+            <input
+              type="number"
+              min="0"
+              max="60"
+              step="1"
+              .value="${forecastConfig.auto_rotate || 0}"
+              @change="${(e) => {
+                let val = parseInt(e.target.value, 10);
+                if (isNaN(val) || val < 0) val = 0;
+                if (val > 60) val = 60;
+                const newConfig = JSON.parse(JSON.stringify(this._config));
+                newConfig.forecast = newConfig.forecast || {};
+                newConfig.forecast.auto_rotate = val;
+                this.configChanged(newConfig);
+                this._config = newConfig;
+                this.requestUpdate();
+              }}"
+              style="width: 60px; margin-left: 8px;"
+            />
+          </div>
+          <h5>Chart style:</h5>
+          <div class="style-radio-group">
+            <div class="radio-group">
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="style"
+                  value="style1"
+                  @change="${this._handleStyleChange}"
+                  .checked="${forecastConfig.style === 'style1'}"
+                />
+                <span class="check-label">Chart style 1</span>
+              </label>
+            </div>
+
+            <div class="radio-group">
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="style"
+                  value="style2"
+                  @change="${this._handleStyleChange}"
+                  .checked="${forecastConfig.style === 'style2'}"
+                />
+                <span class="check-label">Chart style 2</span>
+              </label>
+            </div>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="style"
+                  value="style3"
+                  @change="${this._handleStyleChange}"
+                  .checked="${forecastConfig.style === 'style3'}"
+                />
+                <span class="check-label">Chart style 3</span>
+              </label>
+            </div>
+          </div>
           <div class="switch-container">
             <ha-switch
               @change="${(e) => this._valueChanged(e, 'forecast.condition_icons')}"
