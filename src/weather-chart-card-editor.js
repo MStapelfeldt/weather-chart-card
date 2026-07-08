@@ -302,12 +302,15 @@ class WeatherChartCardEditor extends LitElement {
         .icon-container {
           display: flex;
           flex-direction: row;
+          flex-wrap: wrap;
+          gap: 12px;
           margin-bottom: 12px;
         }
         .switch-right {
           display: flex;
           flex-direction: row;
           align-items: center;
+          gap: 8px;
         }
         .checkbox-container {
           display: flex;
@@ -328,6 +331,24 @@ class WeatherChartCardEditor extends LitElement {
         .radio-group {
           display: flex;
           align-items: center;
+        }
+        .style-radio-group {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 12px;
+        }
+        .radio-option {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 6px 10px;
+          border: 1px solid var(--divider-color);
+          border-radius: 6px;
+          cursor: pointer;
+        }
+        .radio-option input[type='radio'] {
+          margin: 0;
         }
         .radio-group label {
           margin-left: 4px;
@@ -608,42 +629,46 @@ class WeatherChartCardEditor extends LitElement {
             Use Animated Icons
           </label>
         </div>
-        <div class="switch-right radio-container" style="${this._config.animated_icons ? 'display: flex;' : 'display: none;'}">
-          <ha-radio
-            name="icon_style"
-            value="style1"
-            @change="${this._handleIconStyleChange}"
-            .checked="${this._config.icon_style === 'style1'}"
-          ></ha-radio>
-          <label class="check-label">
-            Style 1
-          </label>
+        <div class="style-radio-group" style="${this._config.animated_icons ? 'display: flex;' : 'display: none;'}">
+          <div class="radio-group">
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="icon_style"
+                value="style1"
+                @change="${this._handleIconStyleChange}"
+                .checked="${this._config.icon_style === 'style1'}"
+              />
+              <span class="check-label">Icon style 1</span>
+            </label>
+          </div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="icon_style"
+                value="style2"
+                @change="${this._handleIconStyleChange}"
+                .checked="${this._config.icon_style === 'style2'}"
+              />
+              <span class="check-label">Icon style 2</span>
+            </label>
+          </div>
         </div>
-        <div class="switch-right radio-container" style="${this._config.animated_icons ? 'display: flex;' : 'display: none;'}">
-          <ha-radio
-            name="icon_style"
-            value="style2"
-            @change="${this._handleIconStyleChange}"
-            .checked="${this._config.icon_style === 'style2'}"
-          ></ha-radio>
-          <label class="check-label">
-            Style 2
-          </label>
-        </div>
-        <div class="switch-right">
-          <ha-textfield
-            label="Size for daily icons"
-            type="number"
-            .value="${this._config.icons_size || '35'}"
-            @change="${(e) => this._valueChanged(e, 'icons_size')}"
-          ></ha-textfield>
-          <ha-textfield
-            label="Main Weather Icon Size"
-            type="number"
-            .value="${this._config.main_icon_size || '150'}"
-            @change="${(e) => this._valueChanged(e, 'main_icon_size')}"
-          ></ha-textfield>
-        </div>
+      </div>
+      <div class="flex-container">
+        <ha-textfield
+          label="Size for daily icons"
+          type="number"
+          .value="${this._config.icons_size || '35'}"
+          @change="${(e) => this._valueChanged(e, 'icons_size')}"
+        ></ha-textfield>
+        <ha-textfield
+          label="Main Weather Icon Size"
+          type="number"
+          .value="${this._config.main_icon_size || '150'}"
+          @change="${(e) => this._valueChanged(e, 'main_icon_size')}"
+        ></ha-textfield>
       </div>
 
       <div class="buttons-container">
