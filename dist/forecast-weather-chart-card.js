@@ -1387,6 +1387,11 @@ var WeatherChartCard = (function () {
         .switch-label {
           padding-left: 14px;
         }
+        .text-label {
+          padding-left: 14px;
+          width: 200px;
+          display: inline-block;
+        }
         .switch-container {
           margin-bottom: 12px;
         }
@@ -1655,13 +1660,13 @@ var WeatherChartCard = (function () {
       </div>
 
       <div class="input-container">
-        <label class="switch-label">
+        <label class="text-label">
           Size for daily icons
         </label>
         <input
           type="number"
           min="0"
-          max="60"
+          max="200"
           step="1"
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
           .value="${this._config.icons_size || '35'}"
@@ -1669,13 +1674,13 @@ var WeatherChartCard = (function () {
         />
       </div>
       <div class="input-container">
-        <label class="switch-label">
+        <label class="text-label">
           Size for main icon
         </label>
           <input
             type="number"
             min="0"
-            max="60"
+            max="200"
             step="1"
             style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
             .value="${this._config.main_icons_size || '35'}"
@@ -1683,7 +1688,7 @@ var WeatherChartCard = (function () {
           />
       </div>
       <div class="input-container">
-        <label class="switch-label">
+        <label class="text-label">
           Temperature font size
         </label>
         <input
@@ -1692,7 +1697,7 @@ var WeatherChartCard = (function () {
           max="60"
           step="1"
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-          .value="${this._config.main_icons_size || '35'}"
+          .value="${this._config.current_temp_size || '35'}"
           @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
         />
       </div>
@@ -1971,8 +1976,6 @@ var WeatherChartCard = (function () {
               />
               <span class="check-label">Daily forecast</span>
             </label>
-          </div>
-          <div class="radio-group">
             <label class="radio-option">
               <input
                 type="radio"
@@ -20356,9 +20359,6 @@ var WeatherChartCard = (function () {
           gap: 12px;
           line-height: 0.9;
         }
-        .main-forecast-content {
-          line-height: 0.9;
-        }
         .main-forecast-value {
           font-size: ${config.current_temp_size}px;
         }
@@ -20366,7 +20366,7 @@ var WeatherChartCard = (function () {
           font-size: 18px;
           color: var(--secondary-text-color);
         }
-        .main .temp-info > div {
+        .main .temp-info > div,.main-forecast-content {
           line-height: 1.2;
         }
         .main .current-temp {

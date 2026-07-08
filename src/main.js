@@ -1764,9 +1764,6 @@ updateChart({ forecasts, forecastChart } = this) {
           gap: 12px;
           line-height: 0.9;
         }
-        .main-forecast-content {
-          line-height: 0.9;
-        }
         .main-forecast-value {
           font-size: ${config.current_temp_size}px;
         }
@@ -1774,7 +1771,7 @@ updateChart({ forecasts, forecastChart } = this) {
           font-size: 18px;
           color: var(--secondary-text-color);
         }
-        .main .temp-info > div {
+        .main .temp-info > div,.main-forecast-content {
           line-height: 1.2;
         }
         .main .current-temp {

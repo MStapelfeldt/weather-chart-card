@@ -348,6 +348,11 @@ class WeatherChartCardEditor extends LitElement {
         .switch-label {
           padding-left: 14px;
         }
+        .text-label {
+          padding-left: 14px;
+          width: 200px;
+          display: inline-block;
+        }
         .switch-container {
           margin-bottom: 12px;
         }
@@ -616,13 +621,13 @@ class WeatherChartCardEditor extends LitElement {
       </div>
 
       <div class="input-container">
-        <label class="switch-label">
+        <label class="text-label">
           Size for daily icons
         </label>
         <input
           type="number"
           min="0"
-          max="60"
+          max="200"
           step="1"
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
           .value="${this._config.icons_size || '35'}"
@@ -630,13 +635,13 @@ class WeatherChartCardEditor extends LitElement {
         />
       </div>
       <div class="input-container">
-        <label class="switch-label">
+        <label class="text-label">
           Size for main icon
         </label>
           <input
             type="number"
             min="0"
-            max="60"
+            max="200"
             step="1"
             style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
             .value="${this._config.main_icons_size || '35'}"
@@ -644,7 +649,7 @@ class WeatherChartCardEditor extends LitElement {
           />
       </div>
       <div class="input-container">
-        <label class="switch-label">
+        <label class="text-label">
           Temperature font size
         </label>
         <input
@@ -653,7 +658,7 @@ class WeatherChartCardEditor extends LitElement {
           max="60"
           step="1"
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-          .value="${this._config.main_icons_size || '35'}"
+          .value="${this._config.current_temp_size || '35'}"
           @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
         />
       </div>
@@ -932,8 +937,6 @@ class WeatherChartCardEditor extends LitElement {
               />
               <span class="check-label">Daily forecast</span>
             </label>
-          </div>
-          <div class="radio-group">
             <label class="radio-option">
               <input
                 type="radio"
