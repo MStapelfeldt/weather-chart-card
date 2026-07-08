@@ -1,5 +1,3 @@
-'use strict';
-
 const locale = {
   cs: {
     'tempHi': 'Teplota',
@@ -21114,4 +21112,4 @@ window.customCards.push({
   documentationURL: "https://github.com/MStapelfeldt/weather-chart-card",
 });
 
-module.exports = WeatherChartCard;
+export { WeatherChartCard as default };
