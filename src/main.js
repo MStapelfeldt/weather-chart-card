@@ -7,7 +7,6 @@ import {
   WeatherEntityFeature
 } from './const.js';
 import {LitElement, html} from 'lit';
-import { ifDefined } from 'lit/directives/if-defined.js';
 import './weather-chart-card-editor.js';
 import { property } from 'lit/decorators.js';
 import {Chart, registerables} from 'chart.js';
@@ -28,7 +27,6 @@ static getStubConfig(hass, unusedEntities, allEntities) {
   return {
     entity,
     title: 'Forecast Weather Chart Card',
-    hide_title: false,
     show_main: true,
     show_main_forecast: false,
     show_temperature: true,
@@ -54,9 +52,7 @@ static getStubConfig(hass, unusedEntities, allEntities) {
     use_12hour_format: false,
     icons_size: 30,
     main_icon_size: 150,
-    main_forecast_icon_size: 30,
     current_temp_size: 35,
-    main_forecast_temperature_size: 35,
     animated_icons: true,
     icon_style: 'style1',
     autoscroll: false,
@@ -102,14 +98,11 @@ static getStubConfig(hass, unusedEntities, allEntities) {
 setConfig(config) {
   const cardConfig = {
     title: 'Weather',
-    hide_title: false,
     icons_size: 30,
     animated_icons: true,
     icon_style: 'style1',
     current_temp_size: 35,
-    main_forecast_temperature_size: 35,
     main_icon_size: 150,
-    main_forecast_icon_size: 30,
     time_size: 26,
     day_date_size: 15,
     show_feels_like: false,
@@ -1646,19 +1639,17 @@ updateChart({ forecasts, forecastChart } = this) {
     if (!config || !_hass) {
       return html``;
     }
-    const hasCardTitle = config.hide_title !== true && Boolean(config.title && config.title.trim());
-
     if (!weather || !weather.attributes) {
       return html`
         <style>
           .card {
-            padding-top: ${hasCardTitle ? '0px' : '16px'};
+            padding-top: ${config.title? '0px' : '16px'};
             padding-right: 16px;
             padding-bottom: 16px;
             padding-left: 16px;
           }
         </style>
-        <ha-card header="${ifDefined(hasCardTitle ? config.title : undefined)}">
+        <ha-card header="${config.title}">
           <div class="card">
             Please, check your weather entity
           </div>
@@ -1668,7 +1659,7 @@ updateChart({ forecasts, forecastChart } = this) {
     return html`
       <style>
         ha-card {
-          ${hasCardTitle ? 'padding-bottom: 8px;' : ''}
+          ${config.title ? 'padding-bottom: 8px;' : ''}
           overflow: hidden;
         }
         ha-icon {
@@ -1679,7 +1670,7 @@ updateChart({ forecasts, forecastChart } = this) {
           height: ${config.icons_size}px;
         }
         .card {
-          padding-top: ${hasCardTitle ? '0px' : '16px'};
+          padding-top: ${config.title ? '0px' : '16px'};
           padding-right: 16px;
           padding-bottom: ${config.show_last_changed === true ? '2px' : '16px'};
           padding-left: 16px;
@@ -1726,15 +1717,15 @@ updateChart({ forecasts, forecastChart } = this) {
           z-index: auto;
         }
         .main.main--with-forecast .weather-icon ha-icon {
-          --mdc-icon-size: ${config.main_forecast_icon_size || config.icons_size || 30}px;
+          --mdc-icon-size: ${config.icons_size || 30}px;
         }
         .main.main--with-forecast .weather-icon img {
-          width: ${config.main_forecast_icon_size || config.icons_size || 30}px;
-          height: ${config.main_forecast_icon_size || config.icons_size || 30}px;
+          width: ${config.icons_size || 30}px;
+          height: ${config.icons_size || 30}px;
         }
         .main.main--with-forecast .main-weather-icon img {
-          width: ${config.main_forecast_icon_size || config.icons_size || 30}px;
-          height: ${config.main_forecast_icon_size || config.icons_size || 30}px;
+          width: ${config.icons_size || 30}px;
+          height: ${config.icons_size || 30}px;
         }
         .main-block {
           display: flex;
@@ -1775,7 +1766,7 @@ updateChart({ forecasts, forecastChart } = this) {
           line-height: 0.9;
         }
         .main-forecast-value {
-          font-size: ${config.main_forecast_temperature_size || config.current_temp_size}px;
+          font-size: ${config.current_temp_size}px;
         }
         .main-forecast-value span {
           font-size: 18px;
@@ -1788,16 +1779,13 @@ updateChart({ forecasts, forecastChart } = this) {
           font-size: ${config.current_temp_size}px;
           font-weight: 300;
         }
-        .main.main--with-forecast .current-temp {
-          font-size: ${config.main_forecast_temperature_size || config.current_temp_size}px;
-        }
         .main .current-condition {
           font-size: 18px;
           margin-top: 4px;
         }
         .current-time {
           position: absolute;
-          top: ${hasCardTitle ? '24px' : '20px'};
+          top: ${config.title ? '24px' : '20px'};
           right: 16px;
           inset-inline-start: initial;
           inset-inline-end: 16px;
@@ -1917,7 +1905,7 @@ updateChart({ forecasts, forecastChart } = this) {
         }
       </style>
 
-      <ha-card header="${ifDefined(hasCardTitle ? config.title : undefined)}">
+      <ha-card header="${config.title}">
         <div class="card">
           ${this.renderClock()}
           ${this.renderMain()}

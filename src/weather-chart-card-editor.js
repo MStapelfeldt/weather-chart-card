@@ -409,15 +409,6 @@ class WeatherChartCardEditor extends LitElement {
         .value="${this._config.title || ''}"
         @change="${(e) => this._valueChanged(e, 'title')}"
       ></ha-textfield>
-      <div class="switch-container" style="margin-top: 8px;">
-        <ha-switch
-          @change="${(e) => this._valueChanged(e, 'hide_title')}"
-          .checked="${this._config.hide_title === true}"
-        ></ha-switch>
-        <label class="switch-label">
-          Hide Title
-        </label>
-      </div>
       
       <div>
         <label>Select custom language</label>
@@ -667,20 +658,6 @@ class WeatherChartCardEditor extends LitElement {
             <label class="switch-label">
               Show Main Forecast
             </label>
-          </div>
-          <div class="flex-container" style="${this._config.show_main_forecast === true ? 'display: flex;' : 'display: none;'}">
-            <ha-textfield
-              label="Main Forecast Icon Size"
-              type="number"
-              .value="${(this._config.main_forecast_icon_size !== undefined && this._config.main_forecast_icon_size !== null ? this._config.main_forecast_icon_size : this._config.icons_size) || '30'}"
-              @change="${(e) => this._valueChanged(e, 'main_forecast_icon_size')}"
-            ></ha-textfield>
-            <ha-textfield
-              label="Main Forecast Temp Size"
-              type="number"
-              .value="${(this._config.main_forecast_temperature_size !== undefined && this._config.main_forecast_temperature_size !== null ? this._config.main_forecast_temperature_size : this._config.current_temp_size) || '35'}"
-              @change="${(e) => this._valueChanged(e, 'main_forecast_temperature_size')}"
-            ></ha-textfield>
           </div>
       <div class="switch-container">
         ${this.hasApparentTemperature ? html`

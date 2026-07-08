@@ -18,7 +18,7 @@ export default {
   input: 'src/main.js',
   output: {
     file: 'dist/forecast-weather-chart-card.js',
-    format: 'es',
+    format: 'cjs',
     name: 'WeatherChartCard',
     sourcemap: dev ? true : false,
   },
