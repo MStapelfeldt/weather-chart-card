@@ -1230,6 +1230,37 @@ var WeatherChartCard = (function () {
       this.requestUpdate();
     }
 
+    _handleIconSizeChange(event, key) {
+      if (!this._config) {
+        return;
+      }
+
+      const constraints = {
+        icons_size: { min: 10, max: 120, fallback: 35 },
+        main_icon_size: { min: 40, max: 300, fallback: 150 },
+      };
+      const rule = constraints[key];
+      if (!rule) {
+        return;
+      }
+
+      let value = Number(event.target.value);
+      if (!Number.isFinite(value)) {
+        value = rule.fallback;
+      }
+      value = Math.round(value);
+      value = Math.min(rule.max, Math.max(rule.min, value));
+
+      event.target.value = String(value);
+      const newConfig = {
+        ...this._config,
+        [key]: value,
+      };
+      this.configChanged(newConfig);
+      this._config = newConfig;
+      this.requestUpdate();
+    }
+
     _handlePrecipitationTypeChange(e) {
       const newValue = e.target.value;
       this.config.forecast.precipitation_type = newValue;
@@ -1699,14 +1730,20 @@ var WeatherChartCard = (function () {
         <ha-textfield
           label="Size for daily icons"
           type="number"
+          min="10"
+          max="120"
+          step="1"
           .value="${this._config.icons_size || '35'}"
-          @change="${(e) => this._valueChanged(e, 'icons_size')}"
+          @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
         ></ha-textfield>
         <ha-textfield
           label="Main Weather Icon Size"
           type="number"
+          min="40"
+          max="300"
+          step="1"
           .value="${this._config.main_icon_size || '150'}"
-          @change="${(e) => this._valueChanged(e, 'main_icon_size')}"
+          @change="${(e) => this._handleIconSizeChange(e, 'main_icon_size')}"
         ></ha-textfield>
       </div>
 
