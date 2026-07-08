@@ -650,6 +650,15 @@ class WeatherChartCardEditor extends LitElement {
               Show Main
             </label>
           </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_main_forecast')}"
+              .checked="${this._config.show_main_forecast === true}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Main Forecast
+            </label>
+          </div>
       <div class="switch-container">
         ${this.hasApparentTemperature ? html`
           <ha-switch
