@@ -6,16 +6,21 @@ const locale = {
     'tempLo': 'Teplota v noci',
     'precip': 'Srážky',
     'feelsLike': 'Pocitová teplota',
-    'lowest': 'Minimum',
+    'days': ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'],
+    'months': ['leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'S', 'S-SV', 'SV', 'V-SV', 'V', 'V-JV', 'JV', 'J-JV',
@@ -23,6 +28,7 @@ const locale = {
     ],
     'clear-night': 'Jasná noc',
     'cloudy': 'Zataženo',
+    'exceptional': 'Extrémní počasí',
     'fog': 'Mlha',
     'hail': 'Kroupy',
     'lightning': 'Bouřky',
@@ -41,16 +47,21 @@ const locale = {
     'tempLo': 'Teplota v noci',
     'precip': 'Zrážky',
     'feelsLike': 'Pocitová teplota',
-    'lowest': 'Minimum',
+    'days': ['Nedeľa', 'Pondelok', 'Utorok', 'Streda', 'Štvrtok', 'Piatok', 'Sobota'],
+    'months': ['január', 'február', 'marec', 'apríl', 'máj', 'jún', 'júl', 'august', 'september', 'október', 'november', 'december'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'S', 'S-SV', 'SV', 'V-SV', 'V', 'V-JV', 'JV', 'J-JV',
@@ -58,6 +69,7 @@ const locale = {
     ],
     'clear-night': 'Jasná noc',
     'cloudy': 'Oblačno',
+    'exceptional': 'Extrémne počasie',
     'fog': 'Hmla',
     'hail': 'Krúpy',
     'lightning': 'Búrky',
@@ -76,16 +88,21 @@ const locale = {
     'tempLo': 'Nachttemperatur',
     'precip': 'Niederschlag',
     'feelsLike': 'Gefühlt',
-    'lowest': 'Minimum',
+    'days': ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+    'months': ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NO', 'NO', 'O-NO', 'O', 'O-SO', 'SO', 'S-SO',
@@ -93,6 +110,7 @@ const locale = {
     ],
     'clear-night': 'Sternenklar',
     'cloudy': 'Bewölkt',
+    'exceptional': 'Unwetter',
     'fog': 'Nebel',
     'hail': 'Hagel',
     'lightning': 'Gewitter',
@@ -111,30 +129,36 @@ const locale = {
     'tempLo': 'Nachttemperatuur',
     'precip': 'Neerslag',
     'feelsLike': 'Voelt als',
-    'lowest': 'Minimum',
+    'days': ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'],
+    'months': ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NO', 'NO', 'O-NO', 'O', 'O-ZO', 'ZO', 'Z-ZO',
       'Z', 'Z-ZW', 'ZW', 'W-ZW', 'W', 'W-NW', 'NW', 'N-NW', 'N'
     ],
-    'clear-night': 'Heldere nacht',
+    'clear-night': 'Helder nacht',
     'cloudy': 'Bewolkt',
+    'exceptional': 'Extreem weer',
     'fog': 'Mist',
     'hail': 'Hagel',
     'lightning': 'Bliksem',
-    'lightning-rainy': 'Onweer met regen',
+    'lightning-rainy': 'Bliksem, Regen',
     'partlycloudy': 'Gedeeltelijk bewolkt',
-    'pouring': 'Plensregen',
-    'rainy': 'Regen',
+    'pouring': 'Regen',
+    'rainy': 'Regenachtig',
     'snowy': 'Sneeuw',
     'snowy-rainy': 'Sneeuw, regen',
     'sunny': 'Zonnig',
@@ -143,35 +167,41 @@ const locale = {
   },
   en: {
     'tempHi': 'Temperature',
-    'tempLo': 'Night temperature',
-    'precip': 'Precipitation',
+    'tempLo': 'Temperature night',
+    'precip': 'Precipitations',
     'feelsLike': 'Feels like',
-    'lowest': 'Minimum',
+    'days': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    'months': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
       'S', 'S-SW', 'SW', 'W-SW', 'W', 'W-NW', 'NW', 'N-NW', 'N'
     ],
-    'clear-night': 'Clear night',
+    'clear-night': 'Clear, night',
     'cloudy': 'Cloudy',
+    'exceptional': 'Exceptional',
     'fog': 'Fog',
     'hail': 'Hail',
     'lightning': 'Lightning',
-    'lightning-rainy': 'Thunderstorm',
+    'lightning-rainy': 'Lightning, rainy',
     'partlycloudy': 'Partly cloudy',
     'pouring': 'Pouring',
     'rainy': 'Rainy',
     'snowy': 'Snowy',
-    'snowy-rainy': 'Snow and rain',
+    'snowy-rainy': 'Snowy, rainy',
     'sunny': 'Sunny',
     'windy': 'Windy',
     'windy-variant': 'Windy'
@@ -181,16 +211,21 @@ const locale = {
     'tempLo': 'Temperatura mínima',
     'precip': 'Precipitación',
     'feelsLike': 'Sensación térmica',
-    'lowest': 'Mínimo',
+    'days': ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    'months': ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
@@ -198,11 +233,12 @@ const locale = {
     ],
     'clear-night': 'Despejado, noche',
     'cloudy': 'Nublado',
+    'exceptional': 'Clima extremo',
     'fog': 'Niebla',
     'hail': 'Granizo',
     'lightning': 'Truenos',
     'lightning-rainy': 'Lluvia y truenos',
-    'partlycloudy': 'Parcialmente nublado',
+    'partlycloudy': 'Nublado parcialmente',
     'pouring': 'Lluvia fuerte',
     'rainy': 'Lluvia',
     'snowy': 'Nieve',
@@ -216,16 +252,21 @@ const locale = {
     'tempLo': 'Lämpötila alin',
     'precip': 'Sademäärä',
     'feelsLike': 'Tuntuu kuin',
-    'lowest': 'Minimi',
+    'days': ['Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'],
+    'months': ['tammikuu', 'helmikuu', 'maaliskuu', 'huhtikuu', 'toukokuu', 'kesäkuu', 'heinäkuu', 'elokuu', 'syyskuu', 'lokakuu', 'marraskuu', 'joulukuu'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
@@ -233,6 +274,7 @@ const locale = {
     ],
     'clear-night': 'Y\u00f6, selke\u00e4\u00e4',
     'cloudy': 'Pilvist\u00e4',
+    'exceptional': 'Äärimmäinen sää',
     'fog': 'Sumuista',
     'hail': 'Raekuuroja',
     'lightning': 'Ukkoskuuroja',
@@ -251,16 +293,21 @@ const locale = {
     'tempLo': 'Min. hőmérséklet',
     'precip': 'Csapadék',
     'feelsLike': 'Hőérzet',
-    'lowest': 'Minimum',
+    'days': ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'],
+    'months': ['január', 'február', 'március', 'április', 'május', 'június', 'július', 'augusztus', 'szeptember', 'október', 'november', 'december'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'É', 'É-ÉK', 'ÉK', 'K-ÉK', 'K', 'K-DK', 'DK', 'D-DK',
@@ -268,6 +315,7 @@ const locale = {
     ],
     'clear-night': 'Tiszta, éjszaka',
     'cloudy': 'Felhős',
+    'exceptional': 'Szélsőséges időjárás',
     'fog': 'Ködös',
     'hail': 'Jégeső',
     'lightning': 'Villám',
@@ -286,16 +334,21 @@ const locale = {
     'tempLo': 'Температура ночью',
     'precip': 'Осадки',
     'feelsLike': 'Ощущается как',
-    'lowest': 'Минимум',
+    'days': ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+    'months': ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'],
     'units': {
       'km/h': 'км/ч',
       'm/s': 'м/с',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'гПа',
       'mmHg': 'мм рт.ст.',
       'mm': 'мм',
-      'in': 'in'
+      'cm': 'см',
+      'in': 'in',
+      'l/m2': 'л/м2',
+      'kg/m2': 'кг/м2'
     },
     'cardinalDirections': [
       'С', 'С-СВ', 'СВ', 'В-СВ', 'В', 'В-ЮВ', 'ЮВ', 'Ю-ЮВ',
@@ -303,6 +356,7 @@ const locale = {
     ],
     'clear-night': 'Ясно',
     'cloudy': 'Облачно',
+    'exceptional': 'Экстремальная погода',
     'fog': 'Туман',
     'hail': 'Град',
     'lightning': 'Гроза',
@@ -321,16 +375,21 @@ const locale = {
     'tempLo': 'Temperatur min',
     'precip': 'Nederbörd',
     'feelsLike': 'Känns som',
-    'lowest': 'Minimum',
+    'days': ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'],
+    'months': ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'],
     'units': {
-        'km/h': 'km/h',
-        'm/s': 'm/s',
+      'km/h': 'km/h',
+      'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
-        'hPa': 'hPa',
-        'mmHg': 'mm Hg',
-        'mm': 'mm',
-        'in': 'in'
+      'hPa': 'hPa',
+      'mmHg': 'mmHg',
+      'mm': 'mm',
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
         'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
@@ -338,6 +397,7 @@ const locale = {
     ],
     'clear-night': 'Klar natt',
     'cloudy': 'Molnigt',
+    'exceptional': 'Extremt väder',
     'fog': 'Dimma',
     'hail': 'Hagel',
     'lightning': 'Åska',
@@ -356,16 +416,21 @@ const locale = {
     'tempLo': 'Température min',
     'precip': 'Précipitations',
     'feelsLike': 'Ressenti',
-    'lowest': 'Minimum',
+    'days': ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+    'months': ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'po'
+      'cm': 'cm',
+      'in': 'po',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
@@ -373,6 +438,7 @@ const locale = {
     ],
     'clear-night': 'Nuit dégagée',
     'cloudy': 'Nuageux',
+    'exceptional': 'Temps exceptionnel',
     'fog': 'Brouillard',
     'hail': 'Grêle',
     'lightning': 'Orage',
@@ -391,16 +457,21 @@ const locale = {
     'tempLo': 'Temperatura w nocy',
     'precip': 'Opady',
     'feelsLike': 'Odczuwalna',
-    'lowest': 'Minimum',
+    'days': ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
+    'months': ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec', 'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
@@ -408,6 +479,7 @@ const locale = {
     ],
     'clear-night': 'Bezchmurna noc',
     'cloudy': 'Pochmurnie',
+    'exceptional': 'Pogoda ekstremalna',
     'fog': 'Mgła',
     'hail': 'Grad',
     'lightning': 'Błyskawice',
@@ -426,16 +498,21 @@ const locale = {
     'tempLo': 'Minimumstemperatur',
     'precip': 'Nedbør',
     'feelsLike': 'Føles som',
-    'lowest': 'Minimum',
+    'days': ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
+    'months': ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'],
     'units': {
       'km/h': 'km/t',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
         'N', 'N-NE', 'NE', 'Ø-NØ', 'Ø', 'Ø-SØ', 'SØ', 'S-SØ',
@@ -443,6 +520,7 @@ const locale = {
     ],
     'clear-night': 'Klar natt',
     'cloudy': 'Overskyet',
+    'exceptional': 'Ekstremt vær',
     'fog': 'Tåke',
     'hail': 'Hagl',
     'lightning': 'Lyn',
@@ -461,23 +539,29 @@ const locale = {
     'tempLo': 'Nattemperatur',
     'precip': 'Nedbør',
     'feelsLike': 'Føles som',
-    'lowest': 'Minimum',
+    'days': ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
+    'months': ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NØ', 'NO', 'Ø-NØ', 'Ø', 'Ø-SØ', 'SØ', 'S-SØ',
       'S', 'S-SV', 'SV', 'V-SV', 'V', 'V-NV', 'NV', 'N-NV', 'N'
     ],
-    'clear-night': 'Klar nat',
+    'clear-night': 'Klart',
     'cloudy': 'Overskyet',
+    'exceptional': 'Ekstremt vejr',
     'fog': 'Tåget',
     'hail': 'Hagl',
     'lightning': 'Lyn',
@@ -496,16 +580,21 @@ const locale = {
     'tempLo': 'Temperatura notte',
     'precip': 'Precipitazioni',
     'feelsLike': 'Percepito come',
-    'lowest': 'Minimo',
+    'days': ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
+    'months': ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
@@ -513,6 +602,7 @@ const locale = {
     ],
     'clear-night': 'Sereno, notte',
     'cloudy': 'Nuvoloso',
+    'exceptional': 'Tempo eccezionale',
     'fog': 'Nebbia',
     'hail': 'Grandine',
     'lightning': 'Tuoni',
@@ -531,26 +621,32 @@ const locale = {
     'tempLo': 'Temperatura noite',
     'precip': 'Precipitação',
     'feelsLike': 'Sensação Térmica',
-    'lowest': 'Mínimo',
+    'days': ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+    'months': ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
       'S', 'S-SW', 'SW', 'W-SW', 'W', 'W-NW', 'NW', 'N-NW', 'N'
     ],
-    'clear-night': 'Noite clara',
+    'clear-night': 'Noite limpa',
     'cloudy': 'Nublado',
+    'exceptional': 'Tempo excecional',
     'fog': 'Nevoeiro',
     'hail': 'Granizo',
-    'lightning': 'Relâmpago',
+    'lightning': 'Relâmpago ',
     'lightning-rainy': 'Chuva e relâmpagos',
     'partlycloudy': 'Parcialmente nublado',
     'pouring': 'Chuva forte',
@@ -566,23 +662,29 @@ const locale = {
     'tempLo': 'Ελάχιστη θερμοκρασία νύχτας',
     'precip': 'Υετός',
     'feelsLike': 'Αίσθηση σαν',
-    'lowest': 'Ελάχιστο',
+    'days': ['Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο'],
+    'months': ['Ιανουάριος', 'Φεβρουάριος', 'Μάρτιος', 'Απρίλιος', 'Μάιος', 'Ιούνιος', 'Ιούλιος', 'Αύγουστος', 'Σεπτέμβριος', 'Οκτώβριος', 'Νοέμβριος', 'Δεκέμβριος'],
     'units': {
       'km/h': 'χλμ/ώρα',
       'm/s': 'μ/δ',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
       'mmHg': 'χιλ. υδράργυρου',
       'mm': 'χιλ.',
-      'in': 'ίντσες'
+      'cm': 'cm',
+      'in': 'ίντσες',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
-      'Β', 'Β-ΒΑ', 'ΒΑ', 'Α-ΒΑ', 'Α', 'Α-ΝΑ', 'ΝΑ', 'Ν-ΝΑ',
-      'Ν', 'Ν-ΝΔ', 'ΝΔ', 'Δ-ΝΔ', 'Δ', 'Δ-ΒΔ', 'ΒΔ', 'Β-ΒΔ', 'Β'
+      'Β', 'Β-ΒΔ', 'ΒΔ', 'Δ-ΒΔ', 'Δ', 'Δ-ΝΔ', 'ΝΔ', 'Ν-ΝΔ',
+      'Ν', 'Ν-ΒΔ', 'ΒΔ', 'Β-ΒΔ', 'Β', 'Β-ΒΔ', 'ΒΔ', 'Β-ΒΔ', 'Β'
     ],
     'clear-night': 'Καθαρός ουρανός, νύχτα',
     'cloudy': 'Συννεφιά',
+    'exceptional': 'Ακραίος καιρός',
     'fog': 'Ομίχλη',
     'hail': 'Χαλάζι',
     'lightning': 'Κεραυνοί',
@@ -601,16 +703,21 @@ const locale = {
     'tempLo': 'Минимална температура',
     'precip': 'Валежи',
     'feelsLike': 'Усеща се като',
-    'lowest': 'Минимум',
+    'days': ['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'],
+    'months': ['януари', 'февруари', 'март', 'април', 'май', 'юни', 'юли', 'август', 'септември', 'октомври', 'ноември', 'декември'],
     'units': {
       'km/h': 'км/ч',
       'm/s': 'м/с',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
       'mmHg': 'mmHg',
       'mm': 'мм',
-      'in': 'in'
+      'cm': 'см',
+      'in': 'in',
+      'l/m2': 'л/м2',
+      'kg/m2': 'кг/м2'
     },
     'cardinalDirections': [
       'С', 'С-СИ', 'СИ', 'И-СИ', 'И', 'И-ЮИ', 'ЮИ', 'Ю-ЮИ',
@@ -618,6 +725,7 @@ const locale = {
     ],
     'clear-night': 'Ясно,нощ',
     'cloudy': 'Облачно',
+    'exceptional': 'Екстремно време',
     'fog': 'Мъгла',
     'hail': 'Градушка',
     'lightning': 'Гръмотевици',
@@ -636,16 +744,21 @@ const locale = {
     'tempLo': 'Naktį',
     'precip': 'Krituliai',
     'feelsLike': 'Jaučiama',
-    'lowest': 'Minimum',
+    'days': ['Sekmadienis', 'Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis', 'Šeštadienis'],
+    'months': ['sausis', 'vasaris', 'kovas', 'balandis', 'gegužė', 'birželis', 'liepa', 'rugpjūtis', 'rugsėjis', 'spalis', 'lapkritis', 'gruodis'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'Š', 'Š-ŠR', 'ŠR', 'R-ŠR', 'R', 'R-PR', 'PR', 'P-PR',
@@ -653,6 +766,7 @@ const locale = {
     ],
     'clear-night': 'Giedra naktis',
     'cloudy': 'Debesuota',
+    'exceptional': 'Ekstremalios oro sąlygos',
     'fog': 'Rūkas',
     'hail': 'Kruša',
     'lightning': 'Perkūnija',
@@ -671,16 +785,21 @@ const locale = {
     'tempLo': 'Temperatura mínima',
     'precip': 'Precipitació',
     'feelsLike': 'Sensació tèrmica',
-    'lowest': 'Mínim',
+    'days': ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
+    'months': ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol', 'agost', 'setembre', 'octubre', 'novembre', 'desembre'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
@@ -688,6 +807,7 @@ const locale = {
     ],
     'clear-night': 'Serè',
     'cloudy': 'Ennuvolat',
+    'exceptional': 'Temps extrem',
     'fog': 'Boira',
     'hail': 'Calamarsa',
     'lightning': 'Tempesta elèctrica',
@@ -706,51 +826,62 @@ const locale = {
     'tempLo': 'Temperatură noaptea',
     'precip': 'Precipitații',
     'feelsLike': 'Se simte ca',
-    'lowest': 'Minim',
+    'days': ['Duminică', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', 'Sâmbătă'],
+    'months': ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noiembrie', 'Decembrie'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       'N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
       'S', 'S-SV', 'SV', 'V-SV', 'V', 'V-NV', 'NV', 'N-NV', 'N'
     ],
     'clear-night': 'Cer senin, noapte',
-    'cloudy': 'Noros',
+    'cloudy': 'Cer noros',
+    'exceptional': 'Vreme excepțională',
     'fog': 'Ceață',
     'hail': 'Grindină',
-    'lightning': 'Fulger',
-    'lightning-rainy': 'Furtună cu ploaie',
+    'lightning': 'Fulgere',
+    'lightning-rainy': 'Ploaie cu fulgere',
     'partlycloudy': 'Parțial noros',
-    'pouring': 'Plouă torențial',
-    'rainy': 'Ploios',
-    'snowy': 'Ninge',
-    'snowy-rainy': 'Ninge, ploios',
-    'sunny': 'Însorit',
+    'pouring': 'Ploaie torențială',
+    'rainy': 'Timp ploios',
+    'snowy': 'Ninsoare',
+    'snowy-rainy': 'Lapoviță',
+    'sunny': 'Cer senin',
     'windy': 'Vânt',
-    'windy-variant': 'Vânt'
+    'windy-variant': 'Vânt in rafale'
   },
   uk: {
     'tempHi': 'Температура',
     'tempLo': 'Температура вночі',
     'precip': 'Опади',
     'feelsLike': 'Відчувається як',
-    'lowest': 'Мінімум',
+    'days': ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'],
+    'months': ['січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'],
     'units': {
       'km/h': 'км/год',
       'm/s': 'м/с',
       'mph': 'миль/год',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'гПа',
       'mmHg': 'мм рт. ст.',
       'mm': 'мм',
-      'in': 'in'
+      'cm': 'см',
+      'in': 'in',
+      'l/m2': 'л/м2',
+      'kg/m2': 'кг/м2'
     },
     'cardinalDirections': [
       'Пн', 'Пн-ПнСх', 'ПнСх', 'Сх-ПнСх', 'Сх', 'Сх-ПдСх', 'ПдСх', 'Пд-ПдСх',
@@ -758,6 +889,7 @@ const locale = {
     ],
     'clear-night': 'Ясно, ніч',
     'cloudy': 'Хмарно',
+    'exceptional': 'Екстремальна погода',
     'fog': 'Туман',
     'hail': 'Град',
     'lightning': 'Гроза',
@@ -776,16 +908,21 @@ const locale = {
     'tempLo': '최저 기온',
     'precip': '강수',
     'feelsLike': '체감',
-    'lowest': '최저',
+    'days': ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+    'months': ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
     'units': {
       'km/h': 'km/h',
       'm/s': 'm/s',
       'mph': 'mph',
+      'kn': 'kn',
       'Bft': 'Bft',
       'hPa': 'hPa',
-      'mmHg': 'mm Hg',
+      'mmHg': 'mmHg',
       'mm': 'mm',
-      'in': 'in'
+      'cm': 'cm',
+      'in': 'in',
+      'l/m2': 'l/m2',
+      'kg/m2': 'kg/m2'
     },
     'cardinalDirections': [
       '북', '북북동', '북동', '동북동', '동', '동남동', '남동', '남남동',
@@ -793,6 +930,7 @@ const locale = {
     ],
     'clear-night': '맑음(밤)',
     'cloudy': '흐림',
+    'exceptional': '극한 날씨',
     'fog': '안개',
     'hail': '우박',
     'lightning': '번개',
@@ -807,6 +945,14 @@ const locale = {
     'windy-variant': '강풍'
   },
 };
+
+/**
+ * Weather card constants
+ * 
+ * Weather icons by Bas Milius
+ * https://github.com/basmilius/weather-icons
+ * Licensed under MIT License
+ */
 
 const cardinalDirectionsIcon = [
   'arrow-down', 'arrow-bottom-left', 'arrow-left',
@@ -835,14 +981,14 @@ const weatherIcons = {
 const weatherIconsDay = {
   'clear-night': 'clear-night',
   'cloudy': 'cloudy',
-  'exceptional': 'exceptional',
-  'fog': 'fog',
+  'exceptional': 'extreme-day',
+  'fog': 'fog-day',
   'hail': 'hail',
-  'lightning': 'lightning',
-  'lightning-rainy': 'lightning-rain',
-  'partlycloudy': 'partlycloudy-day',
-  'pouring': 'pouring',
-  'rainy': 'rain',
+  'lightning': 'thunderstorms-day',
+  'lightning-rainy': 'thunderstorms-day-rain',
+  'partlycloudy': 'partly-cloudy-day',
+  'pouring': 'extreme-day-rain',
+  'rainy': 'overcast-day-rain',
   'snowy': 'snow',
   'snowy-rainy': 'sleet',
   'sunny': 'clear-day',
@@ -852,8 +998,14 @@ const weatherIconsDay = {
 
 const weatherIconsNight = {
   ...weatherIconsDay,
+  'exceptional': 'extreme-night',
+  'fog': 'fog-night',
+  'lightning': 'thunderstorms-night',
+  'lightning-rainy': 'thunderstorms-night-rain',
+  'partlycloudy': 'partly-cloudy-night',
+  'pouring': 'extreme-night-rain',
+  'rainy': 'overcast-night-rain',
   'sunny': 'clear-night',
-  'partlycloudy': 'partlycloudy-night',
 };
 
 const WeatherEntityFeature = {
@@ -897,7 +1049,7 @@ const ALT_SCHEMA = [
   { name: "windspeed", title: "Alternative wind speed sensor", selector: { entity: { domain: 'sensor' } } },
   { name: "dew_point", title: "Alternative dew pointsensor", selector: { entity: { domain: 'sensor' } } },
   { name: "wind_gust_speed", title: "Alternative wind gust speed sensor", selector: { entity: { domain: 'sensor' } } },
-  { name: "visibility_entity", title: "Alternative visibility sensor", selector: { entity: { domain: 'sensor' } } },
+  { name: "visibility", title: "Alternative visibility sensor", selector: { entity: { domain: 'sensor' } } },
 ];
 
 class WeatherChartCardEditor extends s {
@@ -908,6 +1060,8 @@ class WeatherChartCardEditor extends s {
       entities: { type: Array },
       hass: { type: Object },
       _entity: { type: String },
+      _cityInput: { type: String },
+      _geoStatus: { type: String },
     };
   }
 
@@ -916,7 +1070,15 @@ class WeatherChartCardEditor extends s {
     this.currentPage = 'card';
     this._entity = '';
     this.entities = [];
+    this._cityInput = '';
+    this._geoStatus = '';
     this._formValueChanged = this._formValueChanged.bind(this);
+    
+    // Initialize with empty config to prevent crashes
+    this._config = {
+      forecast: {},
+      units: {}
+    };
   }
 
   setConfig(config) {
@@ -925,6 +1087,7 @@ class WeatherChartCardEditor extends s {
     }
     this._config = config;
     this._entity = config.entity || '';
+    this._cityInput = config.sun_city || '';
     this.hasApparentTemperature = (
       this.hass &&
       this.hass.states[config.entity] &&
@@ -947,8 +1110,8 @@ class WeatherChartCardEditor extends s {
       this.hass &&
       this.hass.states[config.entity] &&
       this.hass.states[config.entity].attributes &&
-      this.hass.states[config.entity].attributes.visibility_entity !== undefined
-    ) || config.visibility_entity !== undefined;
+      this.hass.states[config.entity].attributes.visibility !== undefined
+    ) || config.visibility !== undefined;
     this.hasDescription = (
       this.hass &&
       this.hass.states[config.entity] &&
@@ -983,9 +1146,10 @@ class WeatherChartCardEditor extends s {
     if (!this._config) {
       return;
     }
+    const value = event.detail ? event.detail.value : event.target.value;
     const newConfig = { ...this._config };
-    newConfig.entity = event.target.value;
-    this._entity = event.target.value;
+    newConfig.entity = value;
+    this._entity = value;
     this.configChanged(newConfig);
   }
 
@@ -1055,14 +1219,6 @@ class WeatherChartCardEditor extends s {
     this.requestUpdate();
   }
 
-  _setForecastType(value) {
-    this._handleTypeChange({ target: { value } });
-  }
-
-  _setChartStyle(value) {
-    this._handleStyleChange({ target: { value } });
-  }
-
   _handleIconStyleChange(event) {
     if (!this._config) {
       return;
@@ -1084,6 +1240,68 @@ class WeatherChartCardEditor extends s {
       this.configChanged(newConfig);
       this.requestUpdate();
     }
+  }
+
+  async _validateCity() {
+    const city = this._cityInput && this._cityInput.trim();
+    if (!city) {
+      this._geoStatus = 'error:Please enter a city name.';
+      this.requestUpdate();
+      return;
+    }
+    this._geoStatus = 'loading';
+    this.requestUpdate();
+    try {
+      const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(city)}&format=json&limit=1`;
+      const response = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+      const data = await response.json();
+      if (!data || data.length === 0) {
+        this._geoStatus = 'error:City not found. Try a different name.';
+        this.requestUpdate();
+        return;
+      }
+      const lat = parseFloat(data[0].lat);
+      const lon = parseFloat(data[0].lon);
+      const displayName = data[0].display_name;
+
+      // Auto-detect timezone from coordinates
+      let sunTimezone = null;
+      try {
+        const tzUrl = `https://timeapi.io/api/timezone/coordinate?latitude=${lat}&longitude=${lon}`;
+        const tzResponse = await fetch(tzUrl);
+        const tzData = await tzResponse.json();
+        if (tzData && tzData.timeZone) sunTimezone = tzData.timeZone;
+      } catch (_) { /* timezone fetch is best-effort */ }
+
+      const newConfig = {
+        ...this._config,
+        sun_city: city,
+        sun_latitude: lat,
+        sun_longitude: lon,
+        sun_timezone: sunTimezone,
+        timezone: sunTimezone || this._config.timezone,
+      };
+      this._geoStatus = `ok:${displayName}${sunTimezone ? ` (${sunTimezone})` : ''}`;
+      this.configChanged(newConfig);
+      this._config = newConfig;
+      this.requestUpdate();
+    } catch (e) {
+      this._geoStatus = 'error:Geocoding failed. Check your internet connection.';
+      this.requestUpdate();
+    }
+  }
+
+  _clearCity() {
+    const newConfig = { ...this._config };
+    delete newConfig.sun_city;
+    delete newConfig.sun_latitude;
+    delete newConfig.sun_longitude;
+    delete newConfig.sun_timezone;
+    this._cityInput = '';
+    this._geoStatus = '';
+    this.configChanged(newConfig);
+    this._config = newConfig;
+    this.requestUpdate();
   }
 
   showPage(pageName) {
@@ -1109,7 +1327,7 @@ class WeatherChartCardEditor extends s {
           margin-bottom: 12px;
         }
         .page-container {
-	        display: none;
+	  display: none;
         }
         .page-container.active {
           display: block;
@@ -1138,7 +1356,7 @@ class WeatherChartCardEditor extends s {
           display: flex;
           flex-direction: column;
           margin-bottom: 10px;
-	        gap: 20px;
+	  gap: 20px;
         }
         .radio-container {
           display: flex;
@@ -1148,52 +1366,36 @@ class WeatherChartCardEditor extends s {
         .radio-group {
           display: flex;
           align-items: center;
-          margin-bottom: 6px;
-        }
-        .radio-option {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          cursor: pointer;
-          user-select: none;
-        }
-        .radio-option input[type="radio"] {
-          margin: 0;
-          accent-color: var(--primary-color, #03a9f4);
-        }
-        .style-radio-group {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 12px;
-          margin-bottom: 8px;
         }
         .radio-group label {
           margin-left: 4px;
         }
-	      div.buttons-container {
-          border-bottom: 2px solid #ccc;
-          padding-bottom: 10px;
-          margin-bottom: 20px;
+        .buttons-container {
           display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
+          gap: 4px;
+          border-bottom: 2px solid var(--divider-color);
+          margin: 20px 0;
         }
-        .tab-button {
-          border: 1px solid var(--divider-color, #bdbdbd);
-          border-radius: 8px;
-          background: var(--card-background-color, #fff);
-          color: var(--primary-text-color, #212121);
-          padding: 6px 12px;
+        .page-button {
+          background: transparent;
+          border: none;
+          border-bottom: 3px solid transparent;
+          padding: 12px 16px;
           cursor: pointer;
-          font: inherit;
+          color: var(--secondary-text-color);
+          font-size: 14px;
+          font-weight: 400;
+          transition: all 0.2s ease;
+          outline: none;
         }
-        .tab-button:hover {
-          background: var(--secondary-background-color, #f5f5f5);
+        .page-button:hover {
+          background: var(--secondary-background-color, rgba(0, 0, 0, 0.05));
+          color: var(--primary-text-color);
         }
-        .tab-button.active {
-          border-color: var(--primary-color, #03a9f4);
-          color: var(--primary-color, #03a9f4);
-          font-weight: 600;
+        .page-button.active {
+          border-bottom-color: var(--primary-color);
+          color: var(--primary-color);
+          font-weight: 500;
         }
         .flex-container {
           display: flex;
@@ -1204,443 +1406,519 @@ class WeatherChartCardEditor extends s {
           flex-basis: 50%;
           flex-grow: 1;
         }
+        .field-label-row {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .experimental-badge {
+          display: inline-flex;
+          align-items: center;
+          padding: 2px 8px;
+          border-radius: 999px;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.2px;
+          text-transform: uppercase;
+          background: rgba(255, 152, 0, 0.2);
+          color: rgb(245, 124, 0);
+          border: 1px solid rgba(255, 152, 0, 0.5);
+        }
+        .adaptive-note {
+          font-size: 12px;
+          color: var(--secondary-text-color);
+          margin-top: -8px;
+        }
       </style>
       <div>
       <div class="textfield-container">
-        <ha-select
-          naturalMenuWidth
-          fixedMenuPosition
-          label="Entity"
-          .configValue=${'entity'}
-          .value=${this._entity}
-          @change=${(e) => this._EntityChanged(e, 'entity')}
-          @closed=${(ev) => ev.stopPropagation()}
+<label class="switch-label">Entity</label>
+<select
+  aria-label="Entity"
+  style="width: 100%; padding: 8px; margin-bottom: 8px; border: 1px solid var(--divider-color, #ccc); border-radius: 4px; background: var(--card-background-color, #fff); color: var(--primary-text-color, #000); font-size: 14px;"
+  .value=${this._entity}
+  @change=${(e) => this._EntityChanged(e, 'entity')}
+>
+  <option value="">-- Select entity --</option>
+  ${this.entities.map((entity) => x`<option value=${entity} ?selected=${entity === this._entity}>${entity}</option>`)}
+</select>
+      <ha-textfield
+        label="Title"
+        .value="${this._config.title || ''}"
+        @change="${(e) => this._valueChanged(e, 'title')}"
+      ></ha-textfield>
+      
+      <div>
+        <label>Select custom language</label>
+        <select
+          aria-label="Select custom language"
+          style="width: 100%; padding: 8px; margin: 10px 0; font-size: 14px; border: 1px solid var(--divider-color); border-radius: 4px; background: var(--card-background-color); color: var(--primary-text-color);"
+          .value=${this._config.locale || ''}
+          @change=${(e) => {
+            const evt = { target: { value: e.target.value } };
+            this._valueChanged(evt, 'locale');
+          }}
         >
-          ${this.entities.map((entity) => x`<ha-list-item .value=${entity}>${entity}</ha-list-item>`)}
-        </ha-select>
-        <ha-textfield
-          label="Title"
-          .value="${this._config.title || ''}"
-          @change="${(e) => this._valueChanged(e, 'title')}"
-        ></ha-textfield>
+          <option value="">HA Default</option>
+          <option value="bg">🇧🇬 Bulgarian</option>
+          <option value="ca">🇪🇸 Catalan</option>
+          <option value="cs">🇨🇿 Czech</option>
+          <option value="da">🇩🇰 Danish</option>
+          <option value="nl">🇳🇱 Dutch</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="fi">🇫🇮 Finnish</option>
+          <option value="fr">🇫🇷 French</option>
+          <option value="de">🇩🇪 German</option>
+          <option value="el">🇬🇷 Greek</option>
+          <option value="hu">🇭🇺 Hungarian</option>
+          <option value="it">🇮🇹 Italian</option>
+          <option value="lt">🇱🇹 Lithuanian</option>
+          <option value="no">🇳🇴 Norwegian</option>
+          <option value="pl">🇵🇱 Polish</option>
+          <option value="pt">🇵🇹 Portuguese</option>
+          <option value="ro">🇷🇴 Romanian</option>
+          <option value="ru">🇷🇺 Russian</option>
+          <option value="sk">🇸🇰 Slovak</option>
+          <option value="es">🇪🇸 Spanish</option>
+          <option value="sv">🇸🇪 Swedish</option>
+          <option value="uk">🇺🇦 Ukrainian</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
       </div>
 
-      <h5>Forecast type:</h5>
+      <ha-textfield
+        label="Timezone override"
+        .value="${this._config.timezone || ''}"
+        @change="${(e) => this._valueChanged(e, 'timezone')}"
+        helperpersistent
+        helper="Optional IANA timezone for forecast labels/clock (for example: Europe/Bucharest). Leave empty to use the default behavior."
+      ></ha-textfield>
 
-      <div class="radio-group">
-        <label class="radio-option">
+      <div>
+        <label>Sunrise/Sunset city <small style="color:var(--secondary-text-color)">(optional — if not set, uses HA server location)</small></label>
+        <div style="display:flex; gap:8px; margin-top:8px; align-items:center;">
           <input
-            type="radio"
+            type="text"
+            placeholder="e.g. Bucharest, Romania"
+            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+            .value="${this._cityInput || ''}"
+            @input="${(e) => { this._cityInput = e.target.value; this.requestUpdate(); }}"
+            @keydown="${(e) => { if (e.key === 'Enter') this._validateCity(); }}"
+          />
+          <button
+            style="padding:8px 14px; background:var(--primary-color); color:var(--text-primary-color, #fff); border:none; border-radius:4px; cursor:pointer; font-size:14px; white-space:nowrap;"
+            @click="${() => this._validateCity()}"
+          >Validate</button>
+          ${this._config.sun_city ? x`
+            <button
+              style="padding:8px 10px; background:var(--error-color, #c62828); color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:14px;"
+              @click="${() => this._clearCity()}"
+              title="Clear city, use HA server location"
+            >✕</button>
+          ` : ''}
+        </div>
+        ${(this._cityInput || '').trim() && (this._cityInput || '').trim() !== (this._config.sun_city || '') && !this._geoStatus.startsWith('ok:') && this._geoStatus !== 'loading' ? x`
+          <div style="margin-top:6px; padding:6px 10px; background:var(--error-color, #c62828); color:#fff; border-radius:4px; font-size:13px;">
+            ⚠ City not validated — click Validate before saving.
+          </div>
+        ` : ''}
+        ${this._geoStatus === 'loading' ? x`<div style="margin-top:6px; color:var(--secondary-text-color); font-size:13px;">Looking up coordinates...</div>` : ''}
+        ${this._geoStatus.startsWith('ok:') ? x`<div style="margin-top:6px; color:var(--success-color, #388e3c); font-size:13px;">✓ ${this._geoStatus.slice(3)}<br><small>lat: ${this._config.sun_latitude}, lon: ${this._config.sun_longitude}</small></div>` : ''}
+        ${this._geoStatus.startsWith('error:') ? x`<div style="margin-top:6px; color:var(--error-color, #c62828); font-size:13px;">✗ ${this._geoStatus.slice(6)}</div>` : ''}
+        ${!this._geoStatus && this._config.sun_city ? x`<div style="margin-top:6px; color:var(--success-color, #388e3c); font-size:13px;">✓ ${this._config.sun_city}<br><small>lat: ${this._config.sun_latitude}, lon: ${this._config.sun_longitude}${this._config.sun_timezone ? `, tz: ${this._config.sun_timezone}` : ''}</small></div>` : ''}
+      </div>
+       </div>
+
+      <h5>Forecast type:</h5>
+      <div class="radio-container">
+        <div class="switch-right">
+          <ha-radio
             name="type"
             value="daily"
             @change="${this._handleTypeChange}"
             .checked="${forecastConfig.type === 'daily'}"
-          />
-          <span class="check-label">Daily forecast</span>
-        </label>
-      </div>
+          ></ha-radio>
+          <label class="check-label">
+            Daily forecast
+          </label>
+        </div>
 
-      <div class="radio-group">
-        <label class="radio-option">
-          <input
-            type="radio"
+        <div class="switch-right">
+          <ha-radio
             name="type"
             value="hourly"
             @change="${this._handleTypeChange}"
             .checked="${forecastConfig.type === 'hourly'}"
-          />
-          <span class="check-label">Hourly forecast</span>
+          ></ha-radio>
+          <label class="check-label">
+            Hourly forecast
+          </label>
+        </div>
+      </div>
+
+      <div class="switch-container">
+        <div class="switch-right">
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'show_forecast_toggle')}"
+            .checked="${this._config.show_forecast_toggle === true}"
+          ></ha-switch>
+          <label class="switch-label">
+            Show Daily/Hourly toggle button
+          </label>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label class="switch-label">
+          Auto-rotate interval (minutes, 0 = off, 1-60)
         </label>
+        <input
+          type="number"
+          min="0"
+          max="60"
+          step="1"
+          .value="${forecastConfig.auto_rotate || 0}"
+          @change="${(e) => {
+            let val = parseInt(e.target.value, 10);
+            if (isNaN(val) || val < 0) val = 0;
+            if (val > 60) val = 60;
+            const newConfig = JSON.parse(JSON.stringify(this._config));
+            newConfig.forecast = newConfig.forecast || {};
+            newConfig.forecast.auto_rotate = val;
+            this.configChanged(newConfig);
+            this._config = newConfig;
+            this.requestUpdate();
+          }}"
+          style="width: 60px; margin-left: 8px;"
+        />
       </div>
 
       <h5>Chart style:</h5>
-      <div class="style-radio-group">
-        <div class="radio-group">
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="style"
-              value="style1"
-              @change="${this._handleStyleChange}"
-              .checked="${forecastConfig.style === 'style1'}"
-            />
-            <span class="check-label">Chart style 1</span>
+      <div class="radio-container">
+        <div class="switch-right">
+          <ha-radio
+            name="style"
+            value="style1"
+            @change="${this._handleStyleChange}"
+            .checked="${forecastConfig.style === 'style1'}"
+          ></ha-radio>
+          <label class="check-label">
+            Chart style 1
           </label>
         </div>
 
-        <div class="radio-group">
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="style"
-              value="style2"
-              @change="${this._handleStyleChange}"
-              .checked="${forecastConfig.style === 'style2'}"
-            />
-            <span class="check-label">Chart style 2</span>
-          </label>
-        </div>
-        <div class="radio-group">
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="style"
-              value="style3"
-              @change="${this._handleStyleChange}"
-              .checked="${forecastConfig.style === 'style3'}"
-            />
-            <span class="check-label">Chart style 3</span>
+        <div class="switch-right">
+          <ha-radio
+            name="style"
+            value="style2"
+            @change="${this._handleStyleChange}"
+            .checked="${forecastConfig.style === 'style2'}"
+          ></ha-radio>
+          <label class="check-label">
+            Chart style 2
           </label>
         </div>
       </div>
 
-      <!-- Buttons to switch between pages -->
-       <h4>Settings:</h4>
-       <div class="buttons-container">
-         <button
-           type="button"
-           class="tab-button ${this.currentPage === 'card' ? 'active' : ''}"
-           @click="${() => this.showPage('card')}"
-         >Main</button>
-         <button
-           type="button"
-           class="tab-button ${this.currentPage === 'forecast' ? 'active' : ''}"
-           @click="${() => this.showPage('forecast')}"
-         >Forecast</button>
-         <button
-           type="button"
-           class="tab-button ${this.currentPage === 'units' ? 'active' : ''}"
-           @click="${() => this.showPage('units')}"
-         >Units</button>
-         <button
-           type="button"
-           class="tab-button ${this.currentPage === 'alternate' ? 'active' : ''}"
-           @click="${() => this.showPage('alternate')}"
-         >Alternate entities</button>
-       </div>
+      <h5>Icons settings:</h5>
+      <div class="icon-container">
+        <div class="switch-right">
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'animated_icons')}"
+            .checked="${this._config.animated_icons === true}"
+          ></ha-switch>
+          <label class="switch-label">
+            Use Animated Icons
+          </label>
+        </div>
+        <div class="switch-right radio-container" style="${this._config.animated_icons ? 'display: flex;' : 'display: none;'}">
+          <ha-radio
+            name="icon_style"
+            value="style1"
+            @change="${this._handleIconStyleChange}"
+            .checked="${this._config.icon_style === 'style1'}"
+          ></ha-radio>
+          <label class="check-label">
+            Style 1
+          </label>
+        </div>
+        <div class="switch-right radio-container" style="${this._config.animated_icons ? 'display: flex;' : 'display: none;'}">
+          <ha-radio
+            name="icon_style"
+            value="style2"
+            @change="${this._handleIconStyleChange}"
+            .checked="${this._config.icon_style === 'style2'}"
+          ></ha-radio>
+          <label class="check-label">
+            Style 2
+          </label>
+        </div>
+      </div>
+      <div class="flex-container">
+        <ha-textfield
+          label="Size for daily icons"
+          type="number"
+          .value="${this._config.icons_size || '35'}"
+          @change="${(e) => this._valueChanged(e, 'icons_size')}"
+        ></ha-textfield>
+        <ha-textfield
+          label="Main Weather Icon Size"
+          type="number"
+          .value="${this._config.main_icon_size || '150'}"
+          @change="${(e) => this._valueChanged(e, 'main_icon_size')}"
+        ></ha-textfield>
+      </div>
 
-      <!-- Card Settings Page -->
-      <div class="page-container ${this.currentPage === 'card' ? 'active' : ''}">
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_main')}"
-            .checked="${this._config.show_main !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Main
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_main_forecast')}"
-            .checked="${this._config.show_main_forecast === true}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Main Forecast
-          </label>
-        </div>
-        <div class="switch-container">
-          ${this.hasApparentTemperature ? x`
+      <div class="buttons-container">
+        <button class="page-button ${this.currentPage === 'card' ? 'active' : ''}" @click="${() => this.showPage('card')}">Main</button>
+        <button class="page-button ${this.currentPage === 'forecast' ? 'active' : ''}" @click="${() => this.showPage('forecast')}">Forecast</button>
+        <button class="page-button ${this.currentPage === 'climate' ? 'active' : ''}" @click="${() => this.showPage('climate')}">Climate</button>
+        <button class="page-button ${this.currentPage === 'units' ? 'active' : ''}" @click="${() => this.showPage('units')}">Units</button>
+        <button class="page-button ${this.currentPage === 'alternate' ? 'active' : ''}" @click="${() => this.showPage('alternate')}">Alternate entities</button>
+      </div>
+
+        <!-- Card Settings Page -->
+        <div class="page-container ${this.currentPage === 'card' ? 'active' : ''}">
+          <div class="switch-container">
             <ha-switch
-              @change="${(e) => this._valueChanged(e, 'show_feels_like')}"
-              .checked="${this._config.show_feels_like !== false}"
+              @change="${(e) => this._valueChanged(e, 'show_main')}"
+              .checked="${this._config.show_main !== false}"
             ></ha-switch>
             <label class="switch-label">
-              Show Feels Like Temperature
-            </label>
-          ` : ''}
-        </div>
-        <div class="switch-container">
-          ${this.hasDescription ? x`
-            <ha-switch
-              @change="${(e) => this._valueChanged(e, 'show_description')}"
-              .checked="${this._config.show_description !== false}"
-            ></ha-switch>
-            <label class="switch-label">
-              Show Weather Description
-            </label>
-          ` : ''}
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_temperature')}"
-            .checked="${this._config.show_temperature !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Current Temperature
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_current_condition')}"
-            .checked="${this._config.show_current_condition !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Current Weather Condition
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_attributes')}"
-            .checked="${this._config.show_attributes !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Attributes
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_humidity')}"
-            .checked="${this._config.show_humidity !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Humidity
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_pressure')}"
-            .checked="${this._config.show_pressure !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Pressure
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_sun')}"
-            .checked="${this._config.show_sun !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Sun
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_uv')}"
-            .checked="${this._config.show_uv !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show UV
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_wind_direction')}"
-            .checked="${this._config.show_wind_direction !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Wind Direction
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_wind_speed')}"
-            .checked="${this._config.show_wind_speed !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show Wind Speed
-          </label>
-        </div>
-        <div class="switch-container">
-          ${this.hasDewpoint ? x`
-            <ha-switch
-              @change="${(e) => this._valueChanged(e, 'show_dew_point')}"
-              .checked="${this._config.show_dew_point !== false}"
-            ></ha-switch>
-            <label class="switch-label">
-              Show Dew Point
-            </label>
-          ` : ''}
-        </div>
-        <div class="switch-container">
-          ${this.hasWindgustspeed ? x`
-            <ha-switch
-              @change="${(e) => this._valueChanged(e, 'show_wind_gust_speed')}"
-              .checked="${this._config.show_wind_gust_speed !== false}"
-            ></ha-switch>
-            <label class="switch-label">
-              Show Wind Gust Speed
-            </label>
-          ` : ''}
-        </div>
-        <div class="switch-container">
-          ${this.hasVisibility ? x`
-            <ha-switch
-              @change="${(e) => this._valueChanged(e, 'show_visibility')}"
-              .checked="${this._config.show_visibility !== false}"
-            ></ha-switch>
-            <label class="switch-label">
-              Show Visibility
-            </label>
-          ` : ''}
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'show_last_changed')}"
-            .checked="${this._config.show_last_changed !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Show when last data changed
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'use_12hour_format')}"
-            .checked="${this._config.use_12hour_format !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Use 12-Hour Format
-          </label>
-        </div>
-        <div class="switch-container">
-          <ha-switch
-            @change="${(e) => this._valueChanged(e, 'autoscroll')}"
-            .checked="${this._config.autoscroll !== false}"
-          ></ha-switch>
-          <label class="switch-label">
-            Autoscroll
-          </label>
-        </div>
-        <div class="time-container">
-          <div class="switch-right">
-            <ha-switch
-              @change="${(e) => this._valueChanged(e, 'show_time')}"
-              .checked="${this._config.show_time !== false}"
-            ></ha-switch>
-            <label class="switch-label">
-              Show Current Time
+              Show Main
             </label>
           </div>
-          <div class="switch-right checkbox-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
-            <ha-checkbox
-              @change="${(e) => this._valueChanged(e, 'show_time_seconds')}"
-              .checked="${this._config.show_time_seconds !== false}"
-            ></ha-checkbox>
-            <label class="check-label">
-              Show Seconds
-            </label>
-          </div>
-          <div class="switch-right checkbox-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
-            <ha-checkbox
-              @change="${(e) => this._valueChanged(e, 'show_day')}"
-              .checked="${this._config.show_day !== false}"
-            ></ha-checkbox>
-            <label class="check-label">
-              Show Day
-            </label>
-          </div>
-          <div class="switch-right checkbox-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
-            <ha-checkbox
-              @change="${(e) => this._valueChanged(e, 'show_date')}"
-              .checked="${this._config.show_date !== false}"
-            ></ha-checkbox>
-            <label class="check-label">
-              Show Date
-            </label>
-          </div>
-        </div>
-        <div class="flex-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
-          <ha-textfield
-            label="Time text size"
-            type="number"
-            .value="${this._config.time_size || '26'}"
-            @change="${(e) => this._valueChanged(e, 'time_size')}"
-          ></ha-textfield>
-          <ha-textfield
-            label="Day and date text size"
-            type="number"
-            .value="${this._config.day_date_size || '15'}"
-            @change="${(e) => this._valueChanged(e, 'day_date_size')}"
-          ></ha-textfield>
-        </div>
-        <div class="icon-container">
-          <div class="switch-right">
+          <div class="switch-container">
             <ha-switch
-              @change="${(e) => this._valueChanged(e, 'animated_icons')}"
-              .checked="${this._config.animated_icons === true}"
+              @change="${(e) => this._valueChanged(e, 'show_main_forecast')}"
+              .checked="${this._config.show_main_forecast === true}"
             ></ha-switch>
             <label class="switch-label">
-              Use Animated Icons
+              Show Main Forecast
             </label>
           </div>
-          <div class="switch-right radio-container" style="${this._config.animated_icons ? 'display: flex;' : 'display: none;'}">
-              <ha-radio
-                name="icon_style"
-                value="style1"
-                @change="${this._handleIconStyleChange}"
-                .checked="${this._config.icon_style === 'style1'}"
-              ></ha-radio>
-              <label class="check-label">
-                Style 1
+      <div class="switch-container">
+        ${this.hasApparentTemperature ? x`
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'show_feels_like')}"
+            .checked="${this._config.show_feels_like !== false}"
+          ></ha-switch>
+          <label class="switch-label">
+            Show Feels Like Temperature
+          </label>
+        ` : ''}
+      </div>
+      <div class="switch-container">
+        ${this.hasDescription ? x`
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'show_description')}"
+            .checked="${this._config.show_description !== false}"
+          ></ha-switch>
+          <label class="switch-label">
+            Show Weather Description
+          </label>
+        ` : ''}
+      </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_temperature')}"
+              .checked="${this._config.show_temperature !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Current Temperature
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_current_condition')}"
+              .checked="${this._config.show_current_condition !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Current Weather Condition
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_attributes')}"
+              .checked="${this._config.show_attributes !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Attributes
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_humidity')}"
+              .checked="${this._config.show_humidity !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Humidity
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_pressure')}"
+              .checked="${this._config.show_pressure !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Pressure
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_sun')}"
+              .checked="${this._config.show_sun !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Sun
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_wind_direction')}"
+              .checked="${this._config.show_wind_direction !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Wind Direction
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_wind_speed')}"
+              .checked="${this._config.show_wind_speed !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show Wind Speed
+            </label>
+	  </div>
+      <div class="switch-container">
+        ${this.hasDewpoint ? x`
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'show_dew_point')}"
+            .checked="${this._config.show_dew_point !== false}"
+          ></ha-switch>
+          <label class="switch-label">
+            Show Dew Point
+          </label>
+        ` : ''}
+      </div>
+      <div class="switch-container">
+        ${this.hasWindgustspeed ? x`
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'show_wind_gust_speed')}"
+            .checked="${this._config.show_wind_gust_speed !== false}"
+          ></ha-switch>
+          <label class="switch-label">
+            Show Wind Gust Speed
+          </label>
+        ` : ''}
+      </div>
+      <div class="switch-container">
+        ${this.hasVisibility ? x`
+          <ha-switch
+            @change="${(e) => this._valueChanged(e, 'show_visibility')}"
+            .checked="${this._config.show_visibility !== false}"
+          ></ha-switch>
+          <label class="switch-label">
+            Show Visibility
+          </label>
+        ` : ''}
+      </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_last_changed')}"
+              .checked="${this._config.show_last_changed !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show when last data changed
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'use_12hour_format')}"
+              .checked="${this._config.use_12hour_format !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Use 12-Hour Format
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'autoscroll')}"
+              .checked="${this._config.autoscroll !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Autoscroll
+            </label>
+          </div>
+          <div class="time-container">
+            <div class="switch-right">
+              <ha-switch
+                @change="${(e) => this._valueChanged(e, 'show_time')}"
+                .checked="${this._config.show_time !== false}"
+              ></ha-switch>
+              <label class="switch-label">
+                Show Current Time
               </label>
             </div>
-          <div class="switch-right radio-container" style="${this._config.animated_icons ? 'display: flex;' : 'display: none;'}">
-              <ha-radio
-                name="icon_style"
-                value="style2"
-                @change="${this._handleIconStyleChange}"
-                .checked="${this._config.icon_style === 'style2'}"
-              ></ha-radio>
+            <div class="switch-right checkbox-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
+              <ha-checkbox
+                @change="${(e) => this._valueChanged(e, 'show_time_seconds')}"
+                .checked="${this._config.show_time_seconds !== false}"
+              ></ha-checkbox>
               <label class="check-label">
-                Style 2
+                Show Seconds
+              </label>
+            </div>
+            <div class="switch-right checkbox-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
+              <ha-checkbox
+                @change="${(e) => this._valueChanged(e, 'show_hour_leading_zero')}"
+                .checked="${this._config.show_hour_leading_zero !== false}"
+              ></ha-checkbox>
+              <label class="check-label">
+                Leading zero for hour
+              </label>
+            </div>
+            <div class="switch-right checkbox-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
+              <ha-checkbox
+                @change="${(e) => this._valueChanged(e, 'show_day')}"
+                .checked="${this._config.show_day !== false}"
+              ></ha-checkbox>
+              <label class="check-label">
+                Show Day
+              </label>
+            </div>
+            <div class="switch-right checkbox-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
+              <ha-checkbox
+                @change="${(e) => this._valueChanged(e, 'show_date')}"
+                .checked="${this._config.show_date !== false}"
+              ></ha-checkbox>
+              <label class="check-label">
+                Show Date
               </label>
             </div>
           </div>
-          <div class="textfield-container">
-            <ha-textfield
-              label="Icon Size for animated or custom icons"
-              type="number"
-              .value="${this._config.icons_size || '25'}"
-              @change="${(e) => this._valueChanged(e, 'icons_size')}"
-            ></ha-textfield>
+            <div class="flex-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
               <ha-textfield
-                label="Current temperature Font Size"
-              type="number"
-                .value="${this._config.current_temp_size || '28'}"
+                label="Time Font Size"
+                type="number"
+                .value="${this._config.time_size || '26'}"
+                @change="${(e) => this._valueChanged(e, 'time_size')}"
+              ></ha-textfield>
+              <ha-textfield
+                label="Date Font Size"
+                type="number"
+                .value="${this._config.day_date_size || '15'}"
+                @change="${(e) => this._valueChanged(e, 'day_date_size')}"
+              ></ha-textfield>
+              <ha-textfield
+                label="Temp Font Size"
+                type="number"
+                .value="${this._config.current_temp_size || '38'}"
                 @change="${(e) => this._valueChanged(e, 'current_temp_size')}"
               ></ha-textfield>
-            <ha-textfield
-              label="Custom icon path"
-              .value="${this._config.icons || ''}"
-              @change="${(e) => this._valueChanged(e, 'icons')}"
-            ></ha-textfield>
-            <ha-select
-              naturalMenuWidth
-              fixedMenuPosition
-              label="Select custom language"
-              .configValue=${''}
-              .value=${this._config.locale}
-              @change=${(e) => this._valueChanged(e, 'locale')}
-              @closed=${(ev) => ev.stopPropagation()}
-            >
-              <ha-list-item .value=${''}>HA Default</ha-list-item>
-              <ha-list-item .value=${'bg'}>Bulgarian</ha-list-item>
-              <ha-list-item .value=${'ca'}>Catalan</ha-list-item>
-              <ha-list-item .value=${'cs'}>Czech</ha-list-item>
-              <ha-list-item .value=${'da'}>Danish</ha-list-item>
-              <ha-list-item .value=${'nl'}>Dutch</ha-list-item>
-              <ha-list-item .value=${'en'}>English</ha-list-item>
-              <ha-list-item .value=${'fi'}>Finnish</ha-list-item>
-              <ha-list-item .value=${'fr'}>French</ha-list-item>
-              <ha-list-item .value=${'de'}>German</ha-list-item>
-              <ha-list-item .value=${'el'}>Greek</ha-list-item>
-              <ha-list-item .value=${'hu'}>Hungarian</ha-list-item>
-              <ha-list-item .value=${'it'}>Italian</ha-list-item>
-              <ha-list-item .value=${'lt'}>Lithuanian</ha-list-item>
-              <ha-list-item .value=${'no'}>Norwegian</ha-list-item>
-              <ha-list-item .value=${'pl'}>Polish</ha-list-item>
-              <ha-list-item .value=${'pt'}>Portuguese</ha-list-item>
-              <ha-list-item .value=${'ro'}>Romanian</ha-list-item>
-              <ha-list-item .value=${'ru'}>Russian</ha-list-item>
-              <ha-list-item .value=${'sk'}>Slovak</ha-list-item>
-              <ha-list-item .value=${'es'}>Spanish</ha-list-item>
-              <ha-list-item .value=${'sv'}>Swedish</ha-list-item>
-              <ha-list-item .value=${'uk'}>Ukrainian</ha-list-item>
-              <ha-list-item .value=${'ko'}>한국어</ha-list-item>
-            </ha-select>
-          </div>
-        </div>
+              </div>
+      </div>
 
         <!-- Forecast Settings Page -->
         <div class="page-container ${this.currentPage === 'forecast' ? 'active' : ''}">
@@ -1680,47 +1958,31 @@ class WeatherChartCardEditor extends s {
               Disable Chart Animation
             </label>
           </div>
-          <div class="switch-container">
-            <ha-switch
-              @change="${(e) => this._valueChanged(e, 'forecast.disable_tooltips')}"
-              .checked="${forecastConfig.disable_tooltips !== false}"
-            ></ha-switch>
-            <label class="switch-label">
-              Disable Chart Tooltips
-            </label>
-          </div>
-	        <div class="textfield-container">
-            <ha-select
-              naturalMenuWidth
-              fixedMenuPosition
-              label="Precipitation Type (Probability if supported by the weather entity)"
-              .configValue=${'forecast.precipitation_type'}
-              .value=${forecastConfig.precipitation_type}
-              @change=${(e) => this._valueChanged(e, 'forecast.precipitation_type')}
-              @closed=${(ev) => ev.stopPropagation()}
+	  <div class="textfield-container">
+          <div>
+            <label>Precipitation Type (Probability if supported by the weather entity)</label>
+            <select
+              aria-label="Precipitation Type"
+              style="width: 100%; padding: 8px; margin: 10px 0; font-size: 14px; border: 1px solid var(--divider-color); border-radius: 4px; background: var(--card-background-color); color: var(--primary-text-color);"
+              .value=${forecastConfig.precipitation_type || 'rainfall'}
+              @change=${(e) => {
+                const evt = { target: { value: e.target.value } };
+                this._valueChanged(evt, 'forecast.precipitation_type');
+              }}
             >
-              <ha-list-item .value=${'rainfall'}>Rainfall</ha-list-item>
-              <ha-list-item .value=${'probability'}>Probability</ha-list-item>
-            </ha-select>
+              <option value="rainfall">Rainfall</option>
+              <option value="probability">Probability</option>
+            </select>
           </div>
-          <div class="switch-container">
-            <ha-switch
-              @change="${(e) => this._valueChanged(e, 'forecast.show_probability')}"
-              .checked="${forecastConfig.show_probability !== false}"
-            ></ha-switch>
-            <label class="switch-label">
-              Show precipitation probability
-            </label>
-          </div>
-          <div class="switch-container">
-            <ha-switch
-              @change="${(e) => this._valueChanged(e, 'forecast.show_rainfall')}"
-              .checked="${forecastConfig.show_rainfall !== false}"
-            ></ha-switch>
-            <label class="switch-label">
-              Show rainfall
-            </label>
-          </div>
+         <div class="switch-container" ?hidden=${forecastConfig.precipitation_type !== 'rainfall'}>
+             <ha-switch
+               @change="${(e) => this._valueChanged(e, 'forecast.show_probability')}"
+               .checked="${forecastConfig.show_probability !== false}"
+             ></ha-switch>
+             <label class="switch-label">
+               Show precipitation probability
+             </label>
+         </div>
           <div class="textfield-container">
             <div class="flex-container">
               <ha-textfield
@@ -1737,8 +1999,8 @@ class WeatherChartCardEditor extends s {
                 .value="${forecastConfig.labels_font_size || '11'}"
                 @change="${(e) => this._valueChanged(e, 'forecast.labels_font_size')}"
               ></ha-textfield>
-            </div>
-	          <div class="flex-container">
+              </div>
+	    <div class="flex-container">
               <ha-textfield
                 label="Chart height"
                 type="number"
@@ -1746,71 +2008,164 @@ class WeatherChartCardEditor extends s {
                 @change="${(e) => this._valueChanged(e, 'forecast.chart_height')}"
               ></ha-textfield>
               <ha-textfield
-                label="Precipitation Labels Font Size"
-                type="number"
-                .value="${forecastConfig.precip_labels_font_size || '10'}"
-                @change="${(e) => this._valueChanged(e, 'forecast.precip_labels_font_size')}"
-              ></ha-textfield>
-            </div>
-            <div class="flex-container">
-              <ha-textfield
                 label="Number of forecasts"
                 type="number"
                 .value="${forecastConfig.number_of_forecasts || '0'}"
                 @change="${(e) => this._valueChanged(e, 'forecast.number_of_forecasts')}"
               ></ha-textfield>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Units Page -->
-      <div class="page-container ${this.currentPage === 'units' ? 'active' : ''}">
-        <div class="textfield-container">
-          <ha-select
-            naturalMenuWidth
-            fixedMenuPosition
-            label="Convert pressure to"
-            .configValue=${'units.pressure'}
-            .value=${unitsConfig.pressure}
-            @change=${(e) => this._valueChanged(e, 'units.pressure')}
-            @closed=${(ev) => ev.stopPropagation()}
-          >
-            <ha-list-item .value=${'hPa'}>hPa</ha-list-item>
-            <ha-list-item .value=${'mmHg'}>mmHg</ha-list-item>
-            <ha-list-item .value=${'inHg'}>inHg</ha-list-item>
-          </ha-select>
-          <ha-select
-            naturalMenuWidth
-            fixedMenuPosition
-            label="Convert wind speed to"
-            .configValue=${'units.speed'}
-            .value=${unitsConfig.speed}
-            @change=${(e) => this._valueChanged(e, 'units.speed')}
-            @closed=${(ev) => ev.stopPropagation()}
-          >
-            <ha-list-item .value=${'km/h'}>km/h</ha-list-item>
-            <ha-list-item .value=${'m/s'}>m/s</ha-list-item>
-            <ha-list-item .value=${'Bft'}>Bft</ha-list-item>
-            <ha-list-item .value=${'mph'}>mph</ha-list-item>
-          </ha-select>
+        <!-- Climate Settings Page -->
+        <div class="page-container ${this.currentPage === 'climate' ? 'active' : ''}">
+	  <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'forecast.use_color_thresholds')}"
+              .checked="${forecastConfig.use_color_thresholds !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Use Temperature Color Thresholds
+            </label>
+          </div>
+	  <div class="textfield-container">
+            <div>
+              <div class="field-label-row">
+                <label>Temperature Gradient Mode</label>
+                <span class="experimental-badge" ?hidden=${(forecastConfig.gradient_mode || 'classic') !== 'adaptive'}>Experimental</span>
+              </div>
+              <select
+                aria-label="Temperature Gradient Mode"
+                style="width: 100%; padding: 8px; margin: 10px 0; font-size: 14px; border: 1px solid var(--divider-color); border-radius: 4px; background: var(--card-background-color); color: var(--primary-text-color);"
+                .value=${forecastConfig.gradient_mode || 'classic'}
+                @change=${(e) => {
+                  const evt = { target: { value: e.target.value } };
+                  this._valueChanged(evt, 'forecast.gradient_mode');
+                }}
+              >
+                <option value="classic">Classic</option>
+                <option value="climate_preset">Climate Preset</option>
+                <option value="adaptive">Adaptive (experimental)</option>
+              </select>
+            </div>
+            <div ?hidden=${(forecastConfig.gradient_mode || 'classic') === 'classic'}>
+              <label>Climate Preset Range</label>
+              <select
+                aria-label="Climate Preset Range"
+                style="width: 100%; padding: 8px; margin: 10px 0; font-size: 14px; border: 1px solid var(--divider-color); border-radius: 4px; background: var(--card-background-color); color: var(--primary-text-color);"
+                .value=${forecastConfig.gradient_preset || 'temperate'}
+                @change=${(e) => {
+                  const evt = { target: { value: e.target.value } };
+                  this._valueChanged(evt, 'forecast.gradient_preset');
+                }}
+              >
+                <option value="temperate">Temperate (-10 to 35 C)</option>
+                <option value="continental">Continental (-30 to 35 C)</option>
+                <option value="subarctic">Subarctic (-45 to 20 C)</option>
+                <option value="polar">Polar (-55 to 10 C)</option>
+                <option value="hot_arid">Hot/Arid (0 to 50 C)</option>
+              </select>
+            </div>
+            <div class="adaptive-note" ?hidden=${(forecastConfig.gradient_mode || 'classic') !== 'adaptive'}>
+              Adaptive is experimental. We welcome feedback on color quality across seasons.
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- Alternate Page -->
-      <div class="page-container ${this.currentPage === 'alternate' ? 'active' : ''}">
-        <h5>Alternative sensors for the main card attributes:</h5>
-        <ha-form
-          .data=${this._config}
-          .schema=${ALT_SCHEMA}
-          .hass=${this.hass}
-          @value-changed=${this._formValueChanged}
-        ></ha-form>
-      </div>
+        <!-- Units Page -->
+        <div class="page-container ${this.currentPage === 'units' ? 'active' : ''}">
+          <div class="textfield-container">
+            <div>
+              <label>Convert temperature to</label>
+              <select
+                aria-label="Convert temperature to"
+                style="width: 100%; padding: 8px; margin: 10px 0; font-size: 14px; border: 1px solid var(--divider-color); border-radius: 4px; background: var(--card-background-color); color: var(--primary-text-color);"
+                .value=${unitsConfig.temperature || ''}
+                @change=${(e) => {
+                  const evt = { target: { value: e.target.value } };
+                  this._valueChanged(evt, 'units.temperature');
+                }}
+              >
+                <option value="">Default</option>
+                <option value="°C">Celsius (°C)</option>
+                <option value="°F">Fahrenheit (°F)</option>
+              </select>
+            </div>
+            <div>
+              <label>Convert pressure to</label>
+              <select
+                aria-label="Convert pressure to"
+                style="width: 100%; padding: 8px; margin: 10px 0; font-size: 14px; border: 1px solid var(--divider-color); border-radius: 4px; background: var(--card-background-color); color: var(--primary-text-color);"
+                .value=${unitsConfig.pressure || ''}
+                @change=${(e) => {
+                  const evt = { target: { value: e.target.value } };
+                  this._valueChanged(evt, 'units.pressure');
+                }}
+              >
+                <option value="">Default</option>
+                <option value="hPa">hPa</option>
+                <option value="mmHg">mmHg</option>
+                <option value="inHg">inHg</option>
+              </select>
+            </div>
+            <div>
+              <label>Convert wind speed to</label>
+              <select
+                aria-label="Convert wind speed to"
+                style="width: 100%; padding: 8px; margin: 10px 0; font-size: 14px; border: 1px solid var(--divider-color); border-radius: 4px; background: var(--card-background-color); color: var(--primary-text-color);"
+                .value=${unitsConfig.speed || ''}
+                @change=${(e) => {
+                  const evt = { target: { value: e.target.value } };
+                  this._valueChanged(evt, 'units.speed');
+                }}
+              >
+                <option value="">Default</option>
+                <option value="km/h">km/h</option>
+                <option value="m/s">m/s</option>
+                <option value="Bft">Bft</option>
+                <option value="mph">mph</option>
+                <option value="kn">kn</option>
+              </select>
+            </div>
+            <div>
+              <label>Display precipitation unit</label>
+              <select
+                aria-label="Display precipitation unit"
+                style="width: 100%; padding: 8px; margin: 10px 0; font-size: 14px; border: 1px solid var(--divider-color); border-radius: 4px; background: var(--card-background-color); color: var(--primary-text-color);"
+                .value=${unitsConfig.precipitation || ''}
+                @change=${(e) => {
+                  const evt = { target: { value: e.target.value } };
+                  this._valueChanged(evt, 'units.precipitation');
+                }}
+              >
+                <option value="">Default</option>
+                <option value="mm">mm</option>
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+                <option value="l/m2">l/m2</option>
+                <option value="kg/m2">kg/m2</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alternate Page -->
+        <div class="page-container ${this.currentPage === 'alternate' ? 'active' : ''}">
+          <h5>Alternative sensors for the main card attributes:</h5>
+          <ha-form
+            .data=${this._config}
+            .schema=${ALT_SCHEMA}
+            .hass=${this.hass}
+            @value-changed=${this._formValueChanged}
+          ></ha-form>
+        </div>
     `;
   }
 }
-customElements.define("weather-chart-card-editor", WeatherChartCardEditor);
+if (!customElements.get('weather-chart-card-ha-editor')) {
+  customElements.define('weather-chart-card-ha-editor', WeatherChartCardEditor);
+}
 
 /**
  * @license
@@ -18109,7 +18464,7 @@ Chart.register(...registerables, plugin);
 class WeatherChartCard extends s {
 
 static getConfigElement() {
-  return document.createElement("weather-chart-card-editor");
+  return document.createElement("weather-chart-card-ha-editor");
 }
 
 static getStubConfig(hass, unusedEntities, allEntities) {
@@ -18119,46 +18474,52 @@ static getStubConfig(hass, unusedEntities, allEntities) {
   }
   return {
     entity,
+    title: 'Enhanced Weather Chart Card',
     show_main: true,
     show_main_forecast: false,
     show_temperature: true,
     show_current_condition: true,
     show_attributes: true,
-    show_time: false,
-    show_time_seconds: false,
-    show_day: false,
-    show_date: false,
+    show_time: true,
+    show_time_seconds: true,
+    show_hour_leading_zero: true,
+    show_day: true,
+    show_date: true,
     show_humidity: true,
     show_pressure: true,
     show_wind_direction: true,
     show_wind_speed: true,
     show_sun: true,
-    show_uv: true,
     show_feels_like: false,
+    timezone: '',
     show_dew_point: false,
     show_wind_gust_speed: false,
     show_visibility: false,
     show_last_changed: false,
+    show_forecast_toggle: false,
     use_12hour_format: false,
-    icons_size: 25,
-    animated_icons: false,
+    icons_size: 30,
+    main_icon_size: 150,
+    current_temp_size: 35,
+    animated_icons: true,
     icon_style: 'style1',
     autoscroll: false,
     forecast: {
       precipitation_type: 'rainfall',
       show_probability: false,
-      show_rainfall: true,
       labels_font_size: '11',
-      precip_labels_font_size: '10',
       precip_bar_size: '100',
-      style: 'style1',
+      style: 'style2',
       show_wind_forecast: true,
       condition_icons: true,
       round_temp: false,
       type: 'daily',
-      number_of_forecasts: '0',
+      number_of_forecasts: '0', 
       disable_animation: false,
-      disable_tooltips: false,
+      show_date_labels: true,
+      use_color_thresholds: true,
+      gradient_mode: 'classic',
+      gradient_preset: 'temperate',
     },
   };
 }
@@ -18178,16 +18539,18 @@ static getStubConfig(hass, unusedEntities, allEntities) {
       forecastChart: {type: Object},
       forecastItems: {type: Number},
       forecasts: { type: Array },
-      dailyForecasts: { type: Array }, 
+      dailyForecasts: { type: Array },
     };
   }
 
 setConfig(config) {
   const cardConfig = {
-    icons_size: 25,
-    animated_icons: false,
+    title: 'Weather',
+    icons_size: 30,
+    animated_icons: true,
     icon_style: 'style1',
-    current_temp_size: 28,
+    current_temp_size: 35,
+    main_icon_size: 150,
     time_size: 26,
     day_date_size: 15,
     show_feels_like: false,
@@ -18197,26 +18560,30 @@ setConfig(config) {
     show_last_changed: false,
     show_description: false,
     show_main_forecast: false,
+    show_forecast_toggle: false,
+    show_hour_leading_zero: true,
     ...config,
     forecast: {
       precipitation_type: 'rainfall',
       show_probability: false,
-      show_rainfall: true,
       labels_font_size: 11,
-      precip_labels_font_size: 10,
       chart_height: 180,
       precip_bar_size: 100,
-      style: 'style1',
+      style: 'style2',
       temperature1_color: 'rgba(255, 152, 0, 1.0)',
       temperature2_color: 'rgba(68, 115, 158, 1.0)',
       precipitation_color: 'rgba(132, 209, 253, 1.0)',
-      disable_tooltips: false,
       condition_icons: true,
       show_wind_forecast: true,
       round_temp: false,
       type: 'daily',
+      auto_rotate: 0,
       number_of_forecasts: '0',
       '12hourformat': false,
+      show_date_labels: true,
+      use_color_thresholds: true,
+      gradient_mode: 'classic',
+      gradient_preset: 'temperate',
       ...config.forecast,
     },
     units: {
@@ -18227,13 +18594,29 @@ setConfig(config) {
 
   cardConfig.units.speed = config.speed ? config.speed : cardConfig.units.speed;
 
-  this.baseIconPath = cardConfig.icon_style === 'style2' ?
-    'https://cdn.jsdelivr.net/gh/mlamberts78/weather-chart-card/dist/icons2/':
-    'https://cdn.jsdelivr.net/gh/mlamberts78/weather-chart-card/dist/icons/' ;
+  // Icon path configuration: Prioritize CDN, fallback to custom path if specified
+  if (config.icons) {
+    // User specified custom icons path
+    this.baseIconPath = config.icons;
+  } else {
+    // Use icons from GitHub repository via jsdelivr CDN
+    // Using @latest for better CDN caching and reliability
+    // style1 = fill (default), style2 = line
+    this.baseIconPath = cardConfig.icon_style === 'style2'
+      ? 'https://cdn.jsdelivr.net/gh/w4mhi/weather-chart-card-ha@latest/dist/icons2/'
+      : 'https://cdn.jsdelivr.net/gh/w4mhi/weather-chart-card-ha@latest/dist/icons/';
+  }
+
+  if (!cardConfig.title || !cardConfig.title.trim()) {
+    cardConfig.title = 'Weather';
+  }
 
   this.config = cardConfig;
   if (!config.entity) {
     throw new Error('Please, define entity in the card config');
+  }
+  if (this.isConnected) {
+    this.startAutoRotate();
   }
 }
 
@@ -18244,6 +18627,7 @@ set hass(hass) {
   this.unitSpeed = this.config.units.speed ? this.config.units.speed : this.weather && this.weather.attributes.wind_speed_unit;
   this.unitPressure = this.config.units.pressure ? this.config.units.pressure : this.weather && this.weather.attributes.pressure_unit;
   this.unitVisibility = this.config.units.visibility ? this.config.units.visibility : this.weather && this.weather.attributes.visibility_unit;
+  this.unitTemperature = this.config.units.temperature ? this.config.units.temperature : this.weather && this.weather.attributes.temperature_unit;
   this.weather = this.config.entity in hass.states
     ? hass.states[this.config.entity]
     : null;
@@ -18252,11 +18636,19 @@ set hass(hass) {
     this.temperature = this.config.temp ? hass.states[this.config.temp].state : this.weather.attributes.temperature;
     this.humidity = this.config.humid ? hass.states[this.config.humid].state : this.weather.attributes.humidity;
     this.pressure = this.config.press ? hass.states[this.config.press].state : this.weather.attributes.pressure;
-    this.uv_index = this.config.uv ? hass.states[this.config.uv].state : this.weather.attributes.uv_index;
+    this.uv_index = this.config.show_uv === false
+      ? undefined
+      : (this.config.uv ? hass.states[this.config.uv].state : this.weather.attributes.uv_index);
     this.windSpeed = this.config.windspeed ? hass.states[this.config.windspeed].state : this.weather.attributes.wind_speed;
     this.dew_point = this.config.dew_point ? hass.states[this.config.dew_point].state : this.weather.attributes.dew_point;
     this.wind_gust_speed = this.config.wind_gust_speed ? hass.states[this.config.wind_gust_speed].state : this.weather.attributes.wind_gust_speed;
-    this.visibility = this.config.visibility_entity ? hass.states[this.config.visibility_entity].state : this.weather.attributes.visibility;
+    if (this.config.visibility && hass.states[this.config.visibility]) {
+      this.visibility = hass.states[this.config.visibility].state;
+      this.visibilitySourceUnit = hass.states[this.config.visibility].attributes.unit_of_measurement || this.weather.attributes.visibility_unit;
+    } else {
+      this.visibility = this.weather.attributes.visibility;
+      this.visibilitySourceUnit = this.weather.attributes.visibility_unit;
+    }
 
     if (this.config.winddir && hass.states[this.config.winddir] && hass.states[this.config.winddir].state !== undefined) {
       this.windDirection = parseFloat(hass.states[this.config.winddir].state);
@@ -18295,7 +18687,7 @@ subscribeForecastEvents() {
     entity_id: this.config.entity,
   });
 
-  if (this.supportsFeature(WeatherEntityFeature.FORECAST_DAILY)) {
+  if (!this.dailyForecastSubscriber && this.supportsFeature(WeatherEntityFeature.FORECAST_DAILY)) {
     this.dailyForecastSubscriber = this._hass.connection.subscribeMessage(
       (event) => {
         this.dailyForecasts = event.forecast;
@@ -18310,8 +18702,59 @@ subscribeForecastEvents() {
   }
 }
 
+handleForecastTypeToggle() {
+  // Toggle between daily and hourly
+  const currentType = this.config.forecast.type || 'daily';
+  const newType = currentType === 'daily' ? 'hourly' : 'daily';
+  
+  // Check if the new type is supported
+  const feature = newType === 'hourly' ? WeatherEntityFeature.FORECAST_HOURLY : WeatherEntityFeature.FORECAST_DAILY;
+  if (!this.supportsFeature(feature)) {
+    console.warn(`Weather entity "${this.config.entity}" does not support ${newType} forecasts.`);
+    return;
+  }
+  
+  // Update config
+  this.config = {
+    ...this.config,
+    forecast: {
+      ...this.config.forecast,
+      type: newType
+    }
+  };
+  
+  // Unsubscribe from old forecast
+  if (this.forecastSubscriber) {
+    this.forecastSubscriber.then((unsub) => unsub());
+    this.forecastSubscriber = null;
+  }
+  
+  // Subscribe to new forecast type
+  this.subscribeForecastEvents();
+  
+  // Request update to re-render
+  this.requestUpdate();
+
+  // Restart animated icon SVG animations after re-render
+  this.updateComplete.then(() => {
+    const icons = this.shadowRoot.querySelectorAll('img[src$=".svg"]');
+    icons.forEach((img) => {
+      const src = img.src;
+      img.src = '';
+      img.src = src;
+    });
+  });
+}
+
   supportsFeature(feature) {
     return (this.weather.attributes.supported_features & feature) !== 0;
+  }
+
+  get _canAutoRotate() {
+    const interval = this.config && this.config.forecast ? parseInt(this.config.forecast.auto_rotate, 10) : 0;
+    return interval > 0 && this.weather
+      && this.supportsFeature(WeatherEntityFeature.FORECAST_DAILY)
+      && this.supportsFeature(WeatherEntityFeature.FORECAST_HOURLY);
   }
 
   constructor() {
@@ -18327,6 +18770,35 @@ subscribeForecastEvents() {
     if (!this.resizeInitialized) {
       this.delayedAttachResizeObserver();
     }
+    this.startAutoRotate();
+  }
+
+  startAutoRotate() {
+    this.stopAutoRotate();
+    const interval = this.config && this.config.forecast ? parseInt(this.config.forecast.auto_rotate, 10) : 0;
+    if (!interval || interval < 1 || interval > 60) return;
+    // Only rotate if the entity supports both daily and hourly forecasts
+    if (!this.weather || !this.supportsFeature(WeatherEntityFeature.FORECAST_DAILY) || !this.supportsFeature(WeatherEntityFeature.FORECAST_HOURLY)) return;
+    // Align to the next whole minute, then start the interval
+    const now = new Date();
+    const msUntilNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+    this.autoRotateTimeout = setTimeout(() => {
+      this.handleForecastTypeToggle();
+      this.autoRotateInterval = setInterval(() => {
+        this.handleForecastTypeToggle();
+      }, interval * 60 * 1000);
+    }, msUntilNextMinute);
+  }
+
+  stopAutoRotate() {
+    if (this.autoRotateTimeout) {
+      clearTimeout(this.autoRotateTimeout);
+      this.autoRotateTimeout = null;
+    }
+    if (this.autoRotateInterval) {
+      clearInterval(this.autoRotateInterval);
+      this.autoRotateInterval = null;
+    }
   }
 
   delayedAttachResizeObserver() {
@@ -18339,11 +18811,17 @@ subscribeForecastEvents() {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.detachResizeObserver();
+    this.stopAutoRotate();
     if (this.forecastSubscriber) {
       this.forecastSubscriber.then((unsub) => unsub());
     }
     if (this.dailyForecastSubscriber) {
       this.dailyForecastSubscriber.then((unsub) => unsub());
+      this.dailyForecastSubscriber = null;
+    }
+    if (this.clockInterval) {
+      clearInterval(this.clockInterval);
+      this.clockInterval = null;
     }
   }
 
@@ -18380,11 +18858,248 @@ measureCard() {
 ll(str) {
   const selectedLocale = this.config.locale || this.language || 'en';
 
-  if (locale[selectedLocale] === undefined) {
-    return locale.en[str];
+  // Try full locale first (e.g., 'ro-RO')
+  if (locale[selectedLocale] && locale[selectedLocale][str]) {
+    return locale[selectedLocale][str];
   }
 
-  return locale[selectedLocale][str];
+  // Fall back to language code (e.g., 'ro' from 'ro-RO')
+  const languageCode = selectedLocale.split('-')[0];
+  if (locale[languageCode] && locale[languageCode][str]) {
+    return locale[languageCode][str];
+  }
+
+  // Final fallback to English
+  return locale.en[str];
+}
+
+getTimezone() {
+  return this.config.timezone || (this._hass && this._hass.config && this._hass.config.time_zone) || Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
+/**
+ * Calculate sunrise and sunset times from coordinates using the standard algorithm.
+ * Returns UTC Date objects for sunrise and sunset on the given date.
+ * @param {Date} date
+ * @param {number} latitude
+ * @param {number} longitude
+ * @returns {{ sunrise: Date|null, sunset: Date|null }}
+ */
+calculateSunriseSunset(date, latitude, longitude) {
+  const toRad = d => d * Math.PI / 180;
+  const toDeg = r => r * 180 / Math.PI;
+
+  const startOfYear = Date.UTC(date.getUTCFullYear(), 0, 0);
+  const dayOfYear = Math.floor(
+    (Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()) - startOfYear) / 86400000
+  );
+
+  const zenith = 90.833;
+  const lngHour = longitude / 15;
+
+  const compute = (isSunrise) => {
+    const t = dayOfYear + ((isSunrise ? 6 : 18) - lngHour) / 24;
+    const M = (0.9856 * t) - 3.289;
+    let L = M + 1.916 * Math.sin(toRad(M)) + 0.020 * Math.sin(toRad(2 * M)) + 282.634;
+    L = ((L % 360) + 360) % 360;
+    let RA = toDeg(Math.atan(0.91764 * Math.tan(toRad(L))));
+    RA = ((RA % 360) + 360) % 360;
+    const Lq = Math.floor(L / 90) * 90;
+    const RAq = Math.floor(RA / 90) * 90;
+    RA = (RA + Lq - RAq) / 15;
+    const sinDec = 0.39782 * Math.sin(toRad(L));
+    const cosDec = Math.cos(Math.asin(sinDec));
+    const cosH = (Math.cos(toRad(zenith)) - sinDec * Math.sin(toRad(latitude))) /
+                 (cosDec * Math.cos(toRad(latitude)));
+    if (cosH > 1 || cosH < -1) return null; // polar day or night
+    const H = isSunrise ? 360 - toDeg(Math.acos(cosH)) : toDeg(Math.acos(cosH));
+    let UT = (H / 15 + RA - 0.06571 * t - 6.622) - lngHour;
+    UT = ((UT % 24) + 24) % 24;
+    const hours = Math.floor(UT);
+    const minutes = Math.round((UT - hours) * 60);
+    return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), hours, minutes, 0));
+  };
+
+  return { sunrise: compute(true), sunset: compute(false) };
+}
+
+/**
+ * Get locale data with fallback logic
+ * @param {string} key - 'days' or 'months'
+ * @returns {Array|null} - locale array or null if not found
+ */
+getLocaleArray(key) {
+  const selectedLocale = this.config.locale || this.language || 'en';
+  
+  // Try full locale first (e.g., 'ro-RO')
+  if (locale[selectedLocale] && locale[selectedLocale][key] && locale[selectedLocale][key].length) {
+    return locale[selectedLocale][key];
+  }
+  
+  // Try language code (e.g., 'ro' from 'ro-RO')
+  const languageCode = selectedLocale.split('-')[0];
+  if (locale[languageCode] && locale[languageCode][key] && locale[languageCode][key].length) {
+    return locale[languageCode][key];
+  }
+  
+  // English fallback with safety check
+  if (locale.en && locale.en[key] && locale.en[key].length) {
+    return locale.en[key];
+  }
+  
+  // Ultimate fallback: return null if nothing works
+  return null;
+}
+
+formatLocalizedShortDateLabel(label, locale) {
+  const normalizedLabel = label.replace(/[.\s]+$/u, '');
+  if (!WeatherChartCard.LATIN_SCRIPT_REGEX.test(normalizedLabel)) return normalizedLabel;
+  try {
+    return normalizedLabel.toLocaleUpperCase(locale);
+  } catch (e) {
+    return normalizedLabel.toUpperCase();
+  }
+}
+
+getLocalizedDayName(date, timezone) {
+  const dayIndex = date.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  
+  // Priority 1: Browser Intl localized short weekday name
+  try {
+    const selectedLocale = this.config.locale || this.language || 'en';
+    const dayFormatter = new Intl.DateTimeFormat(selectedLocale, {
+      weekday: 'short',
+      timeZone: timezone
+    });
+    const formatted = dayFormatter.format(date);
+    if (formatted && formatted.length > 0) {
+      return this.formatLocalizedShortDateLabel(formatted, selectedLocale);
+    }
+  } catch (e) {
+    // Intl failed, continue to translation-array fallback
+  }
+
+  // Priority 2: Try full day translation array from locale.js
+  const days = this.getLocaleArray('days');
+  if (days && days[dayIndex] && typeof days[dayIndex] === 'string' && days[dayIndex].length > 0) {
+    const dayName = days[dayIndex].substring(0, 3);
+    return this.formatLocalizedShortDateLabel(dayName, this.config.locale || this.language || 'en');
+  }
+  
+  // Priority 3: Hardcoded English fallback
+  const englishDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return englishDays[dayIndex].substring(0, 3).toUpperCase();
+}
+
+/**
+ * Get localized day name (full)
+ */
+getLocalizedDayNameFull(date, timezone) {
+  const dayIndex = date.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  
+  // Priority 1: Try translation array from locale.js
+  const days = this.getLocaleArray('days');
+  if (days && days[dayIndex] && typeof days[dayIndex] === 'string' && days[dayIndex].length > 0) {
+    return days[dayIndex];
+  }
+  
+  // Priority 2: Browser Intl fallback
+  try {
+    const selectedLocale = this.config.locale || this.language || 'en';
+    const dayFormatter = new Intl.DateTimeFormat(selectedLocale, {
+      weekday: 'long',
+      timeZone: timezone
+    });
+    const formatted = dayFormatter.format(date);
+    if (formatted && formatted.length > 0) {
+      return formatted;
+    }
+  } catch (e) {
+    // Intl failed, continue to ultimate fallback
+  }
+  
+  // Priority 3: Hardcoded English fallback
+  const englishDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return englishDays[dayIndex];
+}
+
+/**
+ * Get localized day number
+ */
+getLocalizedDayNumber(date, locale, timezone) {
+  try {
+    return date.toLocaleString(locale, { day: 'numeric', timeZone: timezone });
+  } catch (error) {
+    return date.getDate().toString();
+  }
+}
+
+/**
+ * Get localized month name (full)
+ */
+getLocalizedMonthName(date, timezone) {
+  const monthIndex = date.getMonth(); // 0 = January, 1 = February, etc.
+  
+  // Priority 1: Try translation array from locale.js
+  const months = this.getLocaleArray('months');
+  if (months && months[monthIndex] && typeof months[monthIndex] === 'string' && months[monthIndex].length > 0) {
+    return months[monthIndex].charAt(0).toUpperCase() + months[monthIndex].slice(1);
+  }
+  
+  // Priority 2: Browser Intl fallback
+  try {
+    const selectedLocale = this.config.locale || this.language || 'en';
+    const monthFormatter = new Intl.DateTimeFormat(selectedLocale, {
+      month: 'long',
+      timeZone: timezone
+    });
+    const formatted = monthFormatter.format(date);
+    if (formatted && formatted.length > 0) {
+      return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+    }
+  } catch (e) {
+    // Intl failed, continue to ultimate fallback
+  }
+  
+  // Priority 3: Hardcoded English fallback
+  const englishMonths = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+  return englishMonths[monthIndex].charAt(0).toUpperCase() + englishMonths[monthIndex].slice(1);
+}
+
+/**
+ * Get localized month name (short - 3 letters uppercase)
+ */
+getLocalizedMonthNameShort(date, timezone) {
+  const monthIndex = date.getMonth(); // 0 = January, 1 = February, etc.
+  
+  // Priority 1: Try translation array from locale.js
+  const months = this.getLocaleArray('months');
+  if (months && months[monthIndex] && typeof months[monthIndex] === 'string' && months[monthIndex].length > 0) {
+    const monthName = months[monthIndex].substring(0, 3);
+    // Only uppercase for Latin-script languages
+    return WeatherChartCard.LATIN_SCRIPT_REGEX.test(monthName) ? monthName.toUpperCase() : monthName;
+  }
+  
+  // Priority 2: Browser Intl fallback
+  try {
+    const selectedLocale = this.config.locale || this.language || 'en';
+    const monthFormatter = new Intl.DateTimeFormat(selectedLocale, {
+      month: 'long',
+      timeZone: timezone
+    });
+    const formatted = monthFormatter.format(date);
+    if (formatted && formatted.length > 0) {
+      const monthName = formatted.substring(0, 3);
+      // Only uppercase for Latin-script languages
+      return WeatherChartCard.LATIN_SCRIPT_REGEX.test(monthName) ? monthName.toUpperCase() : monthName;
+    }
+  } catch (e) {
+    // Intl failed, continue to ultimate fallback
+  }
+  
+  // Priority 3: Hardcoded English fallback
+  const englishMonths = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+  return englishMonths[monthIndex].substring(0, 3).toUpperCase();
 }
 
   getCardSize() {
@@ -18404,6 +19119,58 @@ ll(str) {
       return `${this.config.icons}${iconName}.svg`;
     }
     return weatherIcons[condition];
+  }
+
+  /**
+   * Get local icon path - tries different common paths for HACS/manual installation
+   */
+  getLocalIconPath() {
+    // Get the card's script URL to determine installation path
+    const scripts = document.querySelectorAll('script[src*="weather-chart-card"]');
+    if (scripts.length > 0) {
+      const scriptSrc = scripts[scripts.length - 1].src;
+      const basePath = scriptSrc.substring(0, scriptSrc.lastIndexOf('/'));
+      return `${basePath}/icons/`;
+    }
+    // Fallback paths for common installations
+    return '/hacsfiles/weather-chart-card-ha/icons/';
+  }
+
+  /**
+   * Handle icon loading error - fallback to local icons or MDI icons
+   */
+  handleIconError(event, condition, sun) {
+    const img = event.target;
+    const currentSrc = img.src;
+    
+    // If already tried local bundled icons, try custom path if configured
+    if (img.dataset.fallbackAttempted === 'bundled') {
+      if (this.config.icons && !currentSrc.includes(this.config.icons)) {
+        img.dataset.fallbackAttempted = 'custom';
+        const iconName = sun === 'below_horizon' ? weatherIconsNight[condition] : weatherIconsDay[condition];
+        img.src = `${this.config.icons}${iconName}.svg`;
+        return;
+      }
+      img.dataset.fallbackAttempted = 'final';
+    }
+    
+    // If all fallbacks failed, use MDI icon
+    if (img.dataset.fallbackAttempted === 'custom' || img.dataset.fallbackAttempted === 'final') {
+      // Replace img with ha-icon
+      const haIcon = document.createElement('ha-icon');
+      haIcon.setAttribute('icon', weatherIcons[condition]);
+      haIcon.style.cssText = img.style.cssText;
+      img.parentNode.replaceChild(haIcon, img);
+      return;
+    }
+    
+    // First fallback: try local bundled icons
+    if (!img.dataset.fallbackAttempted) {
+      img.dataset.fallbackAttempted = 'bundled';
+      const iconName = sun === 'below_horizon' ? weatherIconsNight[condition] : weatherIconsDay[condition];
+      const localPath = this.getLocalIconPath();
+      img.src = `${localPath}${iconName}.svg`;
+    }
   }
 
 getWindDirIcon(deg) {
@@ -18462,18 +19229,19 @@ getWindDir(deg) {
   }
 }
 
-calculateBeaufortScale(windSpeed) {
+calculateBeaufortScale(windSpeed, sourceUnit = this.weather && this.weather.attributes && this.weather.attributes.wind_speed_unit) {
   const unitConversion = {
     'km/h': 1,
     'm/s': 3.6,
     'mph': 1.60934,
+    'kn': 1.852,
   };
 
-  if (!this.weather || !this.weather.attributes.wind_speed_unit) {
+  if (!sourceUnit) {
     throw new Error('wind_speed_unit not available in weather attributes.');
   }
 
-  const wind_speed_unit = this.weather.attributes.wind_speed_unit;
+  const wind_speed_unit = sourceUnit;
   const conversionFactor = unitConversion[wind_speed_unit];
 
   if (typeof conversionFactor !== 'number') {
@@ -18495,6 +19263,160 @@ calculateBeaufortScale(windSpeed) {
   else if (windSpeedInKmPerHour < 103) return 10;
   else if (windSpeedInKmPerHour < 118) return 11;
   else return 12;
+}
+
+convertWindSpeed(windSpeed, targetUnit = this.unitSpeed, sourceUnit = this.weather && this.weather.attributes && this.weather.attributes.wind_speed_unit) {
+  const numericWindSpeed = Number(windSpeed);
+
+  if (!Number.isFinite(numericWindSpeed)) {
+    return windSpeed;
+  }
+
+  if (!targetUnit || !sourceUnit || targetUnit === sourceUnit) {
+    return Math.round(numericWindSpeed);
+  }
+
+  if (targetUnit === 'Bft') {
+    return this.calculateBeaufortScale(numericWindSpeed, sourceUnit);
+  }
+
+  const sourceToMetersPerSecond = {
+    'm/s': 1,
+    'km/h': 1 / 3.6,
+    'mph': 0.44704,
+    'kn': 0.514444,
+  };
+
+  const metersPerSecondToTarget = {
+    'm/s': 1,
+    'km/h': 3.6,
+    'mph': 2.2369362920544,
+    'kn': 1.9438444924406,
+  };
+
+  const toMetersPerSecond = sourceToMetersPerSecond[sourceUnit];
+  const fromMetersPerSecond = metersPerSecondToTarget[targetUnit];
+
+  if (!toMetersPerSecond || !fromMetersPerSecond) {
+    return Math.round(numericWindSpeed);
+  }
+
+  return Math.round(numericWindSpeed * toMetersPerSecond * fromMetersPerSecond);
+}
+
+convertTemperature(temp, fromUnit, toUnit) {
+  if (!toUnit || fromUnit === toUnit) return temp;
+  
+  if (toUnit === '°C' && fromUnit === '°F') {
+    return (temp - 32) * 5/9;
+  } else if (toUnit === '°F' && fromUnit === '°C') {
+    return (temp * 9/5) + 32;
+  }
+  
+  return temp;
+}
+
+normalizePrecipitationUnit(unit) {
+  if (!unit) {
+    return null;
+  }
+
+  const normalized = String(unit).trim().toLowerCase();
+  const aliases = {
+    'mm': 'mm',
+    'millimeter': 'mm',
+    'millimeters': 'mm',
+    'millimetre': 'mm',
+    'millimetres': 'mm',
+    'cm': 'cm',
+    'centimeter': 'cm',
+    'centimeters': 'cm',
+    'centimetre': 'cm',
+    'centimetres': 'cm',
+    'in': 'in',
+    'inch': 'in',
+    'inches': 'in',
+    'l/m2': 'l/m2',
+    'l/m²': 'l/m2',
+    'liter/m2': 'l/m2',
+    'liters/m2': 'l/m2',
+    'litre/m2': 'l/m2',
+    'litres/m2': 'l/m2',
+    'kg/m2': 'kg/m2',
+    'kg/m²': 'kg/m2',
+  };
+
+  return aliases[normalized] || normalized;
+}
+
+getSourcePrecipitationUnit() {
+  const attrUnit = this.weather && this.weather.attributes ? this.weather.attributes.precipitation_unit : null;
+  const normalizedAttrUnit = this.normalizePrecipitationUnit(attrUnit);
+  if (normalizedAttrUnit) {
+    return normalizedAttrUnit;
+  }
+
+  const lengthUnit = this._hass && this._hass.config && this._hass.config.unit_system
+    ? this._hass.config.unit_system.length
+    : null;
+  return lengthUnit === 'km' ? 'mm' : 'in';
+}
+
+getDisplayPrecipitationUnit(sourceUnit = this.getSourcePrecipitationUnit()) {
+  const configuredUnit = this.config && this.config.units ? this.config.units.precipitation : null;
+  const normalizedConfiguredUnit = this.normalizePrecipitationUnit(configuredUnit);
+  return normalizedConfiguredUnit || sourceUnit;
+}
+
+convertPrecipitation(value, fromUnit, toUnit) {
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue)) {
+    return value;
+  }
+
+  const normalizedFrom = this.normalizePrecipitationUnit(fromUnit);
+  const normalizedTo = this.normalizePrecipitationUnit(toUnit);
+
+  if (!normalizedFrom || !normalizedTo || normalizedFrom === normalizedTo) {
+    return numericValue;
+  }
+
+  const toMillimeters = {
+    'mm': 1,
+    'cm': 10,
+    'in': 25.4,
+    'l/m2': 1,
+    'kg/m2': 1,
+  };
+
+  const fromFactor = toMillimeters[normalizedFrom];
+  const toFactor = toMillimeters[normalizedTo];
+
+  if (!fromFactor || !toFactor) {
+    return numericValue;
+  }
+
+  return numericValue * fromFactor / toFactor;
+}
+
+convertVisibility(value, fromUnit, toUnit) {
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue)) {
+    return value;
+  }
+  if (!fromUnit || !toUnit || fromUnit === toUnit) {
+    return numericValue;
+  }
+  // Normalize to meters first
+  const toMeters = { 'm': 1, 'km': 1000, 'mi': 1609.344, 'yd': 0.9144, 'ft': 0.3048 };
+  const fromFactor = toMeters[fromUnit];
+  const toFactor = toMeters[toUnit];
+  if (!fromFactor || !toFactor) {
+    return numericValue;
+  }
+  const result = numericValue * fromFactor / toFactor;
+  // Round to 1 decimal place; drop the decimal if the result is a whole number
+  return Math.round(result * 10) / 10;
 }
 
 async firstUpdated(changedProperties) {
@@ -18562,7 +19484,7 @@ autoscroll() {
     this.autoscrollTimeout = setTimeout(() => {
       this.autoscrollTimeout = null;
       this.updateChart();
-      drawChartOncePerHour();
+      updateChartOncePerHour();
     }, nextHour - now);
   };
 
@@ -18572,10 +19494,151 @@ autoscroll() {
 cancelAutoscroll() {
   if (this.autoscrollTimeout) {
     clearTimeout(this.autoscrollTimeout);
+    this.autoscrollTimeout = null;
   }
 }
 
+getTemperatureColor(temp, unit) {
+  return this.getTemperatureColorWithRange(temp, unit, null);
+}
+
+getTemperatureColorWithRange(temp, unit, rangeC) {
+  // Convert to Celsius for consistent thresholds
+  let tempC = temp;
+  if (unit === '°F') {
+    tempC = (temp - 32) * 5/9;
+  }
+
+  if (rangeC && Number.isFinite(rangeC.min) && Number.isFinite(rangeC.max) && rangeC.max > rangeC.min) {
+    const palette = [
+      { stop: 0.0, rgb: [30, 136, 229] },
+      { stop: 0.25, rgb: [129, 212, 250] },
+      { stop: 0.5, rgb: [129, 199, 132] },
+      { stop: 0.68, rgb: [255, 241, 118] },
+      { stop: 0.84, rgb: [255, 167, 38] },
+      { stop: 1.0, rgb: [244, 67, 54] },
+    ];
+
+    const normalized = Math.max(0, Math.min(1, (tempC - rangeC.min) / (rangeC.max - rangeC.min)));
+
+    for (let i = 0; i < palette.length - 1; i++) {
+      const start = palette[i];
+      const end = palette[i + 1];
+      if (normalized >= start.stop && normalized <= end.stop) {
+        const localT = (normalized - start.stop) / (end.stop - start.stop || 1);
+        const r = Math.round(start.rgb[0] + (end.rgb[0] - start.rgb[0]) * localT);
+        const g = Math.round(start.rgb[1] + (end.rgb[1] - start.rgb[1]) * localT);
+        const b = Math.round(start.rgb[2] + (end.rgb[2] - start.rgb[2]) * localT);
+        return `rgba(${r}, ${g}, ${b}, 1.0)`;
+      }
+    }
+  }
+  
+  // 6-level color spectrum
+  if (tempC < 5) {
+    return 'rgba(30, 136, 229, 1.0)';   // Cold - Dark Blue
+  } else if (tempC < 15) {
+    return 'rgba(129, 212, 250, 1.0)';  // Cool - Light Blue
+  } else if (tempC < 22) {
+    return 'rgba(129, 199, 132, 1.0)';  // Comfortable - Green
+  } else if (tempC < 26) {
+    return 'rgba(255, 241, 118, 1.0)';  // Pleasant/Warm - Yellow
+  } else if (tempC < 32) {
+    return 'rgba(255, 167, 38, 1.0)';   // Hot - Orange
+  } else {
+    return 'rgba(244, 67, 54, 1.0)';    // Very Hot - Red
+  }
+}
+
+getGradientPresetRangeC(preset = 'temperate') {
+  const presetRanges = {
+    temperate: { min: -10, max: 35 },
+    continental: { min: -30, max: 35 },
+    subarctic: { min: -45, max: 20 },
+    polar: { min: -55, max: 10 },
+    hot_arid: { min: 0, max: 50 },
+  };
+
+  return presetRanges[preset] || presetRanges.temperate;
+}
+
+getAdaptiveTemperatureRangeC(data, unit) {
+  const values = (data || [])
+    .map((value) => {
+      if (!Number.isFinite(value)) {
+        return null;
+      }
+      return unit === '°F' ? ((value - 32) * 5 / 9) : value;
+    })
+    .filter((value) => value !== null)
+    .sort((a, b) => a - b);
+
+  if (values.length < 4) {
+    return null;
+  }
+
+  const low = values[Math.floor((values.length - 1) * 0.1)];
+  const high = values[Math.ceil((values.length - 1) * 0.9)];
+  let min = low;
+  let max = high;
+
+  if (max - min < 8) {
+    const center = (min + max) / 2;
+    min = center - 4;
+    max = center + 4;
+  }
+
+  const padding = Math.max(1.5, (max - min) * 0.1);
+  min = Math.max(-60, min - padding);
+  max = Math.min(55, max + padding);
+
+  if (max - min < 2) {
+    return null;
+  }
+
+  return { min, max };
+}
+
+getTemperatureRangeC(data, unit) {
+  const forecastConfig = (this.config && this.config.forecast) ? this.config.forecast : {};
+  const gradientMode = forecastConfig.gradient_mode || 'classic';
+  const gradientPreset = forecastConfig.gradient_preset || 'temperate';
+
+  if (gradientMode === 'climate_preset') {
+    return this.getGradientPresetRangeC(gradientPreset);
+  }
+
+  if (gradientMode === 'adaptive') {
+    const adaptiveRange = this.getAdaptiveTemperatureRangeC(data, unit);
+    if (adaptiveRange) {
+      return adaptiveRange;
+    }
+    return this.getGradientPresetRangeC(gradientPreset);
+  }
+
+  return null;
+}
+
+createTemperatureGradient(data, unit, ctx, chartArea, rangeC = null) {
+  if (!chartArea) {
+    return null;
+  }
+  
+  const gradient = ctx.createLinearGradient(chartArea.left, 0, chartArea.right, 0);
+  const dataLength = data.length;
+  
+  for (let i = 0; i < dataLength; i++) {
+    const position = i / (dataLength - 1);
+    const color = this.getTemperatureColorWithRange(data[i], unit, rangeC);
+    gradient.addColorStop(position, color);
+  }
+  
+  return gradient;
+}
+
 drawChart({ config, language, weather, forecastItems } = this) {
+  const self = this; // Capture component instance for use in Chart.js callbacks
+  
   if (!this.forecasts || !this.forecasts.length) {
     return [];
   }
@@ -18589,14 +19652,30 @@ drawChart({ config, language, weather, forecastItems } = this) {
   if (this.forecastChart) {
     this.forecastChart.destroy();
   }
-  var tempUnit = this._hass.config.unit_system.temperature;
+  var tempUnit = this.unitTemperature || this._hass.config.unit_system.temperature;
   var lengthUnit = this._hass.config.unit_system.length;
-  //if (config.forecast.precipitation_type === 'probability') {
-  //  var precipUnit = '%';
-  //} else {
-    var precipUnit = lengthUnit === 'km' ? this.ll('units')['mm'] : this.ll('units')['in'];
-  //}
+  const sourcePrecipUnit = this.getSourcePrecipitationUnit();
+  const displayPrecipUnit = this.getDisplayPrecipitationUnit(sourcePrecipUnit);
+  if (config.forecast.precipitation_type === 'probability') {
+    var precipUnit = '%';
+  } else {
+    var precipUnit = this.ll('units')[displayPrecipUnit] || displayPrecipUnit;
+  }
+  const formatPrecipitationValue = (rawValue) => {
+    const numericValue = Number(rawValue);
+    if (!Number.isFinite(numericValue)) {
+      return rawValue;
+    }
+
+    if (config.forecast.precipitation_type !== 'rainfall') {
+      return numericValue;
+    }
+
+    const convertedValue = this.convertPrecipitation(numericValue, sourcePrecipUnit, displayPrecipUnit);
+    return Number.isFinite(convertedValue) ? convertedValue : numericValue;
+  };
   const data = this.computeForecastData();
+  const tempColorRange = this.getTemperatureRangeC(data.tempHigh, tempUnit);
 
   var style = getComputedStyle(document.body);
   var backgroundColor = style.getPropertyValue('--card-background-color');
@@ -18636,14 +19715,37 @@ drawChart({ config, language, weather, forecastItems } = this) {
       type: 'line',
       data: data.tempHigh,
       yAxisID: 'TempAxis',
-      borderColor: config.forecast.temperature1_color,
-      backgroundColor: config.forecast.temperature1_color,
+      borderColor: config.forecast.use_color_thresholds 
+        ? (context) => {
+            if (context.chart.chartArea) {
+              return this.createTemperatureGradient(data.tempHigh, tempUnit, context.chart.ctx, context.chart.chartArea, tempColorRange);
+            }
+            return config.forecast.temperature1_color;
+          }
+        : config.forecast.temperature1_color,
+      backgroundColor: config.forecast.use_color_thresholds
+        ? (context) => {
+            if (context.chart.chartArea) {
+              return this.createTemperatureGradient(data.tempHigh, tempUnit, context.chart.ctx, context.chart.chartArea, tempColorRange);
+            }
+            return config.forecast.temperature1_color;
+          }
+        : config.forecast.temperature1_color,
+      segment: {
+        borderColor: config.forecast.use_color_thresholds
+          ? (ctx) => {
+              const temp = ctx.p1.parsed.y;
+              return this.getTemperatureColorWithRange(temp, tempUnit, tempColorRange);
+            }
+          : undefined,
+      },
     },
     {
       label: this.ll('tempLo'),
       type: 'line',
       data: data.tempLow,
       yAxisID: 'TempAxis',
+      borderDash: [5, 5],
       borderColor: config.forecast.temperature2_color,
       backgroundColor: config.forecast.temperature2_color,
     },
@@ -18658,26 +19760,30 @@ drawChart({ config, language, weather, forecastItems } = this) {
       categoryPercentage: 1.0,
       datalabels: {
         display: function (context) {
-          //return context.dataset.data[context.dataIndex] > 0 ? 'true' : false;
-          return context.dataset.data[context.dataIndex] > 0 && (config.forecast.show_rainfall || config.forecast.show_probability) ? 'true' : false;
+          return context.dataset.data[context.dataIndex] > 0 ? 'true' : false;
         },
       formatter: function (value, context) {
-        const rainfall = data.forecast[context.dataIndex].precipitation;
+        const precipitationType = config.forecast.precipitation_type;
+
+        const rainfallRaw = context.dataset.data[context.dataIndex];
+        const rainfall = formatPrecipitationValue(rainfallRaw);
         const probability = data.forecast[context.dataIndex].precipitation_probability;
 
-        let formattedValue = [];
-        if (config.forecast.show_rainfall) {
-          formattedValue.push(`${rainfall > 9 ? Math.round(rainfall) : rainfall.toFixed(1)} ${precipUnit}`);
+        let formattedValue;
+        if (precipitationType === 'rainfall') {
+          if (probability !== undefined && probability !== null && config.forecast.show_probability) {
+	    formattedValue = `${rainfall > 9 ? Math.round(rainfall) : rainfall.toFixed(1)} ${precipUnit}\n${Math.round(probability)}%`;
+          } else {
+            formattedValue = `${rainfall > 9 ? Math.round(rainfall) : rainfall.toFixed(1)} ${precipUnit}`;
+          }
+        } else {
+          formattedValue = `${rainfall > 9 ? Math.round(rainfall) : rainfall.toFixed(1)} ${precipUnit}`;
         }
-        if (probability !== undefined && probability !== null && config.forecast.show_probability) {
-          formattedValue.push(`${Math.round(probability)}%`);
-        }
-        return formattedValue.join('\n\n');
-        },
-        font: {
-          size: config.forecast.precip_labels_font_size,
-          lineHeight: 0.7,
-        },
+
+        formattedValue = formattedValue.replace('\n', '\n\n');
+
+        return formattedValue;
+      },
         textAlign: 'center',
         textBaseline: 'middle',
         align: 'top',
@@ -18701,7 +19807,9 @@ drawChart({ config, language, weather, forecastItems } = this) {
       anchor: 'center',
       backgroundColor: 'transparent',
       borderColor: 'transparent',
-      color: chart_text_color || config.forecast.temperature1_color,
+      color: config.forecast.use_color_thresholds
+        ? (context) => this.getTemperatureColorWithRange(context.dataset.data[context.dataIndex], tempUnit, tempColorRange)
+        : (chart_text_color || config.forecast.temperature1_color),
       font: {
         size: parseInt(config.forecast.labels_font_size) + 1,
         lineHeight: 0.7,
@@ -18758,27 +19866,39 @@ drawChart({ config, language, weather, forecastItems } = this) {
               callback: function (value, index, values) {
                   var datetime = this.getLabelForValue(value);
                   var dateObj = new Date(datetime);
-
+                  var timezone = config.timezone || (self._hass && self._hass.config && self._hass.config.time_zone) || Intl.DateTimeFormat().resolvedOptions().timeZone;
+                  var locale = config.locale || undefined;
+        
                   var timeFormatOptions = {
                       hour12: config.use_12hour_format,
                       hour: 'numeric',
                       ...(config.use_12hour_format ? {} : { minute: 'numeric' }),
+                      timeZone: timezone,
                   };
 
-                  var time = dateObj.toLocaleTimeString(language, timeFormatOptions);
+                  var time = dateObj.toLocaleTimeString(locale, timeFormatOptions);
 
-                  if (dateObj.getHours() === 0 && dateObj.getMinutes() === 0 && config.forecast.type === 'hourly') {
-                      var dateFormatOptions = {
-                          day: 'numeric',
-                          month: 'short',
-                      };
-                      var date = dateObj.toLocaleDateString(language, dateFormatOptions);
+                  // Get hours in the target timezone
+                  var tzHours = parseInt(new Intl.DateTimeFormat('en-US', { hour: 'numeric', hour12: false, timeZone: timezone }).format(dateObj));
+                  var tzMinutes = parseInt(new Intl.DateTimeFormat('en-US', { minute: 'numeric', timeZone: timezone }).format(dateObj));
+
+                  if (tzHours === 0 && tzMinutes === 0 && config.forecast.type === 'hourly') {
+                      var monthShort = self.getLocalizedMonthNameShort(dateObj, timezone);
+                      var dayNumber = self.getLocalizedDayNumber(dateObj, locale, timezone);
+                      var date = monthShort + ' ' + dayNumber;
                       time = time.replace('a.m.', 'AM').replace('p.m.', 'PM');
                       return [date, time];
                   }
 
                   if (config.forecast.type !== 'hourly') {
-                      var weekday = dateObj.toLocaleString(language, { weekday: 'short' }).toUpperCase();
+                      var weekday = self.getLocalizedDayName(dateObj, timezone);
+                      
+                      // Add date number if show_date_labels is enabled
+                      if (config.forecast.show_date_labels) {
+                          var dayNumber = self.getLocalizedDayNumber(dateObj, locale, timezone);
+                          return [weekday, dayNumber];  // Return as array for multi-line display
+                      }
+                      
                       return weekday;
                   }
 
@@ -18804,9 +19924,13 @@ drawChart({ config, language, weather, forecastItems } = this) {
         PrecipAxis: {
           position: 'right',
           suggestedMax: precipMax,
+          beginAtZero: true,
           grid: {
-            display: false,
+            display: true,
+            drawOnChartArea: true,
             drawTicks: false,
+            lineWidth: (context) => context.tick.value === 0 ? 1 : 0,
+            color: (context) => context.tick.value === 0 ? 'rgba(128, 128, 128, 0.2)' : 'transparent',
           },
           ticks: {
             display: false,
@@ -18820,7 +19944,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
         datalabels: {
           backgroundColor: backgroundColor,
           borderColor: context => context.dataset.backgroundColor,
-          borderRadius: config.forecast.style === 'style3' ? 8 : 0,
+          borderRadius: 0,
           borderWidth: 1.5,
           padding: config.forecast.precipitation_type === 'rainfall' && config.forecast.show_probability && config.forecast.type !== 'hourly' ? 3 : 4,
           color: chart_text_color || textColor,
@@ -18833,37 +19957,47 @@ drawChart({ config, language, weather, forecastItems } = this) {
           },
         },
         tooltip: {
-          enabled: config.forecast.disable_tooltips !== true,
           caretSize: 0,
           caretPadding: 15,
           callbacks: {
             title: function (TooltipItem) {
               var datetime = TooltipItem[0].label;
-              return new Date(datetime).toLocaleDateString(language, {
-                month: 'short',
-                day: 'numeric',
-                weekday: 'short',
+              var timezone = config.timezone || (self._hass && self._hass.config && self._hass.config.time_zone) || Intl.DateTimeFormat().resolvedOptions().timeZone;
+              var dateObj = new Date(datetime);
+              
+              var monthShort = self.getLocalizedMonthNameShort(dateObj, timezone);
+              var dayNumber = self.getLocalizedDayNumber(dateObj, config.locale, timezone);
+              var weekdayShort = self.getLocalizedDayName(dateObj, timezone);
+              
+              var timeFormatter = new Intl.DateTimeFormat(config.locale || 'en-US', {
                 hour: 'numeric',
                 minute: 'numeric',
                 hour12: config.use_12hour_format,
+                timeZone: timezone
               });
+              var timeStr = timeFormatter.format(dateObj);
+              
+              return weekdayShort + ', ' + monthShort + ' ' + dayNumber + ', ' + timeStr;
             },
-            label: function (context) {
-              var label = context.dataset.label;
-              var value = context.formattedValue;
-              var rainfall = data.forecast[context.dataIndex].precipitation;
-              var probability = data.forecast[context.dataIndex].precipitation_probability;
+    label: function (context) {
+      var label = context.dataset.label;
+      var value = context.formattedValue;
+      var probability = data.forecast[context.dataIndex].precipitation_probability;
+      var unit = context.datasetIndex === 2 ? precipUnit : tempUnit;
 
-              if (context.datasetIndex === 2) {
-                if (probability !== undefined && probability !== null) {
-                  return `${label}: ${rainfall} ${precipUnit} / ${Math.round(probability)}%`;
-                }
-                else {
-                  return `${label}: ${rainfall} ${precipUnit}`
-                }
-              } else {
-                return label + ': ' + value + ' ' + tempUnit;
-              }
+      if (config.forecast.precipitation_type === 'rainfall' && context.datasetIndex === 2) {
+        const rainfallRaw = context.dataset.data[context.dataIndex];
+        const rainfallDisplay = formatPrecipitationValue(rainfallRaw);
+        if (Number.isFinite(rainfallDisplay)) {
+          value = rainfallDisplay > 9 ? Math.round(rainfallDisplay) : rainfallDisplay.toFixed(1);
+        }
+      }
+
+      if (config.forecast.precipitation_type === 'rainfall' && context.datasetIndex === 2 && config.forecast.show_probability && probability !== undefined && probability !== null) {
+        return label + ': ' + value + ' ' + precipUnit + ' / ' + Math.round(probability) + '%';
+      } else {
+        return label + ': ' + value + ' ' + unit;
+      }
             },
           },
         },
@@ -18889,21 +20023,38 @@ computeForecastData({ config, forecastItems } = this) {
       }
     }
     dateTime.push(d.datetime);
-    tempHigh.push(d.temperature);
-    if (typeof d.templow !== 'undefined') {
-      tempLow.push(d.templow);
-    }
-
-    if (roundTemp) {
-      tempHigh[i] = Math.round(tempHigh[i]);
-      if (typeof d.templow !== 'undefined') {
-        tempLow[i] = Math.round(tempLow[i]);
+    
+    let highTemp = d.temperature;
+    let lowTemp = d.templow;
+    
+    // Convert temperatures if needed
+    if (this.unitTemperature && this.unitTemperature !== this.weather.attributes.temperature_unit) {
+      highTemp = this.convertTemperature(highTemp, this.weather.attributes.temperature_unit, this.unitTemperature);
+      if (typeof lowTemp !== 'undefined') {
+        lowTemp = this.convertTemperature(lowTemp, this.weather.attributes.temperature_unit, this.unitTemperature);
       }
     }
+    
+    // ALWAYS round temperatures for chart display (whether roundTemp is on or not)
+    highTemp = roundTemp ? Math.round(highTemp) : Math.round(highTemp * 10) / 10;
+    if (typeof lowTemp !== 'undefined') {
+      lowTemp = roundTemp ? Math.round(lowTemp) : Math.round(lowTemp * 10) / 10;
+    }
+    
+    tempHigh.push(highTemp);
+    if (typeof lowTemp !== 'undefined') {
+      tempLow.push(lowTemp);
+    }
+
     if (config.forecast.precipitation_type === 'probability') {
       precip.push(d.precipitation_probability);
     } else {
-      precip.push(d.precipitation);
+      const numericPrecipitation = Number(d.precipitation);
+      if (Number.isFinite(numericPrecipitation)) {
+        precip.push(Math.round(numericPrecipitation * 100) / 100);
+      } else {
+        precip.push(d.precipitation);
+      }
     }
   }
 
@@ -18955,6 +20106,10 @@ updateChart({ forecasts, forecastChart } = this) {
     }
     return x`
       <style>
+        ha-card {
+          ${config.title ? 'padding-bottom: 8px;' : ''}
+          overflow: hidden;
+        }
         ha-icon {
           color: var(--paper-item-icon-color);
         }
@@ -18969,12 +20124,45 @@ updateChart({ forecasts, forecastChart } = this) {
           padding-left: 16px;
         }
         .main {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: ${config.current_temp_size}px;
+          margin-bottom: 10px;
+          position: relative;
+        }
+        .main .weather-icon {
+          position: absolute;
+          left: 50%;
+          top: 10px;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+        }
+        .main .weather-icon ha-icon {
+          --mdc-icon-size: ${config.main_icon_size || 150}px;
+        }
+        .main .weather-icon img {
+          width: ${config.main_icon_size || 150}px;
+          height: ${config.main_icon_size || 150}px;
+        }
+        .main .temp-info {
+          display: flex;
+          flex-direction: column;
+          z-index: 2;
+        }
+        .main.main--with-forecast {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
           align-items: flex-start;
-          font-size: ${config.current_temp_size}px;
-          margin-bottom: 10px;
           gap: 16px;
+          position: static;
+        }
+        .main.main--with-forecast .weather-icon {
+          position: static;
+          left: auto;
+          top: auto;
+          transform: none;
+          z-index: auto;
         }
         .main-block {
           display: flex;
@@ -18998,26 +20186,7 @@ updateChart({ forecasts, forecastChart } = this) {
         .main-current {
           display: flex;
           align-items: center;
-        }
-        .main-weather-icon ha-icon {
-          --mdc-icon-size: 50px;
-          margin-right: 14px;
-          margin-inline-start: initial;
-          margin-inline-end: 14px;
-        }
-        .main-weather-icon img {
-          width: ${config.icons_size * 2}px;
-          height: ${config.icons_size * 2}px;
-          margin-right: 14px;
-          margin-inline-start: initial;
-          margin-inline-end: 14px;
-        }
-        .main-current div {
-          line-height: 0.9;
-        }
-        .main span {
-          font-size: 18px;
-          color: var(--secondary-text-color);
+          gap: 12px;
         }
         .main-forecast-item {
           display: flex;
@@ -19027,6 +20196,7 @@ updateChart({ forecasts, forecastChart } = this) {
         .main-forecast-body {
           display: flex;
           align-items: center;
+          gap: 12px;
           line-height: 0.9;
         }
         .main-forecast-content {
@@ -19039,10 +20209,36 @@ updateChart({ forecasts, forecastChart } = this) {
           font-size: 18px;
           color: var(--secondary-text-color);
         }
-        .main-forecast-feels-like {
-          font-size: 13px;
-          margin-top: 5px;
-          font-weight: 400;
+        .main .temp-info > div {
+          line-height: 1.2;
+        }
+        .main .current-temp {
+          font-size: ${config.current_temp_size}px;
+          font-weight: 300;
+        }
+        .main .current-condition {
+          font-size: 18px;
+          margin-top: 4px;
+        }
+        .current-time {
+          position: absolute;
+          top: ${config.title ? '24px' : '20px'};
+          right: 16px;
+          inset-inline-start: initial;
+          inset-inline-end: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          z-index: 1;
+          font-size: ${config.time_size}px;
+        }
+        .date-text {
+          font-size: ${config.day_date_size}px;
+          color: var(--secondary-text-color);
+        }
+        .main span {
+          font-size: 18px;
+          color: var(--secondary-text-color);
         }
         .attributes {
           display: flex;
@@ -19063,7 +20259,7 @@ updateChart({ forecasts, forecastChart } = this) {
           justify-content: space-around;
           align-items: center;
           margin: 0px 5px 0px 5px;
-          cursor: pointer;
+      	  cursor: pointer;
         }
         .forecast-item {
           display: flex;
@@ -19107,18 +20303,6 @@ updateChart({ forecasts, forecastChart } = this) {
           margin-inline-start: 1px;
           margin-inline-end: initial;
         }
-        .current-time {
-          position: absolute;
-          top: 20px;
-          right: 16px;
-          inset-inline-start: initial;
-          inset-inline-end: 16px;
-          font-size: ${config.time_size}px;
-        }
-        .date-text {
-          font-size: ${config.day_date_size}px;
-          color: var(--secondary-text-color);
-        }
         .main .feels-like {
           font-size: 13px;
           margin-top: 5px;
@@ -19136,10 +20320,31 @@ updateChart({ forecasts, forecastChart } = this) {
           font-weight: 300;
           margin-bottom: 1px;
         }
+        .forecast-toggle {
+          cursor: pointer;
+          background: var(--primary-color);
+          color: var(--text-primary-color);
+          border: none;
+          border-radius: 4px;
+          padding: 6px 10px;
+          font-size: 12px;
+          font-weight: 700;
+          opacity: 0.9;
+          transition: opacity 0.2s;
+          margin-top: 4px;
+        }
+        .forecast-toggle:hover {
+          opacity: 1;
+        }
+        .forecast-toggle:disabled {
+          cursor: default;
+          opacity: 0.7;
+        }
       </style>
 
       <ha-card header="${config.title}">
         <div class="card">
+          ${this.renderClock()}
           ${this.renderMain()}
           ${this.renderAttributes()}
           <div class="chart-container">
@@ -19157,116 +20362,121 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
   if (config.show_main === false)
     return x``;
 
-  const use12HourFormat = config.use_12hour_format;
-  const showTime = config.show_time;
-  const showDay = config.show_day;
-  const showDate = config.show_date;
+  config.use_12hour_format;
+  config.show_time;
+  config.show_day;
+  config.show_date;
   const showFeelsLike = config.show_feels_like;
   const showDescription = config.show_description;
   const showMainForecast = config.show_main_forecast === true;
   const showCurrentCondition = config.show_current_condition !== false;
   const showTemperature = config.show_temperature !== false;
-  const showSeconds = config.show_time_seconds === true;
+  config.show_time_seconds === true;
   const mainForecastDays = showMainForecast ? this.getMainForecastDays() : [];
 
   let roundedTemperature = parseFloat(temperature);
+  
+  // Temperature conversion
+  if (this.unitTemperature && this.unitTemperature !== this.weather.attributes.temperature_unit) {
+    roundedTemperature = this.convertTemperature(
+      roundedTemperature, 
+      this.weather.attributes.temperature_unit, 
+      this.unitTemperature
+    );
+  }
+  
   if (!isNaN(roundedTemperature) && roundedTemperature % 1 !== 0) {
     roundedTemperature = Math.round(roundedTemperature * 10) / 10;
   }
 
   let roundedFeelsLike = parseFloat(feels_like);
+  
+  // Feels like conversion
+  if (this.unitTemperature && this.unitTemperature !== this.weather.attributes.temperature_unit) {
+    roundedFeelsLike = this.convertTemperature(
+      roundedFeelsLike, 
+      this.weather.attributes.temperature_unit, 
+      this.unitTemperature
+    );
+  }
+  
   if (!isNaN(roundedFeelsLike) && roundedFeelsLike % 1 !== 0) {
     roundedFeelsLike = Math.round(roundedFeelsLike * 10) / 10;
   }
 
   const iconHtml = config.animated_icons || config.icons
-    ? x`<img src="${this.getWeatherIcon(weather.state, sun.state)}" alt="">`
+    ? x`<img src="${this.getWeatherIcon(weather.state, sun.state)}" 
+                 @error="${(e) => this.handleIconError(e, weather.state, sun.state)}" 
+                 alt="">`
     : x`<ha-icon icon="${this.getWeatherIcon(weather.state, sun.state)}"></ha-icon>`;
 
-  const updateClock = () => {
-    const currentDate = new Date();
-    const timeOptions = {
-      hour12: use12HourFormat,
-      hour: 'numeric',
-      minute: 'numeric',
-      second: showSeconds ? 'numeric' : undefined
-    };
-    const currentTime = currentDate.toLocaleTimeString(this.language, timeOptions);
-    const currentDayOfWeek = currentDate.toLocaleString(this.language, { weekday: 'long' }).toUpperCase();
-    const currentDateFormatted = currentDate.toLocaleDateString(this.language, { month: 'long', day: 'numeric' });
-
-    const mainDiv = this.shadowRoot.querySelector('.main');
-    if (mainDiv) {
-      const clockElement = mainDiv.querySelector('#digital-clock');
-      if (clockElement) {
-        clockElement.textContent = currentTime;
-      }
-      if (showDay) {
-        const dayElement = mainDiv.querySelector('.date-text.day');
-        if (dayElement) {
-          dayElement.textContent = currentDayOfWeek;
-        }
-      }
-      if (showDate) {
-        const dateElement = mainDiv.querySelector('.date-text.date');
-        if (dateElement) {
-          dateElement.textContent = currentDateFormatted;
-        }
-      }
-    }
-  };
-
-  updateClock();
-
-  if (showTime) {
-    setInterval(updateClock, 1000);
+  if (!showMainForecast) {
+    return x`
+      <div class="main">
+        <div class="temp-info">
+          <div class="current-temp">
+            ${showTemperature ? x`${roundedTemperature}<span>${this.unitTemperature || this.getUnit('temperature')}</span>` : ''}
+          </div>
+          ${showCurrentCondition ? x`
+            <div class="current-condition">
+              ${this.ll(weather.state)}
+            </div>
+          ` : ''}
+          ${showFeelsLike && roundedFeelsLike ? x`
+            <div class="feels-like">
+              ${this.ll('feelsLike')}
+              ${roundedFeelsLike}${this.unitTemperature || this.getUnit('temperature')}
+            </div>
+          ` : ''}
+          ${showDescription ? x`
+            <div class="description">
+              ${description}
+            </div>
+          ` : ''}
+        </div>
+        <div class="weather-icon">
+          ${iconHtml}
+        </div>
+      </div>
+    `;
   }
 
   return x`
-    <div class="main">
+    <div class="main main--with-forecast">
       <div class="main-block main-block--today">
         <div class="main-headline">${this.getMainDayLabel(0)}</div>
         <div class="main-current">
-          <div class="main-weather-icon">
-            ${iconHtml}
-          </div>
-          <div>
-            <div>
-              ${showTemperature ? x`${roundedTemperature}<span>${this.getUnit('temperature')}</span>` : ''}
-              ${showFeelsLike && roundedFeelsLike ? x`
-                <div class="feels-like">
-                  ${this.ll('feelsLike')}
-                  ${roundedFeelsLike}${this.getUnit('temperature')}
-                </div>
-              ` : ''}
-              ${showCurrentCondition ? x`
-                <div class="current-condition">
-                  <span>${this.ll(weather.state)}</span>
-                </div>
-              ` : ''}
-              ${showDescription ? x`
-                <div class="description">
-                  ${description}
-                </div>
-              ` : ''}
+          <div class="weather-icon">${iconHtml}</div>
+          <div class="temp-info">
+            <div class="current-temp">
+              ${showTemperature ? x`${roundedTemperature}<span>${this.unitTemperature || this.getUnit('temperature')}</span>` : ''}
             </div>
-            ${showTime ? x`
-              <div class="current-time">
-                <div id="digital-clock"></div>
-                ${showDay ? x`<div class="date-text day"></div>` : ''}
-                ${showDay && showDate ? x` ` : ''}
-                ${showDate ? x`<div class="date-text date"></div>` : ''}
+            ${showFeelsLike && roundedFeelsLike ? x`
+              <div class="feels-like">
+                ${this.ll('feelsLike')}
+                ${roundedFeelsLike}${this.unitTemperature || this.getUnit('temperature')}
+              </div>
+            ` : ''}
+            ${showCurrentCondition ? x`
+              <div class="current-condition">
+                <span>${this.ll(weather.state)}</span>
+              </div>
+            ` : ''}
+            ${showDescription ? x`
+              <div class="description">
+                ${description}
               </div>
             ` : ''}
           </div>
         </div>
       </div>
+
       ${showMainForecast && mainForecastDays[0] ? x`
         <div class="main-block main-block--tomorrow">
           ${(() => {
             const day = mainForecastDays[0];
             const forecastIcon = config.animated_icons || config.icons
-              ? x`<img src="${this.getWeatherIcon(day.condition, day.sunState)}" alt="">`
+              ? x`<img src="${this.getWeatherIcon(day.condition, day.sunState)}" @error="${(e) => this.handleIconError(e, day.condition, day.sunState)}" alt="">`
               : x`<ha-icon icon="${this.getWeatherIcon(day.condition, day.sunState)}"></ha-icon>`;
 
             return x`
@@ -19276,14 +20486,14 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                   <div class="main-weather-icon">${forecastIcon}</div>
                   <div class="main-forecast-content">
                     ${showTemperature ? x`
-                      <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
+                      <div class="main-forecast-value">${day.temperature}<span>${this.unitTemperature || this.getUnit('temperature')}</span></div>
                     ` : ''}
                     ${showFeelsLike ? x`
                       ${showTemperature && day.tempLow !== undefined && day.tempLow !== null ? x`
-                        <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.getUnit('temperature')}</div>
+                        <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.unitTemperature || this.getUnit('temperature')}</div>
                       ` : ''}
                       ${!showTemperature ? x`
-                        <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.getUnit('temperature')}</div>
+                        <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.unitTemperature || this.getUnit('temperature')}</div>
                       ` : ''}
                     ` : ''}
                     ${showCurrentCondition ? x`
@@ -19302,7 +20512,7 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
           ${(() => {
             const day = mainForecastDays[1];
             const forecastIcon = config.animated_icons || config.icons
-              ? x`<img src="${this.getWeatherIcon(day.condition, day.sunState)}" alt="">`
+              ? x`<img src="${this.getWeatherIcon(day.condition, day.sunState)}" @error="${(e) => this.handleIconError(e, day.condition, day.sunState)}" alt="">`
               : x`<ha-icon icon="${this.getWeatherIcon(day.condition, day.sunState)}"></ha-icon>`;
 
             return x`
@@ -19312,14 +20522,14 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
                   <div class="main-weather-icon">${forecastIcon}</div>
                   <div class="main-forecast-content">
                     ${showTemperature ? x`
-                      <div class="main-forecast-value">${day.temperature}<span>${this.getUnit('temperature')}</span></div>
+                      <div class="main-forecast-value">${day.temperature}<span>${this.unitTemperature || this.getUnit('temperature')}</span></div>
                     ` : ''}
                     ${showFeelsLike ? x`
                       ${showTemperature && day.tempLow !== undefined && day.tempLow !== null ? x`
-                        <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.getUnit('temperature')}</div>
+                        <div class="feels-like">${this.ll('tempLo')} ${day.tempLow}${this.unitTemperature || this.getUnit('temperature')}</div>
                       ` : ''}
                       ${!showTemperature ? x`
-                        <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.getUnit('temperature')}</div>
+                        <div class="feels-like">${this.ll('tempHi')} ${day.temperature}${this.unitTemperature || this.getUnit('temperature')}</div>
                       ` : ''}
                     ` : ''}
                     ${showCurrentCondition ? x`
@@ -19337,23 +20547,35 @@ renderMain({ config, sun, weather, temperature, feels_like, description } = this
 }
 
 getMainForecastDays() {
-  if (!this.dailyForecasts || !this.dailyForecasts.length) {
+  const source = (this.dailyForecasts && this.dailyForecasts.length)
+    ? this.dailyForecasts
+    : (this.config.forecast.type === 'daily' ? this.forecasts : []);
+
+  if (!source || source.length < 2) {
     return [];
   }
 
   const days = [];
 
-  for (let i = 1; i < Math.min(3, this.dailyForecasts.length); i++) {
-    const item = this.dailyForecasts[i];
+  for (let i = 1; i < Math.min(3, source.length); i++) {
+    const item = source[i];
 
-    let temperature = parseFloat(item.temperature);
-    if (!isNaN(temperature) && temperature % 1 !== 0) {
+    let temperature = Number(item.temperature);
+    if (Number.isFinite(temperature)) {
+      if (this.unitTemperature && this.unitTemperature !== this.weather.attributes.temperature_unit) {
+        temperature = this.convertTemperature(temperature, this.weather.attributes.temperature_unit, this.unitTemperature);
+      }
       temperature = Math.round(temperature * 10) / 10;
     }
 
-    let tempLow = parseFloat(item.templow);
-    if (!isNaN(tempLow) && tempLow % 1 !== 0) {
+    let tempLow = Number(item.templow);
+    if (Number.isFinite(tempLow)) {
+      if (this.unitTemperature && this.unitTemperature !== this.weather.attributes.temperature_unit) {
+        tempLow = this.convertTemperature(tempLow, this.weather.attributes.temperature_unit, this.unitTemperature);
+      }
       tempLow = Math.round(tempLow * 10) / 10;
+    } else {
+      tempLow = undefined;
     }
 
     days.push({
@@ -19389,87 +20611,125 @@ getMainDayLabel(dayOffset) {
   return label.charAt(0).toUpperCase() + label.slice(1);
 }
 
-isDayTimeForDate(forecastDate) {
-  if (!this.sun || !this.sun.attributes) {
-    return true;
+updateClock() {
+  const timezone = this.getTimezone();
+  const use12HourFormat = this.config.use_12hour_format;
+  const showSeconds = this.config.show_time_seconds === true;
+  const showHourLeadingZero = this.config.show_hour_leading_zero !== false;
+  const showDay = this.config.show_day;
+  const showDate = this.config.show_date;
+  const currentDate = new Date();
+  
+  // Build the full time string using Intl.DateTimeFormat, then fix the hour for leading zero control
+  const locale = this.config.locale || 'en-US';
+  const timeFormatter = new Intl.DateTimeFormat(locale, {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: showSeconds ? '2-digit' : undefined,
+    hour12: use12HourFormat,
+    timeZone: timezone
+  });
+  const parts = timeFormatter.formatToParts(currentDate);
+
+  // Rebuild the time string, adjusting the hour part for leading zero preference
+  var currentTime = '';
+  for (var i = 0; i < parts.length; i++) {
+    var part = parts[i];
+    if (part.type === 'hour') {
+      var h = part.value;
+      if (showHourLeadingZero && h.length === 1) {
+        h = '0' + h;
+      } else if (!showHourLeadingZero && h.length === 2 && h[0] === '0') {
+        h = h.slice(1);
+      }
+      currentTime += h;
+    } else {
+      currentTime += part.value;
+    }
   }
 
-  const sunriseTime = new Date(this.sun.attributes.next_rising);
-  const sunsetTime = new Date(this.sun.attributes.next_setting);
+  const currentDayOfWeek = this.getLocalizedDayNameFull(currentDate, timezone);
+  const selectedLocale = this.config.locale || this.language || 'en';
+  const currentDateFormatted = new Intl.DateTimeFormat(selectedLocale, {
+    day: 'numeric', month: 'long', timeZone: timezone
+  }).format(currentDate);
 
-  if (isNaN(sunriseTime.getTime()) || isNaN(sunsetTime.getTime())) {
-    return true;
+  const cardDiv = this.shadowRoot.querySelector('.card');
+  if (cardDiv) {
+    const clockElement = cardDiv.querySelector('#digital-clock');
+    if (clockElement) {
+      clockElement.textContent = currentTime;
+    }
+    if (showDay) {
+      const dayElement = cardDiv.querySelector('.date-text.day');
+      if (dayElement) {
+        dayElement.textContent = currentDayOfWeek;
+      }
+    }
+    if (showDate) {
+      const dateElement = cardDiv.querySelector('.date-text.date');
+      if (dateElement) {
+        dateElement.textContent = currentDateFormatted;
+      }
+    }
+  }
+}
+
+renderClock({ config } = this) {
+  const showTime = config.show_time;
+  const showDay = config.show_day;
+  const showDate = config.show_date;
+
+  if (!showTime) {
+    if (this.clockInterval) {
+      clearInterval(this.clockInterval);
+      this.clockInterval = null;
+    }
+    return x``;
   }
 
-  const adjustedSunriseTime = new Date(forecastDate);
-  adjustedSunriseTime.setHours(sunriseTime.getHours());
-  adjustedSunriseTime.setMinutes(sunriseTime.getMinutes());
-  adjustedSunriseTime.setSeconds(sunriseTime.getSeconds());
+  // Clock update logic
+  if (!this.clockInterval) {
+    this.clockInterval = setInterval(() => this.updateClock(), 1000);
+    // Initial update
+    setTimeout(() => this.updateClock(), 0);
+  }
 
-  const adjustedSunsetTime = new Date(forecastDate);
-  adjustedSunsetTime.setHours(sunsetTime.getHours());
-  adjustedSunsetTime.setMinutes(sunsetTime.getMinutes());
-  adjustedSunsetTime.setSeconds(sunsetTime.getSeconds());
-
-  return forecastDate >= adjustedSunriseTime && forecastDate <= adjustedSunsetTime;
+  return x`
+    <div class="current-time">
+      <div id="digital-clock"></div>
+      ${showDay ? x`<div class="date-text day"></div>` : ''}
+      ${showDay && showDate ? x` ` : ''}
+      ${showDate ? x`<div class="date-text date"></div>` : ''}
+      ${config.show_forecast_toggle ? x`
+        <button class="forecast-toggle"
+          @click="${this.handleForecastTypeToggle.bind(this)}"
+          ?disabled="${this._canAutoRotate}">
+          ${this._canAutoRotate ? `Auto [${parseInt(config.forecast.auto_rotate, 10)}]` : (this.config.forecast.type === 'daily' ? 'Hourly' : 'Daily')}
+        </button>
+      ` : ''}
+    </div>
+  `;
 }
 
 renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, language, uv_index, dew_point, wind_gust_speed, visibility } = this) {
-  let dWindSpeed = windSpeed;
-  let dWindGustSpeed = wind_gust_speed;
+  let dWindSpeed = this.convertWindSpeed(windSpeed);
   let dPressure = pressure;
-
-  if (this.unitSpeed !== this.weather.attributes.wind_speed_unit) {
-    if (this.unitSpeed === 'm/s') {
-      if (this.weather.attributes.wind_speed_unit === 'km/h') {
-        dWindSpeed = Math.round(windSpeed * 1000 / 3600);
-      } else if (this.weather.attributes.wind_speed_unit === 'mph') {
-        dWindSpeed = Math.round(windSpeed * 0.44704);
-      }
-    } else if (this.unitSpeed === 'km/h') {
-      if (this.weather.attributes.wind_speed_unit === 'm/s') {
-        dWindSpeed = Math.round(windSpeed * 3.6);
-      } else if (this.weather.attributes.wind_speed_unit === 'mph') {
-        dWindSpeed = Math.round(windSpeed * 1.60934);
-      }
-    } else if (this.unitSpeed === 'mph') {
-      if (this.weather.attributes.wind_speed_unit === 'm/s') {
-        dWindSpeed = Math.round(windSpeed / 0.44704);
-      } else if (this.weather.attributes.wind_speed_unit === 'km/h') {
-        dWindSpeed = Math.round(windSpeed / 1.60934);
-      }
-    } else if (this.unitSpeed === 'Bft') {
-      dWindSpeed = this.calculateBeaufortScale(windSpeed);
+  const dewPointNumber = Number(dew_point);
+  let dDewPoint = dew_point;
+  const dewPointDisplayUnit = this.unitTemperature || this.weather.attributes.temperature_unit;
+  if (Number.isFinite(dewPointNumber)) {
+    dDewPoint = dewPointNumber;
+    if (this.unitTemperature && this.unitTemperature !== this.weather.attributes.temperature_unit) {
+      dDewPoint = this.convertTemperature(
+        dDewPoint,
+        this.weather.attributes.temperature_unit,
+        this.unitTemperature
+      );
     }
-  } else {
-    dWindSpeed = Math.round(dWindSpeed);
+    dDewPoint = Math.round(dDewPoint);
   }
-
-  if (this.unitSpeed !== this.weather.attributes.wind_speed_unit) {
-    if (this.unitSpeed === 'm/s') {
-      if (this.weather.attributes.wind_speed_unit === 'km/h') {
-        dWindGustSpeed = Math.round(dWindGustSpeed * 1000 / 3600);
-      } else if (this.weather.attributes.wind_speed_unit === 'mph') {
-        dWindGustSpeed = Math.round(dWindGustSpeed * 0.44704);
-      }
-    } else if (this.unitSpeed === 'km/h') {
-      if (this.weather.attributes.wind_speed_unit === 'm/s') {
-        dWindGustSpeed = Math.round(dWindGustSpeed * 3.6);
-      } else if (this.weather.attributes.wind_speed_unit === 'mph') {
-        dWindGustSpeed = Math.round(dWindGustSpeed * 1.60934);
-      }
-    } else if (this.unitSpeed === 'mph') {
-      if (this.weather.attributes.wind_speed_unit === 'm/s') {
-        dWindGustSpeed = Math.round(dWindGustSpeed / 0.44704);
-      } else if (this.weather.attributes.wind_speed_unit === 'km/h') {
-        dWindGustSpeed = Math.round(dWindGustSpeed / 1.60934);
-      }
-    } else if (this.unitSpeed === 'Bft') {
-        dWindGustSpeed = this.calculateBeaufortScale(dWindGustSpeed);
-    }
-  } else {
-    dWindGustSpeed = Math.round(dWindGustSpeed);
-  }
+  const dWindGustSpeed = this.convertWindSpeed(wind_gust_speed);
 
   if (this.unitPressure !== this.weather.attributes.pressure_unit) {
     if (this.unitPressure === 'mmHg') {
@@ -19506,14 +20766,18 @@ renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, la
   const showWindDirection = config.show_wind_direction !== false;
   const showWindSpeed = config.show_wind_speed !== false;
   const showSun = config.show_sun !== false;
-  const showUV = config.show_uv !== false;
   const showDewpoint = config.show_dew_point == true;
   const showWindgustspeed = config.show_wind_gust_speed == true;
   const showVisibility = config.show_visibility == true;
+  const visibilityDisplayUnit = this.unitVisibility || this.visibilitySourceUnit || (this.weather && this.weather.attributes.visibility_unit);
+  let dVisibility = visibility;
+  if (showVisibility && visibility !== undefined) {
+    dVisibility = this.convertVisibility(visibility, this.visibilitySourceUnit, visibilityDisplayUnit);
+  }
 
-  return x`
+return x`
     <div class="attributes">
-      ${((showHumidity && humidity !== undefined) || (showPressure && dPressure !== undefined) || (showDewpoint && dew_point !== undefined) || (showVisibility && visibility !== undefined)) ? x`
+      ${((showHumidity && humidity !== undefined) || (showPressure && dPressure !== undefined) || (showDewpoint && dew_point !== undefined) || (showVisibility && dVisibility !== undefined)) ? x`
         <div>
           ${showHumidity && humidity !== undefined ? x`
             <ha-icon icon="hass:water-percent"></ha-icon> ${humidity} %<br>
@@ -19522,16 +20786,16 @@ renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, la
             <ha-icon icon="hass:gauge"></ha-icon> ${dPressure} ${this.ll('units')[this.unitPressure]} <br>
           ` : ''}
           ${showDewpoint && dew_point !== undefined ? x`
-            <ha-icon icon="hass:thermometer-water"></ha-icon> ${dew_point} ${this.weather.attributes.temperature_unit} <br>
+            <ha-icon icon="hass:thermometer-water"></ha-icon> ${dDewPoint} ${dewPointDisplayUnit} <br>
           ` : ''}
-          ${showVisibility && visibility !== undefined ? x`
-            <ha-icon icon="hass:eye"></ha-icon> ${visibility} ${this.weather.attributes.visibility_unit}
+          ${showVisibility && dVisibility !== undefined ? x`
+            <ha-icon icon="hass:eye"></ha-icon> ${dVisibility} ${visibilityDisplayUnit}
           ` : ''}
         </div>
       ` : ''}
-      ${((showSun && sun !== undefined) || (showUV && uv_index !== undefined)) ? x`
+      ${((showSun && sun !== undefined) || (typeof uv_index !== 'undefined' && uv_index !== undefined)) ? x`
         <div>
-          ${showUV && uv_index !== undefined ? x`
+          ${typeof uv_index !== 'undefined' && uv_index !== undefined ? x`
             <div>
               <ha-icon icon="hass:white-balance-sunny"></ha-icon> UV: ${Math.round(uv_index * 10) / 10}
             </div>
@@ -19550,35 +20814,61 @@ renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, la
           ` : ''}
           ${showWindSpeed && dWindSpeed !== undefined ? x`
             <ha-icon icon="hass:weather-windy"></ha-icon>
-            ${dWindSpeed} ${this.ll('units')[this.unitSpeed]} <br>
+            ${dWindSpeed} ${this.ll('units')[this.unitSpeed] || this.unitSpeed} <br>
           ` : ''}
-          ${showWindgustspeed && dWindGustSpeed !== undefined ? x`
+          ${showWindgustspeed && wind_gust_speed !== undefined ? x`
             <ha-icon icon="hass:weather-windy-variant"></ha-icon>
-            ${dWindGustSpeed} ${this.ll('units')[this.unitSpeed]}
+            ${dWindGustSpeed} ${this.ll('units')[this.unitSpeed] || this.unitSpeed}
           ` : ''}
         </div>
       ` : ''}
     </div>
-  `;
+`;
 }
 
-renderSun({ sun, language, config } = this) {
+renderSun({ sun, language } = this) {
   if (sun == undefined) {
     return x``;
   }
 
-const use12HourFormat = this.config.use_12hour_format;
-const timeOptions = {
+  const config = this.config;
+  const use12HourFormat = this.config.use_12hour_format;
+  const timezone = config.sun_timezone
+    || config.timezone
+    || (this._hass && this._hass.config && this._hass.config.time_zone)
+    || Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const locale = this.config.locale || undefined;
+
+  const timeOptions = {
     hour12: use12HourFormat,
     hour: 'numeric',
-    minute: 'numeric'
-};
+    minute: 'numeric',
+    timeZone: timezone
+  };
+
+  const lat = this.config.sun_latitude != null ? this.config.sun_latitude
+    : (this._hass && this._hass.config && this._hass.config.latitude);
+  const lon = this.config.sun_longitude != null ? this.config.sun_longitude
+    : (this._hass && this._hass.config && this._hass.config.longitude);
+  let sunriseDate, sunsetDate;
+  if (lat != null && lon != null) {
+    const now = new Date();
+    const { sunrise: todaySunrise, sunset: todaySunset } = this.calculateSunriseSunset(now, lat, lon);
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const { sunrise: tomorrowSunrise, sunset: tomorrowSunset } = this.calculateSunriseSunset(tomorrow, lat, lon);
+    sunriseDate = todaySunrise > now ? todaySunrise : tomorrowSunrise;
+    sunsetDate = todaySunset > now ? todaySunset : tomorrowSunset;
+  } else {
+    sunriseDate = new Date(sun.attributes.next_rising);
+    sunsetDate = new Date(sun.attributes.next_setting);
+  }
 
   return x`
     <ha-icon icon="mdi:weather-sunset-up"></ha-icon>
-      ${new Date(sun.attributes.next_rising).toLocaleTimeString(language, timeOptions)}<br>
+      ${sunriseDate ? sunriseDate.toLocaleTimeString(locale, timeOptions) : '--'}<br>
     <ha-icon icon="mdi:weather-sunset-down"></ha-icon>
-      ${new Date(sun.attributes.next_setting).toLocaleTimeString(language, timeOptions)}
+      ${sunsetDate ? sunsetDate.toLocaleTimeString(locale, timeOptions) : '--'}
   `;
 }
 
@@ -19591,30 +20881,48 @@ renderForecastConditionIcons({ config, forecastItems, sun } = this) {
 
   return x`
     <div class="conditions" @click="${(e) => this.showMoreInfo(config.entity)}">
-      ${forecast.map((item) => {
+      ${(() => {
+        const lat = this.config.sun_latitude != null ? this.config.sun_latitude
+          : (this._hass && this._hass.config && this._hass.config.latitude);
+        const lon = this.config.sun_longitude != null ? this.config.sun_longitude
+          : (this._hass && this._hass.config && this._hass.config.longitude);
+        return forecast.map((item) => {
         const forecastTime = new Date(item.datetime);
-        const sunriseTime = new Date(sun.attributes.next_rising);
-        const sunsetTime = new Date(sun.attributes.next_setting);
 
-        // Adjust sunrise and sunset times to match the date of forecastTime
-        const adjustedSunriseTime = new Date(forecastTime);
-        adjustedSunriseTime.setHours(sunriseTime.getHours());
-        adjustedSunriseTime.setMinutes(sunriseTime.getMinutes());
-        adjustedSunriseTime.setSeconds(sunriseTime.getSeconds());
+        let sunriseTime, sunsetTime;
+        if (lat != null && lon != null) {
+          const configuredTimeZone = this.config.time_zone
+            || (this._hass && this._hass.config && this._hass.config.time_zone);
+          let sunriseSunsetDate = forecastTime;
 
-        const adjustedSunsetTime = new Date(forecastTime);
-        adjustedSunsetTime.setHours(sunsetTime.getHours());
-        adjustedSunsetTime.setMinutes(sunsetTime.getMinutes());
-        adjustedSunsetTime.setSeconds(sunsetTime.getSeconds());
+          if (configuredTimeZone) {
+            const parts = new Intl.DateTimeFormat('en-CA', {
+              timeZone: configuredTimeZone,
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit'
+            }).formatToParts(forecastTime);
+            const year = Number(parts.find((part) => part.type === 'year').value);
+            const month = Number(parts.find((part) => part.type === 'month').value);
+            const day = Number(parts.find((part) => part.type === 'day').value);
+            sunriseSunsetDate = new Date(Date.UTC(year, month - 1, day));
+          }
+
+          const { sunrise, sunset } = this.calculateSunriseSunset(sunriseSunsetDate, lat, lon);
+          sunriseTime = sunrise;
+          sunsetTime = sunset;
+        } else {
+          sunriseTime = new Date(sun.attributes.next_rising);
+          sunsetTime = new Date(sun.attributes.next_setting);
+        }
 
         let isDayTime;
-
         if (config.forecast.type === 'daily') {
-          // For daily forecast, assume it's day time
           isDayTime = true;
         } else {
-          // For other forecast types, determine based on sunrise and sunset times
-          isDayTime = forecastTime >= adjustedSunriseTime && forecastTime <= adjustedSunsetTime;
+          isDayTime = sunriseTime && sunsetTime
+            ? forecastTime >= sunriseTime && forecastTime <= sunsetTime
+            : true;
         }
 
         const weatherIcons = isDayTime ? weatherIconsDay : weatherIconsNight;
@@ -19626,7 +20934,11 @@ renderForecastConditionIcons({ config, forecastItems, sun } = this) {
           const iconSrc = config.animated_icons ?
             `${this.baseIconPath}${weatherIcons[condition]}.svg` :
             `${this.config.icons}${weatherIcons[condition]}.svg`;
-          iconHtml = x`<img class="icon" src="${iconSrc}" alt="">`;
+          const sunState = isDayTime ? 'above_horizon' : 'below_horizon';
+          iconHtml = x`<img class="icon" 
+                               src="${iconSrc}" 
+                               @error="${(e) => this.handleIconError(e, condition, sunState)}" 
+                               alt="">`;
         } else {
           iconHtml = x`<ha-icon icon="${this.getWeatherIcon(condition, sun.state)}"></ha-icon>`;
         }
@@ -19636,7 +20948,8 @@ renderForecastConditionIcons({ config, forecastItems, sun } = this) {
             ${iconHtml}
           </div>
         `;
-      })}
+      });
+      })()}
     </div>
   `;
 }
@@ -19654,39 +20967,13 @@ renderWind({ config, weather, windSpeed, windDirection, forecastItems } = this) 
     <div class="wind-details">
       ${showWindForecast ? x`
         ${forecast.map((item) => {
-          let dWindSpeed = item.wind_speed;
-
-          if (this.unitSpeed !== this.weather.attributes.wind_speed_unit) {
-            if (this.unitSpeed === 'm/s') {
-              if (this.weather.attributes.wind_speed_unit === 'km/h') {
-                dWindSpeed = Math.round(item.wind_speed * 1000 / 3600);
-              } else if (this.weather.attributes.wind_speed_unit === 'mph') {
-                dWindSpeed = Math.round(item.wind_speed * 0.44704);
-              }
-            } else if (this.unitSpeed === 'km/h') {
-              if (this.weather.attributes.wind_speed_unit === 'm/s') {
-                dWindSpeed = Math.round(item.wind_speed * 3.6);
-              } else if (this.weather.attributes.wind_speed_unit === 'mph') {
-                dWindSpeed = Math.round(item.wind_speed * 1.60934);
-              }
-            } else if (this.unitSpeed === 'mph') {
-              if (this.weather.attributes.wind_speed_unit === 'm/s') {
-                dWindSpeed = Math.round(item.wind_speed / 0.44704);
-              } else if (this.weather.attributes.wind_speed_unit === 'km/h') {
-                dWindSpeed = Math.round(item.wind_speed / 1.60934);
-              }
-            } else if (this.unitSpeed === 'Bft') {
-              dWindSpeed = this.calculateBeaufortScale(item.wind_speed);
-            }
-          } else {
-            dWindSpeed = Math.round(dWindSpeed);
-          }
+          const dWindSpeed = this.convertWindSpeed(item.wind_speed);
 
           return x`
             <div class="wind-detail">
               <ha-icon class="wind-icon" icon="hass:${this.getWindDirIcon(item.wind_bearing)}"></ha-icon>
               <span class="wind-speed">${dWindSpeed}</span>
-              <span class="wind-unit">${this.ll('units')[this.unitSpeed]}</span>
+              <span class="wind-unit">${this.ll('units')[this.unitSpeed] || this.unitSpeed}</span>
             </div>
           `;
         })}
@@ -19750,13 +21037,20 @@ renderLastUpdated() {
   }
 }
 
-customElements.define('weather-chart-card', WeatherChartCard);
+// Regex to detect Latin script characters for uppercase formatting (ES2019 compatible)
+WeatherChartCard.LATIN_SCRIPT_REGEX = /^\p{Script=Latin}+$/u;
+
+if (!customElements.get('weather-chart-card-ha')) {
+  customElements.define('weather-chart-card-ha', WeatherChartCard);
+}
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: "weather-chart-card",
-  name: "Weather Chart Card",
-  description: "A custom weather card with chart.",
+  type: "weather-chart-card-ha",
+  name: "Enhanced Weather Chart Card",
+  description: "Enhanced custom weather card with charts.",
   preview: true,
-  documentationURL: "https://github.com/mlamberts78/weather-chart-card",
+  documentationURL: "https://github.com/w4mhi/weather-chart-card-ha",
 });
+
+module.exports = WeatherChartCard;

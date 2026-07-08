@@ -982,6 +982,15 @@ class WeatherChartCardEditor extends LitElement {
 
         <!-- Climate Settings Page -->
         <div class="page-container ${this.currentPage === 'climate' ? 'active' : ''}">
+	  <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'forecast.use_color_thresholds')}"
+              .checked="${forecastConfig.use_color_thresholds !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Use Temperature Color Thresholds
+            </label>
+          </div>
 	  <div class="textfield-container">
             <div>
               <div class="field-label-row">
