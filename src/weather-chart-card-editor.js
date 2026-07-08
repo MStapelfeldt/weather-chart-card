@@ -556,31 +556,46 @@ class WeatherChartCardEditor extends LitElement {
       </div>
 
       <h5>Chart style:</h5>
-      <div class="radio-container">
-        <div class="switch-right">
-          <ha-radio
-            name="style"
-            value="style1"
-            @change="${this._handleStyleChange}"
-            .checked="${forecastConfig.style === 'style1'}"
-          ></ha-radio>
-          <label class="check-label">
-            Chart style 1
+      <div class="style-radio-group">
+        <div class="radio-group">
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="style"
+              value="style1"
+              @change="${this._handleStyleChange}"
+              .checked="${forecastConfig.style === 'style1'}"
+            />
+            <span class="check-label">Chart style 1</span>
           </label>
         </div>
 
-        <div class="switch-right">
-          <ha-radio
-            name="style"
-            value="style2"
-            @change="${this._handleStyleChange}"
-            .checked="${forecastConfig.style === 'style2'}"
-          ></ha-radio>
-          <label class="check-label">
-            Chart style 2
+        <div class="radio-group">
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="style"
+              value="style2"
+              @change="${this._handleStyleChange}"
+              .checked="${forecastConfig.style === 'style2'}"
+            />
+            <span class="check-label">Chart style 2</span>
+          </label>
+        </div>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="style"
+              value="style3"
+              @change="${this._handleStyleChange}"
+              .checked="${forecastConfig.style === 'style3'}"
+            />
+            <span class="check-label">Chart style 3</span>
           </label>
         </div>
       </div>
+
 
       <h5>Icons settings:</h5>
       <div class="icon-container">
@@ -615,20 +630,20 @@ class WeatherChartCardEditor extends LitElement {
             Style 2
           </label>
         </div>
-      </div>
-      <div class="flex-container">
-        <ha-textfield
-          label="Size for daily icons"
-          type="number"
-          .value="${this._config.icons_size || '35'}"
-          @change="${(e) => this._valueChanged(e, 'icons_size')}"
-        ></ha-textfield>
-        <ha-textfield
-          label="Main Weather Icon Size"
-          type="number"
-          .value="${this._config.main_icon_size || '150'}"
-          @change="${(e) => this._valueChanged(e, 'main_icon_size')}"
-        ></ha-textfield>
+        <div class="switch-right">
+          <ha-textfield
+            label="Size for daily icons"
+            type="number"
+            .value="${this._config.icons_size || '35'}"
+            @change="${(e) => this._valueChanged(e, 'icons_size')}"
+          ></ha-textfield>
+          <ha-textfield
+            label="Main Weather Icon Size"
+            type="number"
+            .value="${this._config.main_icon_size || '150'}"
+            @change="${(e) => this._valueChanged(e, 'main_icon_size')}"
+          ></ha-textfield>
+        </div>
       </div>
 
       <div class="buttons-container">
@@ -733,6 +748,15 @@ class WeatherChartCardEditor extends LitElement {
             ></ha-switch>
             <label class="switch-label">
               Show Sun
+            </label>
+          </div>
+          <div class="switch-container">
+            <ha-switch
+              @change="${(e) => this._valueChanged(e, 'show_uv')}"
+              .checked="${this._config.show_uv !== false}"
+            ></ha-switch>
+            <label class="switch-label">
+              Show UV Index
             </label>
           </div>
           <div class="switch-container">

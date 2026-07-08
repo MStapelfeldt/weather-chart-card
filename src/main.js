@@ -42,6 +42,7 @@ static getStubConfig(hass, unusedEntities, allEntities) {
     show_wind_direction: true,
     show_wind_speed: true,
     show_sun: true,
+    show_uv: true,
     show_feels_like: false,
     timezone: '',
     show_dew_point: false,
@@ -111,6 +112,7 @@ setConfig(config) {
     show_visibility: false,
     show_last_changed: false,
     show_description: false,
+    show_uv: true,
     show_main_forecast: false,
     show_forecast_toggle: false,
     show_hour_leading_zero: true,
@@ -1496,7 +1498,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
         datalabels: {
           backgroundColor: backgroundColor,
           borderColor: context => context.dataset.backgroundColor,
-          borderRadius: 0,
+          borderRadius: config.forecast.style === 'style3' ? 8 : 0,
           borderWidth: 1.5,
           padding: config.forecast.precipitation_type === 'rainfall' && config.forecast.show_probability && config.forecast.type !== 'hourly' ? 3 : 4,
           color: chart_text_color || textColor,
@@ -2264,13 +2266,6 @@ renderClock({ config } = this) {
       ${showDay ? html`<div class="date-text day"></div>` : ''}
       ${showDay && showDate ? html` ` : ''}
       ${showDate ? html`<div class="date-text date"></div>` : ''}
-      ${config.show_forecast_toggle ? html`
-        <button class="forecast-toggle"
-          @click="${this.handleForecastTypeToggle.bind(this)}"
-          ?disabled="${this._canAutoRotate}">
-          ${this._canAutoRotate ? `Auto [${parseInt(config.forecast.auto_rotate, 10)}]` : (this.config.forecast.type === 'daily' ? 'Hourly' : 'Daily')}
-        </button>
-      ` : ''}
     </div>
   `;
 }
@@ -2329,6 +2324,7 @@ renderAttributes({ config, humidity, pressure, windSpeed, windDirection, sun, la
   const showWindDirection = config.show_wind_direction !== false;
   const showWindSpeed = config.show_wind_speed !== false;
   const showSun = config.show_sun !== false;
+  const showUV = config.show_uv !== false;
   const showDewpoint = config.show_dew_point == true;
   const showWindgustspeed = config.show_wind_gust_speed == true;
   const showVisibility = config.show_visibility == true;
@@ -2356,9 +2352,9 @@ return html`
           ` : ''}
         </div>
       ` : ''}
-      ${((showSun && sun !== undefined) || (typeof uv_index !== 'undefined' && uv_index !== undefined)) ? html`
+      ${((showSun && sun !== undefined) || (showUV && uv_index !== undefined)) ? html`
         <div>
-          ${typeof uv_index !== 'undefined' && uv_index !== undefined ? html`
+          ${showUV && uv_index !== undefined ? html`
             <div>
               <ha-icon icon="hass:white-balance-sunny"></ha-icon> UV: ${Math.round(uv_index * 10) / 10}
             </div>
@@ -2384,6 +2380,13 @@ return html`
             ${dWindGustSpeed} ${this.ll('units')[this.unitSpeed] || this.unitSpeed}
           ` : ''}
         </div>
+      ` : ''}
+      ${config.show_forecast_toggle ? html`
+        <button class="forecast-toggle"
+          @click="${this.handleForecastTypeToggle.bind(this)}"
+          ?disabled="${this._canAutoRotate}">
+          ${this._canAutoRotate ? `Auto [${parseInt(config.forecast.auto_rotate, 10)}]` : (this.config.forecast.type === 'daily' ? 'Hourly' : 'Daily')}
+        </button>
       ` : ''}
     </div>
 `;
