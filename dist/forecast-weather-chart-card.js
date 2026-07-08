@@ -1748,6 +1748,20 @@ var WeatherChartCard = (function () {
           style="width: 60px; margin-left: 8px;"
         />
       </div>
+      <div class="input-container">
+        <label class="switch-label">
+          Temperature font size
+        </label>
+        <input
+          type="number"
+          min="0"
+          max="60"
+          step="1"
+          .value="${this._config.current_temp_size || '30'}"
+          @change="${(e) => this._handleIconSizeChange(e, 'current_temp_size')}"
+          style="width: 60px; margin-left: 8px;"
+        />
+      </div>
 
       <div class="buttons-container">
         <button class="page-button ${this.currentPage === 'card' ? 'active' : ''}" @click="${() => this.showPage('card')}">Main</button>
