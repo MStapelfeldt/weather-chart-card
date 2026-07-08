@@ -1168,6 +1168,11 @@ var WeatherChartCard = (function () {
         return;
       }
 
+      const hasDetailValue = event && event.detail && Object.prototype.hasOwnProperty.call(event.detail, 'value');
+      const value = event && event.target && event.target.checked !== undefined
+        ? event.target.checked
+        : (hasDetailValue ? event.detail.value : (event && event.target ? event.target.value : undefined));
+
       let newConfig = { ...this._config };
 
       if (key.includes('.')) {
@@ -1183,17 +1188,9 @@ var WeatherChartCard = (function () {
         }
 
         const finalKey = parts[parts.length - 1];
-        if (event.target.checked !== undefined) {
-          currentLevel[finalKey] = event.target.checked;
-        } else {
-          currentLevel[finalKey] = event.target.value;
-        }
+        currentLevel[finalKey] = value;
       } else {
-        if (event.target.checked !== undefined) {
-          newConfig[key] = event.target.checked;
-        } else {
-          newConfig[key] = event.target.value;
-        }
+        newConfig[key] = value;
       }
 
       this.configChanged(newConfig);
@@ -1545,7 +1542,7 @@ var WeatherChartCard = (function () {
             type="text"
             style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
             .value="${this._config.title || ''}"
-            @change="${(e) => this._valueChanged(e, 'title')}"
+            @input="${(e) => this._valueChanged(e, 'title')}"
           />
       
       <div>
