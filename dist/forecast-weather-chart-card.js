@@ -1654,36 +1654,21 @@ var WeatherChartCard = (function () {
         </div>
       </div>
 
-
-      
-        <label>Sunrise/Sunset city <small style="color:var(--secondary-text-color)">(optional — if not set, uses HA server location)</small></label>
-        <div style="display:flex; gap:8px; margin-top:8px; align-items:center;">
-          <input
-            type="number"
-            min="0"
-            max="60"
-            step="1"
-            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-            .value="${this._config.icons_size || '35'}"
-            @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
-          />
-        </div>
-
-
-
       <div class="input-container">
         <label class="switch-label">
           Size for daily icons
         </label>
-          <input
-            type="number"
-            min="0"
-            max="60"
-            step="1"
-            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-            .value="${this._config.icons_size || '35'}"
-            @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
-          />
+        <input
+          type="number"
+          min="0"
+          max="60"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.icons_size || '35'}"
+          @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
+        />
+      </div>
+      <div class="input-container">
         <label class="switch-label">
           Size for main icon
         </label>
@@ -1701,15 +1686,15 @@ var WeatherChartCard = (function () {
         <label class="switch-label">
           Temperature font size
         </label>
-          <input
-            type="number"
-            min="0"
-            max="60"
-            step="1"
-            style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-            .value="${this._config.main_icons_size || '35'}"
-            @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
-          />
+        <input
+          type="number"
+          min="0"
+          max="60"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.main_icons_size || '35'}"
+          @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
+        />
       </div>
 
       <div class="buttons-container">
@@ -2033,7 +2018,7 @@ var WeatherChartCard = (function () {
                 this._config = newConfig;
                 this.requestUpdate();
               }}"
-              style="width: 60px; margin-left: 8px;"
+              style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
             />
           </div>
           <h5>Chart style:</h5>
