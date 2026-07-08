@@ -366,16 +366,12 @@ class WeatherChartCardEditor extends LitElement {
         .style-radio-group {
           display: flex;
           flex-wrap: wrap;
-          gap: 12px;
-          margin-bottom: 12px;
         }
         .radio-option {
           display: inline-flex;
           align-items: center;
           gap: 8px;
           padding: 6px 10px;
-          border: 1px solid var(--divider-color);
-          border-radius: 6px;
           cursor: pointer;
         }
         .radio-option input[type='radio'] {
@@ -687,25 +683,31 @@ class WeatherChartCardEditor extends LitElement {
           </div>
         </div>
       </div>
-      <div class="flex-container">
-        <ha-textfield
-          label="Size for daily icons"
+      <div class="input-container">
+        <label class="switch-label">
+          Size for daily icons
+        </label>
+        <input
           type="number"
-          min="10"
-          max="120"
+          min="0"
+          max="60"
           step="1"
           .value="${this._config.icons_size || '35'}"
           @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
-        ></ha-textfield>
-        <ha-textfield
-          label="Main Weather Icon Size"
+          style="width: 60px; margin-left: 8px;"
+        />
+        <label class="switch-label">
+          Size for main icon
+        </label>
+        <input
           type="number"
-          min="40"
-          max="300"
+          min="0"
+          max="60"
           step="1"
           .value="${this._config.main_icon_size || '150'}"
           @change="${(e) => this._handleIconSizeChange(e, 'main_icon_size')}"
-        ></ha-textfield>
+          style="width: 60px; margin-left: 8px;"
+        />
       </div>
 
       <div class="buttons-container">
