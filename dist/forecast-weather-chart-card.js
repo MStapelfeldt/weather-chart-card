@@ -1671,8 +1671,8 @@ var WeatherChartCard = (function () {
         </label>
         <input
           type="number"
-          min="10"
-          max="120"
+          min="0"
+          max="200"
           step="1"
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
           .value="${this._config.icons_size || '35'}"
@@ -1714,7 +1714,7 @@ var WeatherChartCard = (function () {
         <input
           type="number"
           min="10"
-          max="80"
+          max="200"
           step="1"
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
           .value="${this._config.time_size || '26'}"
@@ -1728,7 +1728,7 @@ var WeatherChartCard = (function () {
         <input
           type="number"
           min="8"
-          max="60"
+          max="200"
           step="1"
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
           .value="${this._config.day_date_size || '15'}"
@@ -21245,11 +21245,6 @@ var WeatherChartCard = (function () {
 
   if (!customElements.get('forecast-weather-chart-card')) {
     customElements.define('forecast-weather-chart-card', WeatherChartCard);
-  }
-
-  // Backward compatibility for existing dashboards using the old tag name.
-  if (!customElements.get('weather-chart-card-ha')) {
-    customElements.define('weather-chart-card-ha', WeatherChartCard);
   }
 
   window.customCards = window.customCards || [];

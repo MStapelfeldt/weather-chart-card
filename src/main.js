@@ -2625,11 +2625,6 @@ if (!customElements.get('forecast-weather-chart-card')) {
   customElements.define('forecast-weather-chart-card', WeatherChartCard);
 }
 
-// Backward compatibility for existing dashboards using the old tag name.
-if (!customElements.get('weather-chart-card-ha')) {
-  customElements.define('weather-chart-card-ha', WeatherChartCard);
-}
-
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "forecast-weather-chart-card",
