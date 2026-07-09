@@ -1786,7 +1786,6 @@ updateChart({ forecasts, forecastChart } = this) {
           margin-top: 4px;
         }
         .current-time {
-          position: absolute;
           top: ${showTitle ? '24px' : '20px'};
           left: 16px;
           right: 16px;
