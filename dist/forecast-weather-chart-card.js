@@ -1264,9 +1264,9 @@ var WeatherChartCard = (function () {
       }
 
       const constraints = {
-        current_temp_size: { min: 10, max: 80, fallback: 38 },
-        time_size: { min: 10, max: 80, fallback: 26 },
-        day_date_size: { min: 8, max: 60, fallback: 15 },
+        current_temp_size: { min: 10, max: 800, fallback: 38 },
+        time_size: { min: 10, max: 800, fallback: 26 },
+        day_date_size: { min: 8, max: 800, fallback: 15 },
       };
       const rule = constraints[key];
       if (!rule) {
@@ -1712,6 +1712,7 @@ var WeatherChartCard = (function () {
           Clock time size
         </label>
         <input
+          id="time-size-input"
           type="number"
           min="10"
           max="200"
@@ -1726,6 +1727,7 @@ var WeatherChartCard = (function () {
           Day/Date size
         </label>
         <input
+          id="day-date-size-input"
           type="number"
           min="8"
           max="200"
@@ -20345,14 +20347,10 @@ var WeatherChartCard = (function () {
           transform: none;
           z-index: auto;
         }
-        .main.main--with-forecast .weather-icon ha-icon {
+        .main.main--with-forecast .weather-icon ha-icon, .main.main--with-forecast .main-weather-icon ha-icon {
           --mdc-icon-size: ${config.icons_size || 30}px;
         }
         .main.main--with-forecast .weather-icon img {
-          width: ${config.icons_size || 30}px;
-          height: ${config.icons_size || 30}px;
-        }
-        .main.main--with-forecast .main-weather-icon img {
           width: ${config.icons_size || 30}px;
           height: ${config.icons_size || 30}px;
         }

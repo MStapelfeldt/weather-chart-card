@@ -1721,14 +1721,10 @@ updateChart({ forecasts, forecastChart } = this) {
           transform: none;
           z-index: auto;
         }
-        .main.main--with-forecast .weather-icon ha-icon {
+        .main.main--with-forecast .weather-icon ha-icon, .main.main--with-forecast .main-weather-icon ha-icon {
           --mdc-icon-size: ${config.icons_size || 30}px;
         }
         .main.main--with-forecast .weather-icon img {
-          width: ${config.icons_size || 30}px;
-          height: ${config.icons_size || 30}px;
-        }
-        .main.main--with-forecast .main-weather-icon img {
           width: ${config.icons_size || 30}px;
           height: ${config.icons_size || 30}px;
         }

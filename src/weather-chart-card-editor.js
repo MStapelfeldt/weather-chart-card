@@ -225,9 +225,9 @@ class WeatherChartCardEditor extends LitElement {
     }
 
     const constraints = {
-      current_temp_size: { min: 10, max: 80, fallback: 38 },
-      time_size: { min: 10, max: 80, fallback: 26 },
-      day_date_size: { min: 8, max: 60, fallback: 15 },
+      current_temp_size: { min: 10, max: 800, fallback: 38 },
+      time_size: { min: 10, max: 800, fallback: 26 },
+      day_date_size: { min: 8, max: 800, fallback: 15 },
     };
     const rule = constraints[key];
     if (!rule) {
@@ -673,6 +673,7 @@ class WeatherChartCardEditor extends LitElement {
           Clock time size
         </label>
         <input
+          id="time-size-input"
           type="number"
           min="10"
           max="200"
@@ -687,6 +688,7 @@ class WeatherChartCardEditor extends LitElement {
           Day/Date size
         </label>
         <input
+          id="day-date-size-input"
           type="number"
           min="8"
           max="200"
