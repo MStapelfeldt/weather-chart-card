@@ -1788,14 +1788,26 @@ updateChart({ forecasts, forecastChart } = this) {
         .current-time {
           position: absolute;
           top: ${showTitle ? '24px' : '20px'};
+          left: 16px;
           right: 16px;
-          inset-inline-start: initial;
+          inset-inline-start: 16px;
           inset-inline-end: 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          z-index: 2;
+          pointer-events: none;
+        }
+        .clock-time {
+          font-size: ${config.time_size}px;
+          line-height: 1;
+        }
+        .clock-date {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
-          z-index: 1;
-          font-size: ${config.time_size}px;
+          text-align: right;
+          line-height: 1.2;
         }
         .date-text {
           font-size: ${config.day_date_size}px;
@@ -2262,10 +2274,11 @@ renderClock({ config } = this) {
 
   return html`
     <div class="current-time">
-      <div id="digital-clock"></div>
-      ${showDay ? html`<div class="date-text day"></div>` : ''}
-      ${showDay && showDate ? html` ` : ''}
-      ${showDate ? html`<div class="date-text date"></div>` : ''}
+      <div class="clock-time" id="digital-clock"></div>
+      <div class="clock-date">
+        ${showDay ? html`<div class="date-text day"></div>` : ''}
+        ${showDate ? html`<div class="date-text date"></div>` : ''}
+      </div>
     </div>
   `;
 }

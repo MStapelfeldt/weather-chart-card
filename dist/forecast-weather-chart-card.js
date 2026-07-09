@@ -1671,8 +1671,8 @@ var WeatherChartCard = (function () {
         </label>
         <input
           type="number"
-          min="0"
-          max="200"
+          min="10"
+          max="120"
           step="1"
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
           .value="${this._config.icons_size || '35'}"
@@ -1685,12 +1685,12 @@ var WeatherChartCard = (function () {
         </label>
           <input
             type="number"
-            min="0"
-            max="200"
+            min="40"
+            max="300"
             step="1"
             style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-            .value="${this._config.main_icons_size || '35'}"
-            @change="${(e) => this._handleIconSizeChange(e, 'main_icons_size')}"
+            .value="${this._config.main_icon_size || '150'}"
+            @change="${(e) => this._handleIconSizeChange(e, 'main_icon_size')}"
           />
       </div>
       <div class="input-container">
@@ -1705,6 +1705,34 @@ var WeatherChartCard = (function () {
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
           .value="${this._config.current_temp_size || '35'}"
           @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
+        />
+      </div>
+      <div class="input-container">
+        <label class="text-label">
+          Clock time size
+        </label>
+        <input
+          type="number"
+          min="10"
+          max="80"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.time_size || '26'}"
+          @change="${(e) => this._handleFontSizeChange(e, 'time_size')}"
+        />
+      </div>
+      <div class="input-container">
+        <label class="text-label">
+          Day/Date size
+        </label>
+        <input
+          type="number"
+          min="8"
+          max="60"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.day_date_size || '15'}"
+          @change="${(e) => this._handleFontSizeChange(e, 'day_date_size')}"
         />
       </div>
 
@@ -2313,11 +2341,6 @@ var WeatherChartCard = (function () {
   }
   if (!customElements.get('forecast-weather-chart-card-editor')) {
     customElements.define('forecast-weather-chart-card-editor', WeatherChartCardEditor);
-  }
-
-  // Backward compatibility for existing references.
-  if (!customElements.get('weather-chart-card-ha-editor')) {
-    customElements.define('weather-chart-card-ha-editor', WeatherChartCardEditor);
   }
 
   /**
@@ -20389,14 +20412,26 @@ var WeatherChartCard = (function () {
         .current-time {
           position: absolute;
           top: ${showTitle ? '24px' : '20px'};
+          left: 16px;
           right: 16px;
-          inset-inline-start: initial;
+          inset-inline-start: 16px;
           inset-inline-end: 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          z-index: 2;
+          pointer-events: none;
+        }
+        .clock-time {
+          font-size: ${config.time_size}px;
+          line-height: 1;
+        }
+        .clock-date {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
-          z-index: 1;
-          font-size: ${config.time_size}px;
+          text-align: right;
+          line-height: 1.2;
         }
         .date-text {
           font-size: ${config.day_date_size}px;
@@ -20863,10 +20898,11 @@ var WeatherChartCard = (function () {
 
     return x`
     <div class="current-time">
-      <div id="digital-clock"></div>
-      ${showDay ? x`<div class="date-text day"></div>` : ''}
-      ${showDay && showDate ? x` ` : ''}
-      ${showDate ? x`<div class="date-text date"></div>` : ''}
+      <div class="clock-time" id="digital-clock"></div>
+      <div class="clock-date">
+        ${showDay ? x`<div class="date-text day"></div>` : ''}
+        ${showDate ? x`<div class="date-text date"></div>` : ''}
+      </div>
     </div>
   `;
   }

@@ -646,12 +646,12 @@ class WeatherChartCardEditor extends LitElement {
         </label>
           <input
             type="number"
-            min="0"
-            max="200"
+            min="40"
+            max="300"
             step="1"
             style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-            .value="${this._config.main_icons_size || '35'}"
-            @change="${(e) => this._handleIconSizeChange(e, 'main_icons_size')}"
+            .value="${this._config.main_icon_size || '150'}"
+            @change="${(e) => this._handleIconSizeChange(e, 'main_icon_size')}"
           />
       </div>
       <div class="input-container">
@@ -666,6 +666,34 @@ class WeatherChartCardEditor extends LitElement {
           style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
           .value="${this._config.current_temp_size || '35'}"
           @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
+        />
+      </div>
+      <div class="input-container">
+        <label class="text-label">
+          Clock time size
+        </label>
+        <input
+          type="number"
+          min="10"
+          max="200"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.time_size || '26'}"
+          @change="${(e) => this._handleFontSizeChange(e, 'time_size')}"
+        />
+      </div>
+      <div class="input-container">
+        <label class="text-label">
+          Day/Date size
+        </label>
+        <input
+          type="number"
+          min="8"
+          max="200"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.day_date_size || '15'}"
+          @change="${(e) => this._handleFontSizeChange(e, 'day_date_size')}"
         />
       </div>
 
@@ -1274,9 +1302,4 @@ class WeatherChartCardEditor extends LitElement {
 }
 if (!customElements.get('forecast-weather-chart-card-editor')) {
   customElements.define('forecast-weather-chart-card-editor', WeatherChartCardEditor);
-}
-
-// Backward compatibility for existing references.
-if (!customElements.get('weather-chart-card-ha-editor')) {
-  customElements.define('weather-chart-card-ha-editor', WeatherChartCardEditor);
 }
