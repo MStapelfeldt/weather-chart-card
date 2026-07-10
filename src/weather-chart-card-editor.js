@@ -475,9 +475,25 @@ class WeatherChartCardEditor extends LitElement {
           flex-direction: row;
           gap: 20px;
         }
-        .flex-container ha-textfield {
+        .flex-field {
           flex-basis: 50%;
           flex-grow: 1;
+        }
+        .input-field {
+          width: 100%;
+          padding: 8px;
+          margin-top: 6px;
+          font-size: 14px;
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          background: var(--card-background-color);
+          color: var(--primary-text-color);
+          box-sizing: border-box;
+        }
+        .helper-text {
+          margin-top: 4px;
+          font-size: 12px;
+          color: var(--secondary-text-color);
         }
         .field-label-row {
           display: flex;
@@ -573,13 +589,17 @@ class WeatherChartCardEditor extends LitElement {
         </select>
       </div>
 
-      <ha-textfield
-        label="Timezone override"
-        .value="${this._config.timezone || ''}"
-        @change="${(e) => this._valueChanged(e, 'timezone')}"
-        helperpersistent
-        helper="Optional IANA timezone for forecast labels/clock (for example: Europe/Bucharest). Leave empty to use the default behavior."
-      ></ha-textfield>
+      <div>
+        <label>Timezone override</label>
+        <input
+          type="text"
+          class="input-field"
+          .value="${this._config.timezone || ''}"
+          @change="${(e) => this._valueChanged(e, 'timezone')}"
+          placeholder="e.g. Europe/Bucharest"
+        />
+        <div class="helper-text">Optional IANA timezone for forecast labels/clock. Leave empty to use the default behavior.</div>
+      </div>
 
       <div>
         <label>Sunrise/Sunset city <small style="color:var(--secondary-text-color)">(optional — if not set, uses HA server location)</small></label>
@@ -743,7 +763,7 @@ class WeatherChartCardEditor extends LitElement {
       </div>
       <div class="input-container">
         <label class="text-label">
-          Attributes ha-icon size
+          Attributes icon size
         </label>
         <input
           type="number"
@@ -995,24 +1015,33 @@ class WeatherChartCardEditor extends LitElement {
             </div>
           </div>
             <div class="flex-container" style="${this._config.show_time ? 'display: flex;' : 'display: none;'}">
-              <ha-textfield
-                label="Time Font Size"
-                type="number"
-                .value="${this._config.time_size || '26'}"
-                @change="${(e) => this._valueChanged(e, 'time_size')}"
-              ></ha-textfield>
-              <ha-textfield
-                label="Date Font Size"
-                type="number"
-                .value="${this._config.day_date_size || '15'}"
-                @change="${(e) => this._valueChanged(e, 'day_date_size')}"
-              ></ha-textfield>
-              <ha-textfield
-                label="Temp Font Size"
-                type="number"
-                .value="${this._config.current_temp_size || '38'}"
-                @change="${(e) => this._valueChanged(e, 'current_temp_size')}"
-              ></ha-textfield>
+              <div class="flex-field">
+                <label>Time Font Size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${this._config.time_size || '26'}"
+                  @change="${(e) => this._valueChanged(e, 'time_size')}"
+                />
+              </div>
+              <div class="flex-field">
+                <label>Date Font Size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${this._config.day_date_size || '15'}"
+                  @change="${(e) => this._valueChanged(e, 'day_date_size')}"
+                />
+              </div>
+              <div class="flex-field">
+                <label>Temp Font Size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${this._config.current_temp_size || '38'}"
+                  @change="${(e) => this._valueChanged(e, 'current_temp_size')}"
+                />
+              </div>
               </div>
       </div>
 
@@ -1181,46 +1210,64 @@ class WeatherChartCardEditor extends LitElement {
          </div>
           <div class="textfield-container">
             <div class="flex-container">
-              <ha-textfield
-                label="Precipitation Bar Size %"
-                type="number"
-                max="100"
-                min="0"
-                .value="${forecastConfig.precip_bar_size || '100'}"
-                @change="${(e) => this._valueChanged(e, 'forecast.precip_bar_size')}"
-              ></ha-textfield>
-              <ha-textfield
-                label="Labels Font Size"
-                type="number"
-                .value="${forecastConfig.labels_font_size || '11'}"
-                @change="${(e) => this._valueChanged(e, 'forecast.labels_font_size')}"
-              ></ha-textfield>
-              <ha-textfield
-                label="Chart Text Size"
-                type="number"
-                .value="${forecastConfig.chart_text_size || forecastConfig.labels_font_size || '11'}"
-                @change="${(e) => this._handleForecastSizeChange(e, 'chart_text_size', 8, 120, 11)}"
-              ></ha-textfield>
+              <div class="flex-field">
+                <label>Precipitation Bar Size %</label>
+                <input
+                  type="number"
+                  min="0"
+                  max="100"
+                  class="input-field"
+                  .value="${forecastConfig.precip_bar_size || '100'}"
+                  @change="${(e) => this._valueChanged(e, 'forecast.precip_bar_size')}"
+                />
+              </div>
+              <div class="flex-field">
+                <label>Labels Font Size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${forecastConfig.labels_font_size || '11'}"
+                  @change="${(e) => this._valueChanged(e, 'forecast.labels_font_size')}"
+                />
+              </div>
+              <div class="flex-field">
+                <label>Chart Text Size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${forecastConfig.chart_text_size || forecastConfig.labels_font_size || '11'}"
+                  @change="${(e) => this._handleForecastSizeChange(e, 'chart_text_size', 8, 120, 11)}"
+                />
+              </div>
               </div>
 	    <div class="flex-container">
-              <ha-textfield
-                label="Chart height"
-                type="number"
-                .value="${forecastConfig.chart_height || '180'}"
-                @change="${(e) => this._valueChanged(e, 'forecast.chart_height')}"
-              ></ha-textfield>
-              <ha-textfield
-                label="Chart Icon Size"
-                type="number"
-                .value="${forecastConfig.chart_icon_size || '30'}"
-                @change="${(e) => this._handleForecastSizeChange(e, 'chart_icon_size', 8, 200, 30)}"
-              ></ha-textfield>
-              <ha-textfield
-                label="Number of forecasts"
-                type="number"
-                .value="${forecastConfig.number_of_forecasts || '0'}"
-                @change="${(e) => this._valueChanged(e, 'forecast.number_of_forecasts')}"
-              ></ha-textfield>
+              <div class="flex-field">
+                <label>Chart height</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${forecastConfig.chart_height || '180'}"
+                  @change="${(e) => this._valueChanged(e, 'forecast.chart_height')}"
+                />
+              </div>
+              <div class="flex-field">
+                <label>Chart Icon Size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${forecastConfig.chart_icon_size || '30'}"
+                  @change="${(e) => this._handleForecastSizeChange(e, 'chart_icon_size', 8, 200, 30)}"
+                />
+              </div>
+              <div class="flex-field">
+                <label>Number of forecasts</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${forecastConfig.number_of_forecasts || '0'}"
+                  @change="${(e) => this._valueChanged(e, 'forecast.number_of_forecasts')}"
+                />
+              </div>
               </div>
             </div>
           </div>
