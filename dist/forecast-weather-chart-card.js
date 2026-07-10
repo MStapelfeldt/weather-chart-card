@@ -1235,6 +1235,7 @@ var WeatherChartCard = (function () {
       const constraints = {
         icons_size: { min: 10, max: 120, fallback: 35 },
         main_icon_size: { min: 40, max: 300, fallback: 150 },
+        attributes_icon_size: { min: 8, max: 120, fallback: 16 },
       };
       const rule = constraints[key];
       if (!rule) {
@@ -1267,6 +1268,7 @@ var WeatherChartCard = (function () {
         current_temp_size: { min: 10, max: 800, fallback: 38 },
         time_size: { min: 10, max: 800, fallback: 26 },
         day_date_size: { min: 8, max: 800, fallback: 15 },
+        attributes_font_size: { min: 8, max: 120, fallback: 14 },
       };
       const rule = constraints[key];
       if (!rule) {
@@ -1293,6 +1295,33 @@ var WeatherChartCard = (function () {
     _handlePrecipitationTypeChange(e) {
       const newValue = e.target.value;
       this.config.forecast.precipitation_type = newValue;
+    }
+
+    _handleForecastSizeChange(event, key, min, max, fallback) {
+      if (!this._config) {
+        return;
+      }
+
+      let value = Number(event.target.value);
+      if (!Number.isFinite(value)) {
+        value = fallback;
+      }
+
+      value = Math.round(value);
+      value = Math.min(max, Math.max(min, value));
+      event.target.value = String(value);
+
+      const newConfig = {
+        ...this._config,
+        forecast: {
+          ...(this._config.forecast || {}),
+          [key]: value,
+        },
+      };
+
+      this.configChanged(newConfig);
+      this._config = newConfig;
+      this.requestUpdate();
     }
 
     _formValueChanged(event) {
@@ -1737,6 +1766,34 @@ var WeatherChartCard = (function () {
           @change="${(e) => this._handleFontSizeChange(e, 'day_date_size')}"
         />
       </div>
+      <div class="input-container">
+        <label class="text-label">
+          Attributes text size
+        </label>
+        <input
+          type="number"
+          min="8"
+          max="120"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.attributes_font_size || '14'}"
+          @change="${(e) => this._handleFontSizeChange(e, 'attributes_font_size')}"
+        />
+      </div>
+      <div class="input-container">
+        <label class="text-label">
+          Attributes ha-icon size
+        </label>
+        <input
+          type="number"
+          min="8"
+          max="80"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.attributes_icon_size || '16'}"
+          @change="${(e) => this._handleIconSizeChange(e, 'attributes_icon_size')}"
+        />
+      </div>
 
       <div class="buttons-container">
         <button class="page-button ${this.currentPage === 'card' ? 'active' : ''}" @click="${() => this.showPage('card')}">Main</button>
@@ -2177,6 +2234,12 @@ var WeatherChartCard = (function () {
                 .value="${forecastConfig.labels_font_size || '11'}"
                 @change="${(e) => this._valueChanged(e, 'forecast.labels_font_size')}"
               ></ha-textfield>
+              <ha-textfield
+                label="Chart Text Size"
+                type="number"
+                .value="${forecastConfig.chart_text_size || forecastConfig.labels_font_size || '11'}"
+                @change="${(e) => this._handleForecastSizeChange(e, 'chart_text_size', 8, 120, 11)}"
+              ></ha-textfield>
               </div>
 	    <div class="flex-container">
               <ha-textfield
@@ -2184,6 +2247,12 @@ var WeatherChartCard = (function () {
                 type="number"
                 .value="${forecastConfig.chart_height || '180'}"
                 @change="${(e) => this._valueChanged(e, 'forecast.chart_height')}"
+              ></ha-textfield>
+              <ha-textfield
+                label="Chart Icon Size"
+                type="number"
+                .value="${forecastConfig.chart_icon_size || '30'}"
+                @change="${(e) => this._handleForecastSizeChange(e, 'chart_icon_size', 8, 200, 30)}"
               ></ha-textfield>
               <ha-textfield
                 label="Number of forecasts"
@@ -18666,6 +18735,8 @@ var WeatherChartCard = (function () {
       show_date: true,
       show_humidity: true,
       show_pressure: true,
+      attributes_font_size: 14,
+      attributes_icon_size: 16,
       show_wind_direction: true,
       show_wind_speed: true,
       show_sun: true,
@@ -18688,6 +18759,8 @@ var WeatherChartCard = (function () {
         precipitation_type: 'rainfall',
         show_probability: false,
         labels_font_size: '11',
+        chart_text_size: 11,
+        chart_icon_size: 30,
         precip_bar_size: '100',
         style: 'style2',
         show_wind_forecast: true,
@@ -18731,6 +18804,8 @@ var WeatherChartCard = (function () {
       animated_icons: true,
       icon_style: 'style1',
       current_temp_size: 35,
+      attributes_font_size: 14,
+      attributes_icon_size: 16,
       main_icon_size: 150,
       time_size: 26,
       day_date_size: 15,
@@ -18749,6 +18824,8 @@ var WeatherChartCard = (function () {
         precipitation_type: 'rainfall',
         show_probability: false,
         labels_font_size: 11,
+        chart_text_size: 11,
+        chart_icon_size: 30,
         chart_height: 180,
         precip_bar_size: 100,
         style: 'style2',
@@ -19820,6 +19897,13 @@ var WeatherChartCard = (function () {
 
   drawChart({ config, language, weather, forecastItems } = this) {
     const self = this; // Capture component instance for use in Chart.js callbacks
+    const chartTextSizeSource = (config.forecast.chart_text_size !== undefined && config.forecast.chart_text_size !== null)
+      ? config.forecast.chart_text_size
+      : ((config.forecast.labels_font_size !== undefined && config.forecast.labels_font_size !== null)
+        ? config.forecast.labels_font_size
+        : 11);
+    const chartTextSizeRaw = Number(chartTextSizeSource);
+    const chartTextSize = Number.isFinite(chartTextSizeRaw) ? chartTextSizeRaw : 11;
     
     if (!this.forecasts || !this.forecasts.length) {
       return [];
@@ -19993,7 +20077,7 @@ var WeatherChartCard = (function () {
           ? (context) => this.getTemperatureColorWithRange(context.dataset.data[context.dataIndex], tempUnit, tempColorRange)
           : (chart_text_color || config.forecast.temperature1_color),
         font: {
-          size: parseInt(config.forecast.labels_font_size) + 1,
+          size: chartTextSize + 1,
           lineHeight: 0.7,
         },
       };
@@ -20011,7 +20095,7 @@ var WeatherChartCard = (function () {
         borderColor: 'transparent',
         color: chart_text_color || config.forecast.temperature2_color,
         font: {
-          size: parseInt(config.forecast.labels_font_size) + 1,
+          size: chartTextSize + 1,
           lineHeight: 0.7,
         },
       };
@@ -20044,6 +20128,9 @@ var WeatherChartCard = (function () {
             ticks: {
                 maxRotation: 0,
                 color: config.forecast.chart_datetime_color || textColor,
+                font: {
+                  size: chartTextSize,
+                },
                 padding: config.forecast.precipitation_type === 'rainfall' && config.forecast.show_probability && config.forecast.type !== 'hourly' ? 4 : 10,
                 callback: function (value, index, values) {
                     var datetime = this.getLabelForValue(value);
@@ -20131,7 +20218,7 @@ var WeatherChartCard = (function () {
             padding: config.forecast.precipitation_type === 'rainfall' && config.forecast.show_probability && config.forecast.type !== 'hourly' ? 3 : 4,
             color: chart_text_color || textColor,
             font: {
-              size: config.forecast.labels_font_size,
+              size: chartTextSize,
               lineHeight: 0.7,
             },
             formatter: function (value, context) {
@@ -20287,6 +20374,17 @@ var WeatherChartCard = (function () {
         </ha-card>
       `;
       }
+      const chartIconSizeRaw = Number(config.forecast && config.forecast.chart_icon_size);
+      const chartIconSize = Number.isFinite(chartIconSizeRaw)
+        ? chartIconSizeRaw
+        : (Number(config.icons_size) || 30);
+      const chartTextSizeSource = config.forecast && config.forecast.chart_text_size !== undefined && config.forecast.chart_text_size !== null
+        ? config.forecast.chart_text_size
+        : (config.forecast ? config.forecast.labels_font_size : undefined);
+      const chartTextSizeRaw = Number(chartTextSizeSource);
+      const chartTextSize = Number.isFinite(chartTextSizeRaw) ? chartTextSizeRaw : 11;
+      const chartWindUnitTextSize = Math.max(8, chartTextSize - 2);
+
       return x`
       <style>
         ha-card {
@@ -20444,7 +20542,11 @@ var WeatherChartCard = (function () {
           align-items: center;
           margin-bottom: 6px;
       	  font-weight: 300;
+          font-size: ${config.attributes_font_size}px;
           direction: ltr;
+        }
+        .attributes ha-icon {
+          --mdc-icon-size: ${config.attributes_icon_size}px;
         }
         .chart-container {
           position: relative;
@@ -20465,6 +20567,13 @@ var WeatherChartCard = (function () {
           align-items: center;
           margin: 1px;
         }
+        .conditions .forecast-item img {
+          width: ${chartIconSize}px;
+          height: ${chartIconSize}px;
+        }
+        .conditions .forecast-item ha-icon {
+          --mdc-icon-size: ${chartIconSize}px;
+        }
         .wind-details {
           display: flex;
           justify-content: space-around;
@@ -20477,7 +20586,7 @@ var WeatherChartCard = (function () {
           margin: 1px;
         }
         .wind-detail ha-icon {
-          --mdc-icon-size: 15px;
+          --mdc-icon-size: ${chartIconSize}px;
           margin-right: 1px;
           margin-inline-start: initial;
           margin-inline-end: 1px;
@@ -20490,13 +20599,13 @@ var WeatherChartCard = (function () {
 	        bottom: 1px;
         }
         .wind-speed {
-          font-size: 11px;
+          font-size: ${chartTextSize}px;
           margin-right: 1px;
           margin-inline-start: initial;
           margin-inline-end: 1px;
         }
         .wind-unit {
-          font-size: 9px;
+          font-size: ${chartWindUnitTextSize}px;
           margin-left: 1px;
           margin-inline-start: 1px;
           margin-inline-end: initial;

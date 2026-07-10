@@ -40,6 +40,8 @@ static getStubConfig(hass, unusedEntities, allEntities) {
     show_date: true,
     show_humidity: true,
     show_pressure: true,
+    attributes_font_size: 14,
+    attributes_icon_size: 16,
     show_wind_direction: true,
     show_wind_speed: true,
     show_sun: true,
@@ -62,6 +64,8 @@ static getStubConfig(hass, unusedEntities, allEntities) {
       precipitation_type: 'rainfall',
       show_probability: false,
       labels_font_size: '11',
+      chart_text_size: 11,
+      chart_icon_size: 30,
       precip_bar_size: '100',
       style: 'style2',
       show_wind_forecast: true,
@@ -105,6 +109,8 @@ setConfig(config) {
     animated_icons: true,
     icon_style: 'style1',
     current_temp_size: 35,
+    attributes_font_size: 14,
+    attributes_icon_size: 16,
     main_icon_size: 150,
     time_size: 26,
     day_date_size: 15,
@@ -123,6 +129,8 @@ setConfig(config) {
       precipitation_type: 'rainfall',
       show_probability: false,
       labels_font_size: 11,
+      chart_text_size: 11,
+      chart_icon_size: 30,
       chart_height: 180,
       precip_bar_size: 100,
       style: 'style2',
@@ -1194,6 +1202,13 @@ createTemperatureGradient(data, unit, ctx, chartArea, rangeC = null) {
 
 drawChart({ config, language, weather, forecastItems } = this) {
   const self = this; // Capture component instance for use in Chart.js callbacks
+  const chartTextSizeSource = (config.forecast.chart_text_size !== undefined && config.forecast.chart_text_size !== null)
+    ? config.forecast.chart_text_size
+    : ((config.forecast.labels_font_size !== undefined && config.forecast.labels_font_size !== null)
+      ? config.forecast.labels_font_size
+      : 11);
+  const chartTextSizeRaw = Number(chartTextSizeSource);
+  const chartTextSize = Number.isFinite(chartTextSizeRaw) ? chartTextSizeRaw : 11;
   
   if (!this.forecasts || !this.forecasts.length) {
     return [];
@@ -1367,7 +1382,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
         ? (context) => this.getTemperatureColorWithRange(context.dataset.data[context.dataIndex], tempUnit, tempColorRange)
         : (chart_text_color || config.forecast.temperature1_color),
       font: {
-        size: parseInt(config.forecast.labels_font_size) + 1,
+        size: chartTextSize + 1,
         lineHeight: 0.7,
       },
     };
@@ -1385,7 +1400,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
       borderColor: 'transparent',
       color: chart_text_color || config.forecast.temperature2_color,
       font: {
-        size: parseInt(config.forecast.labels_font_size) + 1,
+        size: chartTextSize + 1,
         lineHeight: 0.7,
       },
     };
@@ -1418,6 +1433,9 @@ drawChart({ config, language, weather, forecastItems } = this) {
           ticks: {
               maxRotation: 0,
               color: config.forecast.chart_datetime_color || textColor,
+              font: {
+                size: chartTextSize,
+              },
               padding: config.forecast.precipitation_type === 'rainfall' && config.forecast.show_probability && config.forecast.type !== 'hourly' ? 4 : 10,
               callback: function (value, index, values) {
                   var datetime = this.getLabelForValue(value);
@@ -1505,7 +1523,7 @@ drawChart({ config, language, weather, forecastItems } = this) {
           padding: config.forecast.precipitation_type === 'rainfall' && config.forecast.show_probability && config.forecast.type !== 'hourly' ? 3 : 4,
           color: chart_text_color || textColor,
           font: {
-            size: config.forecast.labels_font_size,
+            size: chartTextSize,
             lineHeight: 0.7,
           },
           formatter: function (value, context) {
@@ -1661,6 +1679,17 @@ updateChart({ forecasts, forecastChart } = this) {
         </ha-card>
       `;
     }
+    const chartIconSizeRaw = Number(config.forecast && config.forecast.chart_icon_size);
+    const chartIconSize = Number.isFinite(chartIconSizeRaw)
+      ? chartIconSizeRaw
+      : (Number(config.icons_size) || 30);
+    const chartTextSizeSource = config.forecast && config.forecast.chart_text_size !== undefined && config.forecast.chart_text_size !== null
+      ? config.forecast.chart_text_size
+      : (config.forecast ? config.forecast.labels_font_size : undefined);
+    const chartTextSizeRaw = Number(chartTextSizeSource);
+    const chartTextSize = Number.isFinite(chartTextSizeRaw) ? chartTextSizeRaw : 11;
+    const chartWindUnitTextSize = Math.max(8, chartTextSize - 2);
+
     return html`
       <style>
         ha-card {
@@ -1818,7 +1847,11 @@ updateChart({ forecasts, forecastChart } = this) {
           align-items: center;
           margin-bottom: 6px;
       	  font-weight: 300;
+          font-size: ${config.attributes_font_size}px;
           direction: ltr;
+        }
+        .attributes ha-icon {
+          --mdc-icon-size: ${config.attributes_icon_size}px;
         }
         .chart-container {
           position: relative;
@@ -1839,6 +1872,13 @@ updateChart({ forecasts, forecastChart } = this) {
           align-items: center;
           margin: 1px;
         }
+        .conditions .forecast-item img {
+          width: ${chartIconSize}px;
+          height: ${chartIconSize}px;
+        }
+        .conditions .forecast-item ha-icon {
+          --mdc-icon-size: ${chartIconSize}px;
+        }
         .wind-details {
           display: flex;
           justify-content: space-around;
@@ -1851,7 +1891,7 @@ updateChart({ forecasts, forecastChart } = this) {
           margin: 1px;
         }
         .wind-detail ha-icon {
-          --mdc-icon-size: 15px;
+          --mdc-icon-size: ${chartIconSize}px;
           margin-right: 1px;
           margin-inline-start: initial;
           margin-inline-end: 1px;
@@ -1864,13 +1904,13 @@ updateChart({ forecasts, forecastChart } = this) {
 	        bottom: 1px;
         }
         .wind-speed {
-          font-size: 11px;
+          font-size: ${chartTextSize}px;
           margin-right: 1px;
           margin-inline-start: initial;
           margin-inline-end: 1px;
         }
         .wind-unit {
-          font-size: 9px;
+          font-size: ${chartWindUnitTextSize}px;
           margin-left: 1px;
           margin-inline-start: 1px;
           margin-inline-end: initial;

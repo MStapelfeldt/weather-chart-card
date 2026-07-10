@@ -196,6 +196,7 @@ class WeatherChartCardEditor extends LitElement {
     const constraints = {
       icons_size: { min: 10, max: 120, fallback: 35 },
       main_icon_size: { min: 40, max: 300, fallback: 150 },
+      attributes_icon_size: { min: 8, max: 120, fallback: 16 },
     };
     const rule = constraints[key];
     if (!rule) {
@@ -228,6 +229,7 @@ class WeatherChartCardEditor extends LitElement {
       current_temp_size: { min: 10, max: 800, fallback: 38 },
       time_size: { min: 10, max: 800, fallback: 26 },
       day_date_size: { min: 8, max: 800, fallback: 15 },
+      attributes_font_size: { min: 8, max: 120, fallback: 14 },
     };
     const rule = constraints[key];
     if (!rule) {
@@ -254,6 +256,33 @@ class WeatherChartCardEditor extends LitElement {
   _handlePrecipitationTypeChange(e) {
     const newValue = e.target.value;
     this.config.forecast.precipitation_type = newValue;
+  }
+
+  _handleForecastSizeChange(event, key, min, max, fallback) {
+    if (!this._config) {
+      return;
+    }
+
+    let value = Number(event.target.value);
+    if (!Number.isFinite(value)) {
+      value = fallback;
+    }
+
+    value = Math.round(value);
+    value = Math.min(max, Math.max(min, value));
+    event.target.value = String(value);
+
+    const newConfig = {
+      ...this._config,
+      forecast: {
+        ...(this._config.forecast || {}),
+        [key]: value,
+      },
+    };
+
+    this.configChanged(newConfig);
+    this._config = newConfig;
+    this.requestUpdate();
   }
 
   _formValueChanged(event) {
@@ -698,6 +727,34 @@ class WeatherChartCardEditor extends LitElement {
           @change="${(e) => this._handleFontSizeChange(e, 'day_date_size')}"
         />
       </div>
+      <div class="input-container">
+        <label class="text-label">
+          Attributes text size
+        </label>
+        <input
+          type="number"
+          min="8"
+          max="120"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.attributes_font_size || '14'}"
+          @change="${(e) => this._handleFontSizeChange(e, 'attributes_font_size')}"
+        />
+      </div>
+      <div class="input-container">
+        <label class="text-label">
+          Attributes ha-icon size
+        </label>
+        <input
+          type="number"
+          min="8"
+          max="80"
+          step="1"
+          style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
+          .value="${this._config.attributes_icon_size || '16'}"
+          @change="${(e) => this._handleIconSizeChange(e, 'attributes_icon_size')}"
+        />
+      </div>
 
       <div class="buttons-container">
         <button class="page-button ${this.currentPage === 'card' ? 'active' : ''}" @click="${() => this.showPage('card')}">Main</button>
@@ -1138,6 +1195,12 @@ class WeatherChartCardEditor extends LitElement {
                 .value="${forecastConfig.labels_font_size || '11'}"
                 @change="${(e) => this._valueChanged(e, 'forecast.labels_font_size')}"
               ></ha-textfield>
+              <ha-textfield
+                label="Chart Text Size"
+                type="number"
+                .value="${forecastConfig.chart_text_size || forecastConfig.labels_font_size || '11'}"
+                @change="${(e) => this._handleForecastSizeChange(e, 'chart_text_size', 8, 120, 11)}"
+              ></ha-textfield>
               </div>
 	    <div class="flex-container">
               <ha-textfield
@@ -1145,6 +1208,12 @@ class WeatherChartCardEditor extends LitElement {
                 type="number"
                 .value="${forecastConfig.chart_height || '180'}"
                 @change="${(e) => this._valueChanged(e, 'forecast.chart_height')}"
+              ></ha-textfield>
+              <ha-textfield
+                label="Chart Icon Size"
+                type="number"
+                .value="${forecastConfig.chart_icon_size || '30'}"
+                @change="${(e) => this._handleForecastSizeChange(e, 'chart_icon_size', 8, 200, 30)}"
               ></ha-textfield>
               <ha-textfield
                 label="Number of forecasts"
