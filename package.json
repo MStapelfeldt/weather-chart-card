@@ -1,6 +1,6 @@
 {
   "name": "forecast-weather-chart-card",
-  "version": "1.0.7-beta",
+  "version": "1.0.0",
   "description": "Weather forecast card with charts for Home Assistant Lovelace UI",
   "keywords": [
     "home-assistant",
