@@ -945,109 +945,52 @@ class WeatherChartCardEditor extends LitElement {
             </div>
             <div class="flex-container" style="display: flex;">
               <div class="flex-field">
-              <label class="text-label">
-                Size for daily icons
-              </label>
-              <input
-                type="number"
-                min="0"
-                max="200"
-                step="1"
-                style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-                .value="${this._config.icons_size || '35'}"
-                @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
-              />
-              </div>
-              <div class="flex-field">
-              <label class="text-label">
-                Size for main icon
-              </label>
+                <label>Size for daily icons</label>
                 <input
                   type="number"
-                  min="40"
-                  max="300"
-                  step="1"
-                  style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-                  .value="${this._config.main_icon_size || '150'}"
-                  @change="${(e) => this._handleIconSizeChange(e, 'main_icon_size')}"
+                  class="input-field"
+                    .value="${this._config.icons_size || '35'}"
+                  @change="${(e) => this._handleIconSizeChange(e, 'icons_size')}"
                 />
               </div>
               <div class="flex-field">
-              <label class="text-label">
-                Temperature font size
-              </label>
-              <input
-                type="number"
-                min="0"
-                max="60"
-                step="1"
-                style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-                .value="${this._config.current_temp_size || '35'}"
-                @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
-              />
+                <label>Size for main icon</label>
+                  <input
+                    type="number"
+                    class="input-field"
+                    .value="${this._config.main_icon_size || '150'}"
+                    @change="${(e) => this._handleIconSizeChange(e, 'main_icon_size')}"
+                  />
+              </div>
+              <div class="flex-field">
+                <label>Temperature font size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${this._config.current_temp_size || '35'}"
+                  @change="${(e) => this._handleFontSizeChange(e, 'current_temp_size')}"
+                />
               </div>
             </div>
             <div class="flex-container" style="display: flex;">
               <div class="flex-field">
-              <label class="text-label">
-                Clock time size
-              </label>
-              <input
-                id="time-size-input"
-                type="number"
-                min="10"
-                max="200"
-                step="1"
-                style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-                .value="${this._config.time_size || '26'}"
-                @change="${(e) => this._handleFontSizeChange(e, 'time_size')}"
-              />
+                <label>Attributes text size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${this._config.attributes_font_size || '14'}"
+                  @change="${(e) => this._handleFontSizeChange(e, 'attributes_font_size')}"
+                />
               </div>
               <div class="flex-field">
-              <label class="text-label">
-                Day/Date size
-              </label>
-              <input
-                id="day-date-size-input"
-                type="number"
-                min="8"
-                max="200"
-                step="1"
-                style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-                .value="${this._config.day_date_size || '15'}"
-                @change="${(e) => this._handleFontSizeChange(e, 'day_date_size')}"
-              />
+                <label>Attributes icon size</label>
+                <input
+                  type="number"
+                  class="input-field"
+                  .value="${this._config.attributes_icon_size || '16'}"
+                  @change="${(e) => this._handleIconSizeChange(e, 'attributes_icon_size')}"
+                />
               </div>
-              <div class="flex-field">
-              <label class="text-label">
-                Attributes text size
-              </label>
-              <input
-                type="number"
-                min="8"
-                max="120"
-                step="1"
-                style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-                .value="${this._config.attributes_font_size || '14'}"
-                @change="${(e) => this._handleFontSizeChange(e, 'attributes_font_size')}"
-              />
-            </div>
-            </div>
-            <div class="flex-container" style="display: flex;">
-              <div class="flex-field">
-              <label class="text-label">
-                Attributes icon size
-              </label>
-              <input
-                type="number"
-                min="8"
-                max="80"
-                step="1"
-                style="flex:1; padding:8px; font-size:14px; border:1px solid var(--divider-color); border-radius:4px; background:var(--card-background-color); color:var(--primary-text-color);"
-                .value="${this._config.attributes_icon_size || '16'}"
-                @change="${(e) => this._handleIconSizeChange(e, 'attributes_icon_size')}"
-              />
-            </div>
             </div>
       </div>
 
