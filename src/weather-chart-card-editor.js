@@ -528,7 +528,7 @@ class WeatherChartCardEditor extends LitElement {
       </div>
 
       <!-- Card Settings Page -->
-      <div class="page-container ${this.currentPage === 'card' ? 'active' : ''}"><div>
+      <div class="page-container ${this.currentPage === 'card' ? 'active' : ''}">
         <div class="textfield-container">
           <label class="switch-label">Entity</label>
           <select
