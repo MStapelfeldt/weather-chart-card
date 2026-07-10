@@ -1,7 +1,7 @@
 const locale = {
   cs: {
     'tempHi': 'Teplota',
-    'tempLo': 'Teplota v noci',
+    'tempLo': 'Noc',
     'precip': 'Srážky',
     'feelsLike': 'Pocitová teplota',
     'days': ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'],
@@ -42,7 +42,7 @@ const locale = {
   },
   sk: {
     'tempHi': 'Teplota',
-    'tempLo': 'Teplota v noci',
+    'tempLo': 'Noc',
     'precip': 'Zrážky',
     'feelsLike': 'Pocitová teplota',
     'days': ['Nedeľa', 'Pondelok', 'Utorok', 'Streda', 'Štvrtok', 'Piatok', 'Sobota'],
@@ -83,7 +83,7 @@ const locale = {
   },  
   de: {
     'tempHi': 'Temperatur',
-    'tempLo': 'Nachttemperatur',
+    'tempLo': 'Nacht',
     'precip': 'Niederschlag',
     'feelsLike': 'Gefühlt',
     'days': ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
@@ -124,7 +124,7 @@ const locale = {
   },
   nl: {
     'tempHi': 'Temperatuur',
-    'tempLo': 'Nachttemperatuur',
+    'tempLo': 'Nacht',
     'precip': 'Neerslag',
     'feelsLike': 'Voelt als',
     'days': ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'],
@@ -165,7 +165,7 @@ const locale = {
   },
   en: {
     'tempHi': 'Temperature',
-    'tempLo': 'Temperature night',
+    'tempLo': 'Night',
     'precip': 'Precipitations',
     'feelsLike': 'Feels like',
     'days': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -206,7 +206,7 @@ const locale = {
   },
   es: {
     'tempHi': 'Temperatura máxima',
-    'tempLo': 'Temperatura mínima',
+    'tempLo': 'Noche',
     'precip': 'Precipitación',
     'feelsLike': 'Sensación térmica',
     'days': ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
@@ -247,7 +247,7 @@ const locale = {
   },
   fi: {
     'tempHi': 'Lämpötila ylin',
-    'tempLo': 'Lämpötila alin',
+    'tempLo': 'Yö',
     'precip': 'Sademäärä',
     'feelsLike': 'Tuntuu kuin',
     'days': ['Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'],
@@ -288,7 +288,7 @@ const locale = {
   },
   hu: {
     'tempHi': 'Max. hőmérséklet',
-    'tempLo': 'Min. hőmérséklet',
+    'tempLo': 'Éjjel',
     'precip': 'Csapadék',
     'feelsLike': 'Hőérzet',
     'days': ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'],
@@ -329,7 +329,7 @@ const locale = {
   },
   ru: {
     'tempHi': 'Температура',
-    'tempLo': 'Температура ночью',
+    'tempLo': 'Ночь',
     'precip': 'Осадки',
     'feelsLike': 'Ощущается как',
     'days': ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
@@ -370,7 +370,7 @@ const locale = {
   },
   sv: {
     'tempHi': 'Temperatur max',
-    'tempLo': 'Temperatur min',
+    'tempLo': 'Natt',
     'precip': 'Nederbörd',
     'feelsLike': 'Känns som',
     'days': ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'],
@@ -411,7 +411,7 @@ const locale = {
   },
   fr: {
     'tempHi': 'Température max',
-    'tempLo': 'Température min',
+    'tempLo': 'Nuit',
     'precip': 'Précipitations',
     'feelsLike': 'Ressenti',
     'days': ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
@@ -452,7 +452,7 @@ const locale = {
   },
   pl: {
     'tempHi': 'Temperatura',
-    'tempLo': 'Temperatura w nocy',
+    'tempLo': 'Noc',
     'precip': 'Opady',
     'feelsLike': 'Odczuwalna',
     'days': ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
@@ -493,7 +493,7 @@ const locale = {
   },
   nb: {
     'tempHi': 'Maksimumstemperatur',
-    'tempLo': 'Minimumstemperatur',
+    'tempLo': 'Natt',
     'precip': 'Nedbør',
     'feelsLike': 'Føles som',
     'days': ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
@@ -534,7 +534,7 @@ const locale = {
   },
   da: {
     'tempHi': 'Temperatur',
-    'tempLo': 'Nattemperatur',
+    'tempLo': 'Nat',
     'precip': 'Nedbør',
     'feelsLike': 'Føles som',
     'days': ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
@@ -575,7 +575,7 @@ const locale = {
   },
   it: {
     'tempHi': 'Temperatura massima',
-    'tempLo': 'Temperatura notte',
+    'tempLo': 'Notte',
     'precip': 'Precipitazioni',
     'feelsLike': 'Percepito come',
     'days': ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
@@ -616,7 +616,7 @@ const locale = {
   },
   pt: {
     'tempHi': 'Temperatura máxima',
-    'tempLo': 'Temperatura noite',
+    'tempLo': 'Noite',
     'precip': 'Precipitação',
     'feelsLike': 'Sensação Térmica',
     'days': ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
@@ -657,7 +657,7 @@ const locale = {
   },
   el: {
     'tempHi': 'Μέγιστη θερμοκρασία',
-    'tempLo': 'Ελάχιστη θερμοκρασία νύχτας',
+    'tempLo': 'Νύχτα',
     'precip': 'Υετός',
     'feelsLike': 'Αίσθηση σαν',
     'days': ['Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο'],
@@ -698,7 +698,7 @@ const locale = {
   },
   bg: {
     'tempHi': 'Максимална температура',
-    'tempLo': 'Минимална температура',
+    'tempLo': 'Нощ',
     'precip': 'Валежи',
     'feelsLike': 'Усеща се като',
     'days': ['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'],
@@ -739,7 +739,7 @@ const locale = {
   },
   lt: {
     'tempHi': 'Dieną',
-    'tempLo': 'Naktį',
+    'tempLo': 'Naktis',
     'precip': 'Krituliai',
     'feelsLike': 'Jaučiama',
     'days': ['Sekmadienis', 'Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis', 'Šeštadienis'],
@@ -780,7 +780,7 @@ const locale = {
   },
   ca: {
     'tempHi': 'Temperatura màxima',
-    'tempLo': 'Temperatura mínima',
+    'tempLo': 'Nit',
     'precip': 'Precipitació',
     'feelsLike': 'Sensació tèrmica',
     'days': ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
@@ -821,7 +821,7 @@ const locale = {
   },
   ro: {
     'tempHi': 'Temperatură',
-    'tempLo': 'Temperatură noaptea',
+    'tempLo': 'Noapte',
     'precip': 'Precipitații',
     'feelsLike': 'Se simte ca',
     'days': ['Duminică', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', 'Sâmbătă'],
@@ -862,7 +862,7 @@ const locale = {
   },
   uk: {
     'tempHi': 'Температура',
-    'tempLo': 'Температура вночі',
+    'tempLo': 'Ніч',
     'precip': 'Опади',
     'feelsLike': 'Відчувається як',
     'days': ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'],
@@ -903,7 +903,7 @@ const locale = {
   },
   ko: {
     'tempHi': '최고 기온',
-    'tempLo': '최저 기온',
+    'tempLo': '야간',
     'precip': '강수',
     'feelsLike': '체감',
     'days': ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],

@@ -4,7 +4,7 @@ var WeatherChartCard = (function () {
   const locale = {
     cs: {
       'tempHi': 'Teplota',
-      'tempLo': 'Teplota v noci',
+      'tempLo': 'Noc',
       'precip': 'Srážky',
       'feelsLike': 'Pocitová teplota',
       'days': ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'],
@@ -45,7 +45,7 @@ var WeatherChartCard = (function () {
     },
     sk: {
       'tempHi': 'Teplota',
-      'tempLo': 'Teplota v noci',
+      'tempLo': 'Noc',
       'precip': 'Zrážky',
       'feelsLike': 'Pocitová teplota',
       'days': ['Nedeľa', 'Pondelok', 'Utorok', 'Streda', 'Štvrtok', 'Piatok', 'Sobota'],
@@ -86,7 +86,7 @@ var WeatherChartCard = (function () {
     },  
     de: {
       'tempHi': 'Temperatur',
-      'tempLo': 'Nachttemperatur',
+      'tempLo': 'Nacht',
       'precip': 'Niederschlag',
       'feelsLike': 'Gefühlt',
       'days': ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
@@ -127,7 +127,7 @@ var WeatherChartCard = (function () {
     },
     nl: {
       'tempHi': 'Temperatuur',
-      'tempLo': 'Nachttemperatuur',
+      'tempLo': 'Nacht',
       'precip': 'Neerslag',
       'feelsLike': 'Voelt als',
       'days': ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'],
@@ -168,7 +168,7 @@ var WeatherChartCard = (function () {
     },
     en: {
       'tempHi': 'Temperature',
-      'tempLo': 'Temperature night',
+      'tempLo': 'Night',
       'precip': 'Precipitations',
       'feelsLike': 'Feels like',
       'days': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -209,7 +209,7 @@ var WeatherChartCard = (function () {
     },
     es: {
       'tempHi': 'Temperatura máxima',
-      'tempLo': 'Temperatura mínima',
+      'tempLo': 'Noche',
       'precip': 'Precipitación',
       'feelsLike': 'Sensación térmica',
       'days': ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
@@ -250,7 +250,7 @@ var WeatherChartCard = (function () {
     },
     fi: {
       'tempHi': 'Lämpötila ylin',
-      'tempLo': 'Lämpötila alin',
+      'tempLo': 'Yö',
       'precip': 'Sademäärä',
       'feelsLike': 'Tuntuu kuin',
       'days': ['Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'],
@@ -291,7 +291,7 @@ var WeatherChartCard = (function () {
     },
     hu: {
       'tempHi': 'Max. hőmérséklet',
-      'tempLo': 'Min. hőmérséklet',
+      'tempLo': 'Éjjel',
       'precip': 'Csapadék',
       'feelsLike': 'Hőérzet',
       'days': ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'],
@@ -332,7 +332,7 @@ var WeatherChartCard = (function () {
     },
     ru: {
       'tempHi': 'Температура',
-      'tempLo': 'Температура ночью',
+      'tempLo': 'Ночь',
       'precip': 'Осадки',
       'feelsLike': 'Ощущается как',
       'days': ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
@@ -373,7 +373,7 @@ var WeatherChartCard = (function () {
     },
     sv: {
       'tempHi': 'Temperatur max',
-      'tempLo': 'Temperatur min',
+      'tempLo': 'Natt',
       'precip': 'Nederbörd',
       'feelsLike': 'Känns som',
       'days': ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'],
@@ -414,7 +414,7 @@ var WeatherChartCard = (function () {
     },
     fr: {
       'tempHi': 'Température max',
-      'tempLo': 'Température min',
+      'tempLo': 'Nuit',
       'precip': 'Précipitations',
       'feelsLike': 'Ressenti',
       'days': ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
@@ -455,7 +455,7 @@ var WeatherChartCard = (function () {
     },
     pl: {
       'tempHi': 'Temperatura',
-      'tempLo': 'Temperatura w nocy',
+      'tempLo': 'Noc',
       'precip': 'Opady',
       'feelsLike': 'Odczuwalna',
       'days': ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
@@ -496,7 +496,7 @@ var WeatherChartCard = (function () {
     },
     nb: {
       'tempHi': 'Maksimumstemperatur',
-      'tempLo': 'Minimumstemperatur',
+      'tempLo': 'Natt',
       'precip': 'Nedbør',
       'feelsLike': 'Føles som',
       'days': ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
@@ -537,7 +537,7 @@ var WeatherChartCard = (function () {
     },
     da: {
       'tempHi': 'Temperatur',
-      'tempLo': 'Nattemperatur',
+      'tempLo': 'Nat',
       'precip': 'Nedbør',
       'feelsLike': 'Føles som',
       'days': ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'],
@@ -578,7 +578,7 @@ var WeatherChartCard = (function () {
     },
     it: {
       'tempHi': 'Temperatura massima',
-      'tempLo': 'Temperatura notte',
+      'tempLo': 'Notte',
       'precip': 'Precipitazioni',
       'feelsLike': 'Percepito come',
       'days': ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
@@ -619,7 +619,7 @@ var WeatherChartCard = (function () {
     },
     pt: {
       'tempHi': 'Temperatura máxima',
-      'tempLo': 'Temperatura noite',
+      'tempLo': 'Noite',
       'precip': 'Precipitação',
       'feelsLike': 'Sensação Térmica',
       'days': ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
@@ -660,7 +660,7 @@ var WeatherChartCard = (function () {
     },
     el: {
       'tempHi': 'Μέγιστη θερμοκρασία',
-      'tempLo': 'Ελάχιστη θερμοκρασία νύχτας',
+      'tempLo': 'Νύχτα',
       'precip': 'Υετός',
       'feelsLike': 'Αίσθηση σαν',
       'days': ['Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο'],
@@ -701,7 +701,7 @@ var WeatherChartCard = (function () {
     },
     bg: {
       'tempHi': 'Максимална температура',
-      'tempLo': 'Минимална температура',
+      'tempLo': 'Нощ',
       'precip': 'Валежи',
       'feelsLike': 'Усеща се като',
       'days': ['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'],
@@ -742,7 +742,7 @@ var WeatherChartCard = (function () {
     },
     lt: {
       'tempHi': 'Dieną',
-      'tempLo': 'Naktį',
+      'tempLo': 'Naktis',
       'precip': 'Krituliai',
       'feelsLike': 'Jaučiama',
       'days': ['Sekmadienis', 'Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis', 'Šeštadienis'],
@@ -783,7 +783,7 @@ var WeatherChartCard = (function () {
     },
     ca: {
       'tempHi': 'Temperatura màxima',
-      'tempLo': 'Temperatura mínima',
+      'tempLo': 'Nit',
       'precip': 'Precipitació',
       'feelsLike': 'Sensació tèrmica',
       'days': ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
@@ -824,7 +824,7 @@ var WeatherChartCard = (function () {
     },
     ro: {
       'tempHi': 'Temperatură',
-      'tempLo': 'Temperatură noaptea',
+      'tempLo': 'Noapte',
       'precip': 'Precipitații',
       'feelsLike': 'Se simte ca',
       'days': ['Duminică', 'Luni', 'Marți', 'Miercuri', 'Joi', 'Vineri', 'Sâmbătă'],
@@ -865,7 +865,7 @@ var WeatherChartCard = (function () {
     },
     uk: {
       'tempHi': 'Температура',
-      'tempLo': 'Температура вночі',
+      'tempLo': 'Ніч',
       'precip': 'Опади',
       'feelsLike': 'Відчувається як',
       'days': ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'],
@@ -906,7 +906,7 @@ var WeatherChartCard = (function () {
     },
     ko: {
       'tempHi': '최고 기온',
-      'tempLo': '최저 기온',
+      'tempLo': '야간',
       'precip': '강수',
       'feelsLike': '체감',
       'days': ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
@@ -1168,10 +1168,18 @@ var WeatherChartCard = (function () {
         return;
       }
 
+      const target = event && event.target ? event.target : null;
+      const tagName = target && target.tagName ? target.tagName.toLowerCase() : '';
       const hasDetailValue = event && event.detail && Object.prototype.hasOwnProperty.call(event.detail, 'value');
-      const value = event && event.target && event.target.checked !== undefined
-        ? event.target.checked
-        : (hasDetailValue ? event.detail.value : (event && event.target ? event.target.value : undefined));
+      const isBooleanControl = !!target && (
+        target.type === 'checkbox'
+        || target.type === 'radio'
+        || tagName === 'ha-switch'
+        || tagName === 'ha-checkbox'
+      );
+      const value = isBooleanControl
+        ? target.checked
+        : (hasDetailValue ? event.detail.value : (target ? target.value : undefined));
 
       let newConfig = { ...this._config };
 
@@ -1266,6 +1274,9 @@ var WeatherChartCard = (function () {
 
       const constraints = {
         current_temp_size: { min: 10, max: 800, fallback: 38 },
+        main_headline_size: { min: 8, max: 120, fallback: 12 },
+        current_condition_size: { min: 8, max: 120, fallback: 18 },
+        feels_like_size: { min: 8, max: 120, fallback: 13 },
         time_size: { min: 10, max: 800, fallback: 26 },
         day_date_size: { min: 8, max: 800, fallback: 15 },
         attributes_font_size: { min: 8, max: 120, fallback: 14 },
@@ -1316,6 +1327,32 @@ var WeatherChartCard = (function () {
         forecast: {
           ...(this._config.forecast || {}),
           [key]: value,
+        },
+      };
+
+      this.configChanged(newConfig);
+      this._config = newConfig;
+      this.requestUpdate();
+    }
+
+    _handleForecastOffsetChange(event) {
+      if (!this._config) {
+        return;
+      }
+
+      let value = Number(event.target.value);
+      if (!Number.isFinite(value)) {
+        value = 0;
+      }
+
+      value = Math.max(0, Math.floor(value));
+      event.target.value = String(value);
+
+      const newConfig = {
+        ...this._config,
+        forecast: {
+          ...(this._config.forecast || {}),
+          forecast_start_offset: value,
         },
       };
 
@@ -2010,6 +2047,35 @@ var WeatherChartCard = (function () {
         </div>
         <div class="flex-container" style="display: flex;">
           <div class="flex-field">
+            <label>Main headline font size</label>
+            <input
+              type="number"
+              class="input-field"
+              .value="${this._config.main_headline_size || '12'}"
+              @change="${(e) => this._handleFontSizeChange(e, 'main_headline_size')}"
+            />
+          </div>
+          <div class="flex-field">
+            <label>Current condition font size</label>
+            <input
+              type="number"
+              class="input-field"
+              .value="${this._config.current_condition_size || '18'}"
+              @change="${(e) => this._handleFontSizeChange(e, 'current_condition_size')}"
+            />
+          </div>
+          <div class="flex-field">
+            <label>Feels like font size</label>
+            <input
+              type="number"
+              class="input-field"
+              .value="${this._config.feels_like_size || '13'}"
+              @change="${(e) => this._handleFontSizeChange(e, 'feels_like_size')}"
+            />
+          </div>
+        </div>
+        <div class="flex-container" style="display: flex;">
+          <div class="flex-field">
             <label>Attributes text size</label>
             <input
               type="number"
@@ -2249,8 +2315,18 @@ var WeatherChartCard = (function () {
                 <input
                   type="number"
                   class="input-field"
-                  .value="${forecastConfig.number_of_forecasts || '0'}"
+                  .value="${forecastConfig.number_of_forecasts || '7'}"
                   @change="${(e) => this._valueChanged(e, 'forecast.number_of_forecasts')}"
+                />
+              </div>
+              <div class="flex-field">
+                <label>Forecast start offset</label>
+                <input
+                  type="number"
+                  min="0"
+                  class="input-field"
+                  .value="${forecastConfig.forecast_start_offset || '0'}"
+                  @change="${(e) => this._handleForecastOffsetChange(e)}"
                 />
               </div>
             </div>
@@ -18741,6 +18817,9 @@ var WeatherChartCard = (function () {
       icons_size: 30,
       main_icon_size: 150,
       current_temp_size: 35,
+      main_headline_size: 12,
+      current_condition_size: 18,
+      feels_like_size: 13,
       animated_icons: true,
       icon_style: 'style1',
       autoscroll: false,
@@ -18757,6 +18836,7 @@ var WeatherChartCard = (function () {
         round_temp: false,
         type: 'daily',
         number_of_forecasts: '0', 
+        forecast_start_offset: 0,
         disable_animation: false,
         show_date_labels: true,
         use_color_thresholds: true,
@@ -18793,6 +18873,9 @@ var WeatherChartCard = (function () {
       animated_icons: true,
       icon_style: 'style1',
       current_temp_size: 35,
+      main_headline_size: 12,
+      current_condition_size: 18,
+      feels_like_size: 13,
       attributes_font_size: 14,
       attributes_icon_size: 16,
       main_icon_size: 150,
@@ -18827,6 +18910,7 @@ var WeatherChartCard = (function () {
         type: 'daily',
         auto_rotate: 0,
         number_of_forecasts: '0',
+        forecast_start_offset: 0,
         '12hourformat': false,
         show_date_labels: true,
         use_color_thresholds: true,
@@ -20264,8 +20348,24 @@ var WeatherChartCard = (function () {
     });
   }
 
+  getForecastStartOffset() {
+    const rawOffset = Number(this.config && this.config.forecast ? this.config.forecast.forecast_start_offset : 0);
+    if (!Number.isFinite(rawOffset)) {
+      return 0;
+    }
+    return Math.max(0, Math.floor(rawOffset));
+  }
+
+  getForecastSlice(forecastItems = this.forecastItems) {
+    const source = Array.isArray(this.forecasts) ? this.forecasts : [];
+    const startOffset = this.getForecastStartOffset();
+    const count = Number(forecastItems);
+    const safeCount = Number.isFinite(count) ? Math.max(0, Math.floor(count)) : source.length;
+    return source.slice(startOffset, startOffset + safeCount);
+  }
+
   computeForecastData({ config, forecastItems } = this) {
-    var forecast = this.forecasts ? this.forecasts.slice(0, forecastItems) : [];
+    var forecast = this.getForecastSlice(forecastItems);
     var roundTemp = config.forecast.round_temp == true;
     var dateTime = [];
     var tempHigh = [];
@@ -20456,7 +20556,7 @@ var WeatherChartCard = (function () {
           justify-self: end;
         }
         .main-headline {
-          font-size: 12px;
+          font-size: ${config.main_headline_size}px;
           color: var(--secondary-text-color);
           margin-bottom: 4px;
         }
@@ -20491,7 +20591,7 @@ var WeatherChartCard = (function () {
           font-weight: 300;
         }
         .main .current-condition {
-          font-size: 18px;
+          font-size: ${config.current_condition_size}px;
           margin-top: 4px;
         }
         .current-time {
@@ -20600,7 +20700,7 @@ var WeatherChartCard = (function () {
           margin-inline-end: initial;
         }
         .main .feels-like {
-          font-size: 13px;
+          font-size: ${config.feels_like_size}px;
           margin-top: 5px;
           font-weight: 400;
         }
@@ -21171,7 +21271,7 @@ var WeatherChartCard = (function () {
   }
 
   renderForecastConditionIcons({ config, forecastItems, sun } = this) {
-    const forecast = this.forecasts ? this.forecasts.slice(0, forecastItems) : [];
+    const forecast = this.getForecastSlice(forecastItems);
 
     if (config.forecast.condition_icons === false) {
       return x``;
@@ -21259,7 +21359,7 @@ var WeatherChartCard = (function () {
       return x``;
     }
 
-    const forecast = this.forecasts ? this.forecasts.slice(0, forecastItems) : [];
+    const forecast = this.getForecastSlice(forecastItems);
 
     return x`
     <div class="wind-details">

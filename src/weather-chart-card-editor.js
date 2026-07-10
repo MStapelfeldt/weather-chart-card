@@ -129,10 +129,18 @@ class WeatherChartCardEditor extends LitElement {
       return;
     }
 
+    const target = event && event.target ? event.target : null;
+    const tagName = target && target.tagName ? target.tagName.toLowerCase() : '';
     const hasDetailValue = event && event.detail && Object.prototype.hasOwnProperty.call(event.detail, 'value');
-    const value = event && event.target && event.target.checked !== undefined
-      ? event.target.checked
-      : (hasDetailValue ? event.detail.value : (event && event.target ? event.target.value : undefined));
+    const isBooleanControl = !!target && (
+      target.type === 'checkbox'
+      || target.type === 'radio'
+      || tagName === 'ha-switch'
+      || tagName === 'ha-checkbox'
+    );
+    const value = isBooleanControl
+      ? target.checked
+      : (hasDetailValue ? event.detail.value : (target ? target.value : undefined));
 
     let newConfig = { ...this._config };
 
@@ -227,6 +235,9 @@ class WeatherChartCardEditor extends LitElement {
 
     const constraints = {
       current_temp_size: { min: 10, max: 800, fallback: 38 },
+      main_headline_size: { min: 8, max: 120, fallback: 12 },
+      current_condition_size: { min: 8, max: 120, fallback: 18 },
+      feels_like_size: { min: 8, max: 120, fallback: 13 },
       time_size: { min: 10, max: 800, fallback: 26 },
       day_date_size: { min: 8, max: 800, fallback: 15 },
       attributes_font_size: { min: 8, max: 120, fallback: 14 },
@@ -277,6 +288,32 @@ class WeatherChartCardEditor extends LitElement {
       forecast: {
         ...(this._config.forecast || {}),
         [key]: value,
+      },
+    };
+
+    this.configChanged(newConfig);
+    this._config = newConfig;
+    this.requestUpdate();
+  }
+
+  _handleForecastOffsetChange(event) {
+    if (!this._config) {
+      return;
+    }
+
+    let value = Number(event.target.value);
+    if (!Number.isFinite(value)) {
+      value = 0;
+    }
+
+    value = Math.max(0, Math.floor(value));
+    event.target.value = String(value);
+
+    const newConfig = {
+      ...this._config,
+      forecast: {
+        ...(this._config.forecast || {}),
+        forecast_start_offset: value,
       },
     };
 
@@ -971,6 +1008,35 @@ class WeatherChartCardEditor extends LitElement {
         </div>
         <div class="flex-container" style="display: flex;">
           <div class="flex-field">
+            <label>Main headline font size</label>
+            <input
+              type="number"
+              class="input-field"
+              .value="${this._config.main_headline_size || '12'}"
+              @change="${(e) => this._handleFontSizeChange(e, 'main_headline_size')}"
+            />
+          </div>
+          <div class="flex-field">
+            <label>Current condition font size</label>
+            <input
+              type="number"
+              class="input-field"
+              .value="${this._config.current_condition_size || '18'}"
+              @change="${(e) => this._handleFontSizeChange(e, 'current_condition_size')}"
+            />
+          </div>
+          <div class="flex-field">
+            <label>Feels like font size</label>
+            <input
+              type="number"
+              class="input-field"
+              .value="${this._config.feels_like_size || '13'}"
+              @change="${(e) => this._handleFontSizeChange(e, 'feels_like_size')}"
+            />
+          </div>
+        </div>
+        <div class="flex-container" style="display: flex;">
+          <div class="flex-field">
             <label>Attributes text size</label>
             <input
               type="number"
@@ -1210,8 +1276,18 @@ class WeatherChartCardEditor extends LitElement {
                 <input
                   type="number"
                   class="input-field"
-                  .value="${forecastConfig.number_of_forecasts || '0'}"
+                  .value="${forecastConfig.number_of_forecasts || '7'}"
                   @change="${(e) => this._valueChanged(e, 'forecast.number_of_forecasts')}"
+                />
+              </div>
+              <div class="flex-field">
+                <label>Forecast start offset</label>
+                <input
+                  type="number"
+                  min="0"
+                  class="input-field"
+                  .value="${forecastConfig.forecast_start_offset || '0'}"
+                  @change="${(e) => this._handleForecastOffsetChange(e)}"
                 />
               </div>
             </div>

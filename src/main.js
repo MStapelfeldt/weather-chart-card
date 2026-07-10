@@ -57,6 +57,9 @@ static getStubConfig(hass, unusedEntities, allEntities) {
     icons_size: 30,
     main_icon_size: 150,
     current_temp_size: 35,
+    main_headline_size: 12,
+    current_condition_size: 18,
+    feels_like_size: 13,
     animated_icons: true,
     icon_style: 'style1',
     autoscroll: false,
@@ -73,6 +76,7 @@ static getStubConfig(hass, unusedEntities, allEntities) {
       round_temp: false,
       type: 'daily',
       number_of_forecasts: '0', 
+      forecast_start_offset: 0,
       disable_animation: false,
       show_date_labels: true,
       use_color_thresholds: true,
@@ -109,6 +113,9 @@ setConfig(config) {
     animated_icons: true,
     icon_style: 'style1',
     current_temp_size: 35,
+    main_headline_size: 12,
+    current_condition_size: 18,
+    feels_like_size: 13,
     attributes_font_size: 14,
     attributes_icon_size: 16,
     main_icon_size: 150,
@@ -143,6 +150,7 @@ setConfig(config) {
       type: 'daily',
       auto_rotate: 0,
       number_of_forecasts: '0',
+      forecast_start_offset: 0,
       '12hourformat': false,
       show_date_labels: true,
       use_color_thresholds: true,
@@ -1580,8 +1588,24 @@ drawChart({ config, language, weather, forecastItems } = this) {
   });
 }
 
+getForecastStartOffset() {
+  const rawOffset = Number(this.config && this.config.forecast ? this.config.forecast.forecast_start_offset : 0);
+  if (!Number.isFinite(rawOffset)) {
+    return 0;
+  }
+  return Math.max(0, Math.floor(rawOffset));
+}
+
+getForecastSlice(forecastItems = this.forecastItems) {
+  const source = Array.isArray(this.forecasts) ? this.forecasts : [];
+  const startOffset = this.getForecastStartOffset();
+  const count = Number(forecastItems);
+  const safeCount = Number.isFinite(count) ? Math.max(0, Math.floor(count)) : source.length;
+  return source.slice(startOffset, startOffset + safeCount);
+}
+
 computeForecastData({ config, forecastItems } = this) {
-  var forecast = this.forecasts ? this.forecasts.slice(0, forecastItems) : [];
+  var forecast = this.getForecastSlice(forecastItems);
   var roundTemp = config.forecast.round_temp == true;
   var dateTime = [];
   var tempHigh = [];
@@ -1772,7 +1796,7 @@ updateChart({ forecasts, forecastChart } = this) {
           justify-self: end;
         }
         .main-headline {
-          font-size: 12px;
+          font-size: ${config.main_headline_size}px;
           color: var(--secondary-text-color);
           margin-bottom: 4px;
         }
@@ -1807,7 +1831,7 @@ updateChart({ forecasts, forecastChart } = this) {
           font-weight: 300;
         }
         .main .current-condition {
-          font-size: 18px;
+          font-size: ${config.current_condition_size}px;
           margin-top: 4px;
         }
         .current-time {
@@ -1916,7 +1940,7 @@ updateChart({ forecasts, forecastChart } = this) {
           margin-inline-end: initial;
         }
         .main .feels-like {
-          font-size: 13px;
+          font-size: ${config.feels_like_size}px;
           margin-top: 5px;
           font-weight: 400;
         }
@@ -2487,7 +2511,7 @@ renderSun({ sun, language } = this) {
 }
 
 renderForecastConditionIcons({ config, forecastItems, sun } = this) {
-  const forecast = this.forecasts ? this.forecasts.slice(0, forecastItems) : [];
+  const forecast = this.getForecastSlice(forecastItems);
 
   if (config.forecast.condition_icons === false) {
     return html``;
@@ -2575,7 +2599,7 @@ renderWind({ config, weather, windSpeed, windDirection, forecastItems } = this) 
     return html``;
   }
 
-  const forecast = this.forecasts ? this.forecasts.slice(0, forecastItems) : [];
+  const forecast = this.getForecastSlice(forecastItems);
 
   return html`
     <div class="wind-details">
